@@ -4,18 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prism - K8s visualizer</title>
-  </head>
+    <link rel="stylesheet" href="./styles.css">
+    </head>
+  
+  <script> 
+    // this is just here to test the express route
+    async function testEx() {
+      console.log('onclick event confirmed');
+
+      const response = await fetch('/testBtn',{ });
+      const result = await response.json();
+      
+      console.log(result.message);
+      return 
+    }
+  </script>
+  
   <body>
     
     <div>
-      |-----------| <br />
-      | MORE 　　　| <br />
-      | TO　　　　　|<br />
-      | COME!　　　|<br />
-      |-----------|<br />
+      |-------------| <br />
+      | MORE 　| <br />
+      | TO　　　|<br />
+      | COME!　|<br />
+      |-------------|<br />
       (\__/) ||<br />
       (•ㅅ•) ||<br />
       / 　 づ<br />
     </div>
+    <br>
+    <div>
+      <button onclick="testEx()">Click this to test an Express route </button>
+    </div>
+
   </body>
 </html>
