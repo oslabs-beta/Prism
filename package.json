@@ -2,14 +2,16 @@
   "name": "prism",
   "version": "1.0.0",
   "description": "kubernetes cluster visualizer",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
-    "test": "npm run dev"
+    "dev": "concurrently \"nodemon server/server.js\" \" webpack serve --open\" "
   },
   "author": "Beserat Tafesse, Dawit Merid, James Li, Josh Hall, Paul Glenn",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "mongoose": "^7.4.0",
     "nodemon": "^3.0.1",
     "react": "^18.2.0",
     "react-router-dom": "^6.14.2"
@@ -17,9 +19,11 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
+    "concurrently": "^8.2.0",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",
     "html-webpack-plugin": "^5.5.3",
+    "nodemon": "^3.0.1",
     "webpack-dev-server": "^4.15.1"
   }
 }
