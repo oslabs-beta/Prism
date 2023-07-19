@@ -1,16 +1,16 @@
-const path = require('path'); 
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './client/app.js', // if index.js we'll use that 
-    output: {
-        path: path.resolve(__dirname,'./build')
-    },
+  entry: path.resolve(__dirname, '/client/index.js') // if index.js we'll use that 
+  output: {
+    path: path.resolve(__dirname, './build')
+  },
 
 
-plugins: [
+  plugins: [
     new HtmlWebPackPlugin({
-      template: path.resolve(__dirname, './client/index.html'),
+      template: 'index.html',
     }),
   ],
   devServer: {
