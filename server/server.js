@@ -8,7 +8,9 @@ app.use(express.json());
 
 // just to get something running
 app.get('/', (req, res) => {
-  return res.status(200).send(path.resolve(__dirname, '../client/index.html'));
+  return res
+    .status(200)
+    .sendFile(path.resolve(__dirname, '../client/index.html'));
 });
 
 // catch all route
