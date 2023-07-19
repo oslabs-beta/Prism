@@ -4,6 +4,16 @@ Prism is a Kubernetes and Docker visualizer that helps users understand the stat
 
 < we should put an image of some kind here >
 
+## Features: currently live
+
+- none yet
+
+## Features: coming soon
+
+- React app renders to index.html
+
+
+
 ## backend structure
 
 ### required actions
