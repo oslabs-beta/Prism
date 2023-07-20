@@ -8,6 +8,6 @@ module.exports = metricsController = {
         console.log('test button routed through metrics controller')
         next();
     },
-
-
+    // add more routes here
+    // methodName: (req, res, next) => {},
 };
