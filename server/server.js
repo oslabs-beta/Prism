@@ -1,16 +1,19 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 3000;
+const PORT = 8080;
 
 // convert request body, etc.  to JSON
 app.use(express.json());
+
+
+
 
 // just to get something running
 app.get('/', (req, res) => {
   return res
     .status(200)
-    .sendFile(path.resolve(__dirname, '../client/index.html'));
+    .sendFile(path.resolve(__dirname, '../index.html'));
 });
 
 // catch all route

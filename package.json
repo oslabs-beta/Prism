@@ -14,16 +14,16 @@
     "mongoose": "^7.4.0",
     "nodemon": "^3.0.1",
     "react": "^18.2.0",
-    "react-router-dom": "^6.14.2"
+    "react-router-dom": "^6.14.2",
+    "webpack": "^5.88.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.1.0",
     "concurrently": "^8.2.0",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react": "^7.32.2",
     "html-webpack-plugin": "^5.5.3",
     "nodemon": "^3.0.1",
+    "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   }
 }

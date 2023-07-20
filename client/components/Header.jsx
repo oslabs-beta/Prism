@@ -25,4 +25,4 @@ export default function Header({ user, setUser }) {
             }
         </header>
     )
-};
+}

@@ -2,11 +2,10 @@ const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, '/client/index.js') // if index.js we'll use that 
+  entry: path.resolve(__dirname, '/client/index.js'), // if index.js we'll use that 
   output: {
     path: path.resolve(__dirname, './build')
   },
-
 
   plugins: [
     new HtmlWebPackPlugin({
@@ -15,7 +14,8 @@ module.exports = {
   ],
   devServer: {
     proxy: {
-      target: 'http://localhost:8080',
+
+      target: 'http://localhost:3000',
     },
     headers: {
       'Access-Control-Allow-Origin': '*',
