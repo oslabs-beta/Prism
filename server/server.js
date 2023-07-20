@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 8080;
 
 // convert request body, etc.  to JSON
 app.use(express.json());
@@ -34,6 +33,6 @@ app.use((err, req, res, next) => {
 });
 
 //listens on port 3000 -> http://localhost:3000/
-app.listen(PORT, () => {
-  console.log(`App listening on PORT ${PORT}`);
+app.listen(3000, () => {
+  console.log(`App listening on PORT 3000`);
 });
