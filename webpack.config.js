@@ -1,14 +1,15 @@
-const path = require('path'); 
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './client/app.js', // if index.js we'll use that 
-    output: {
-        path: path.resolve(__dirname,'./build')
-    },
+  mode: process.env.NODE_ENV || 'development',
+  entry: './client/index.js', // if index.js we'll use that
+  output: {
+    path: path.resolve(__dirname, './build'),
+    filename: 'bundle.js',
+  },
 
-
-plugins: [
+  plugins: [
     new HtmlWebPackPlugin({
       template: path.resolve(__dirname, './client/index.html'),
     }),
@@ -20,6 +21,11 @@ plugins: [
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
+    historyApiFallback: true,
+    static: {
+      directory: path.resolve(__dirname, 'build'),
+      publicPath: 'build',
+    },
   },
   module: {
     //rules array is executed in reverse order
@@ -30,6 +36,9 @@ plugins: [
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
         },
       },
 
@@ -46,6 +55,7 @@ plugins: [
           'style-loader',
           // compiles CSS to commonJS
           'css-loader',
+          'postcss-loader',
         ],
       },
       // handle images using url-loader - source:https://v4.webpack.js.org/loaders/url-loader/
@@ -59,4 +69,7 @@ plugins: [
       },
     ],
   },
-}
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+};
