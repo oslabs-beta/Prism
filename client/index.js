@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom';
 import App from './components/App.jsx';
 import { createRoot } from 'react-dom/client';
 import './styles.css'
@@ -9,10 +9,12 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-  <Router>
-    <>
-      <div>hello </div>
+
+  <React.StrictMode>
+    <BrowserRouter>
       <App />
-    </>
-  </Router>
+    </BrowserRouter>
+  </React.StrictMode>
+
+
 );
