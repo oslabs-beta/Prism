@@ -21,7 +21,7 @@ module.exports = {
     host: 'localhost',
     port: '8080',
     proxy: {
-      target: 'http://localhost:3000',
+      '/': 'http://localhost:3000',
     },
     historyApiFallback: true,
     static: {

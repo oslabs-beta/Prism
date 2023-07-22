@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import { Route, Routes } from "react-router-dom";
-import Layout from './Layout.jsx';
-import Login from './Login.jsx';
-import Signup from './Signup.jsx';
 import AppIntro from './AppIntro.jsx';
-import Header from './Header.jsx'
+import Layout from './NavBar/Layout.jsx';
+import Login from './NavBar/Login.jsx';
+import Signup from './NavBar/Signup.jsx';
+import Github from './NavBar/Github.jsx';
+import LinkedIn from './NavBar/LinkedIn.jsx';
+import ClusterConnect from './ClusterView/ClusterConnect.jsx';
+
+
 
 export default function App() {
 
@@ -12,11 +16,15 @@ export default function App() {
 
   return (
     <>
-      <h1 className='text-red-500'>Hi</h1>
       <div>
         <Routes>
-          <Route path="/" element={<Header />}>
+          <Route path="/" element={<Layout />} >
             <Route index element={<AppIntro />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/signup" element={<Signup />}></Route>
+            <Route path="/github" element={<Github />}></Route>
+            <Route path="/linkedin" element={<LinkedIn />}></Route>
+            {/* <Route path="/connectcluster" element={<ClusterConnect />}></Route> */}
           </Route>
         </Routes>
       </div>
