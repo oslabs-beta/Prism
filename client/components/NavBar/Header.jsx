@@ -4,7 +4,13 @@ import { Link } from 'react-router-dom';
 export default function Header() {
 
     return (
-        <div> DAWIT </div>
+        <>
+            <Link to='/connectcluster'>Connect Cluster------------------------------------------------------------------------------------------------------</Link>
+            <Link to='/linkedin'>(Insert LinkedIn Logo Here)</Link>
+            <Link to='/github'>(Insert Github Logo Here)</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/signup">Signup</Link>
+        </>
     )
 
     //     const username = user.username;
