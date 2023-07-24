@@ -2,12 +2,13 @@ const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
+  mode: process.env.NODE_ENV,
   entry: path.resolve(__dirname, '/client/index.js'),
 
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
+    assetModuleFilename: 'images/[hash][ext][query]',
   },
 
   plugins: [
@@ -20,8 +21,11 @@ module.exports = {
   devServer: {
     host: 'localhost',
     port: '8080',
+    hot: true,
     proxy: {
       '/': 'http://localhost:3000',
+      secure: false,
+      changeOrigin: true,
     },
     historyApiFallback: true,
     static: {
@@ -45,6 +49,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader', 'postcss-loader'],
+      },
+      {
+        test: /\.png/,
+        type: 'asset/resource',
       },
     ],
   },
