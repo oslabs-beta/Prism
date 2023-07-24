@@ -5,7 +5,7 @@ import SidePanel from './SidePanel/SidePanel';
 
 export default function RootLayout() {
   return (
-    <div className=' flex flex-col  sm:grid sm:grid-areas-layout sm:grid-cols-layout sm:grid-rows-layout h-full '>
+    <div className=' flex flex-col  sm:grid sm:grid-areas-layout sm:grid-cols-layout sm:grid-rows-layout min-h-screen '>
       {' '}
       <header className='bg-[var(--primary-white)]  dark:bg-[var(--secondary)]  px-6 py-7  mb-0 sm:px-10 sm:grid-in-header  sm:justify-end sm:grid sm:auto-rows-max dark:bg[var(--secondary)] border-b-[3px] border-[var(--primary-grey)]  dark:border-[var(--primary)]'>
         <ClusterViewHeader />
