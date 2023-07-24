@@ -1,11 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,500&family=Righteous&family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,600&display=swap');
 
 /* beautiful background  */
 body {
-    background: linear-gradient(90deg,
+  /* background: linear-gradient(90deg,
             rgba(255, 0, 0, 1) 0%,
             rgba(255, 154, 0, 1) 10%,
             rgba(208, 222, 33, 1) 20%,
@@ -16,10 +17,46 @@ body {
             rgba(95, 21, 242, 1) 70%,
             rgba(186, 12, 248, 1) 80%,
             rgba(251, 7, 217, 1) 90%,
-            rgba(255, 0, 0, 1) 100%);
+            rgba(255, 0, 0, 1) 100%); */
 }
 
-#expressBtn {
-    border: 2px solid black;
-    background-color: white;
+/* #expressBtn {
+  border: 2px solid black;
+  background-color: white;
+} */
+
+:root {
+  --primary: #aaeec4;
+  --primary-dark: #aaeec4ad;
+  --secondary: #22252b;
+  --primary-white: #ffffff;
+  --primary-grey: #e8e8e8;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    /* font-stretch: semi-condensed; */
+    letter-spacing: -0.06em;
+  }
+
+  li {
+    @apply p-4 text-sm;
+  }
+
+  button {
+    @apply flex items-center justify-center px-2 py-1 border bg-[var(--secondary)] text-[var(--primary)] dark:bg-[var(--primary)] dark:text-[var(--secondary)] rounded border-none;
+  }
+  h2 {
+    @apply text-xl font-bold;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
 }

@@ -3,7 +3,6 @@ const app = express();
 const path = require('path');
 const PORT = 3000; // from josh's branch
 
-
 // convert request body, etc.  to JSON
 app.use(express.json());
 const metricsController = require('./controllers/metricsController');
@@ -13,21 +12,18 @@ const metricsController = require('./controllers/metricsController');
 
 // just to get something running
 app.get('/', (req, res) => {
-  return res
-    .status(200)
-    .sendFile(path.resolve(__dirname, '../index.html'));
+  return res.status(200).sendFile(path.resolve(__dirname, '../index.html'));
 });
 
 // test button request from index.html
 app.get('/testBtn', metricsController.testButton, (req, res) => {
   return res.status(200).send({ message: 'Express button test complete' });
-})
+});
 
 // catch all route
 app.get('*', (req, res) => {
   return res.status(404).send('Page Not Found!');
 });
-
 
 // global error handler
 app.use((err, req, res, next) => {
