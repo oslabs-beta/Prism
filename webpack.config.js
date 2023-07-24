@@ -1,25 +1,27 @@
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: process.env.NODE_ENV || 'development',
-  entry: './client/index.js', // if index.js we'll use that
+  mode: 'development',
+  entry: path.resolve(__dirname, '/client/index.js'),
+
   output: {
-    path: path.resolve(__dirname, './build'),
+    path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
   },
 
   plugins: [
-    new HtmlWebPackPlugin({
-      template: path.resolve(__dirname, './client/index.html'),
+    new HTMLWebpackPlugin({
+      // filename: 'index.html',
+      template: '/index.html',
     }),
   ],
+
   devServer: {
+    host: 'localhost',
+    port: '8080',
     proxy: {
-      target: 'http://localhost:8080',
-    },
-    headers: {
-      'Access-Control-Allow-Origin': '*',
+      '/': 'http://localhost:3000',
     },
     historyApiFallback: true,
     static: {
@@ -27,13 +29,12 @@ module.exports = {
       publicPath: 'build',
     },
   },
+
   module: {
-    //rules array is executed in reverse order
     rules: [
       {
-        //? matches the preceding item 0 or 1 times (could be .js or .jsx)
-        test: /\.jsx?/,
-        exclude: /(node_modules)/,
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -41,31 +42,9 @@ module.exports = {
           },
         },
       },
-
       {
-        // for CSS
-        //this is a regexp
-        //\. escapes the period
-        //[] or
-        //$ end of string
-        //i not case sensitive
-        test: /\.css$/i,
-        use: [
-          // creates 'style' nodes from JS strings
-          'style-loader',
-          // compiles CSS to commonJS
-          'css-loader',
-          'postcss-loader',
-        ],
-      },
-      // handle images using url-loader - source:https://v4.webpack.js.org/loaders/url-loader/
-      {
-        test: /\.(png|jpg|jpeg|gif)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-          },
-        ],
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
     ],
   },
