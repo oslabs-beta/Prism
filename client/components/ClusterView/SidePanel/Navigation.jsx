@@ -10,7 +10,7 @@ const Navigation = () => {
       {/* START OF ONE LINK */}
       <NavLink
         className='hover:bg-[var(--secondary)] hover:px-2 hover:py-1 my-0 hover:text-[var(--primary)] rounded flex items-center gap-1 dark:hover:text-[var(--secondary)] dark:hover:bg-[var(--primary)]'
-        to='/'
+        to='/clusterview'
       >
         <span className='material-symbols-outlined'>overview</span>
         Overview
@@ -19,7 +19,7 @@ const Navigation = () => {
       {/* START OF ONE NavLink */}
       <NavLink
         className='hover:bg-[var(--secondary)] hover:px-2 hover:py-1 my-0 hover:text-[var(--primary)] rounded flex items-center gap-1 dark:hover:text-[var(--secondary)] dark:hover:bg-[var(--primary)]'
-        to='/nodes'
+        to='/clusterview/nodes'
       >
         <FaServer size={20} />
         Node
@@ -28,7 +28,7 @@ const Navigation = () => {
       {/* START OF ONE NavLink */}
       <NavLink
         className='hover:bg-[var(--secondary)] hover:px-2 hover:py-1 my-0 hover:text-[var(--primary)] rounded flex items-center gap-1 dark:hover:text-[var(--secondary)] dark:hover:bg-[var(--primary)]'
-        to='/pods'
+        to='/clusterview/pods'
       >
         {/* <AiOutlineCluster size={28} /> */}
         <FaFreebsd size={21} />
@@ -38,7 +38,7 @@ const Navigation = () => {
       {/* START OF ONE NavLink */}
       <NavLink
         className='hover:bg-[var(--secondary)] hover:px-2 hover:py-1 my-0 hover:text-[var(--primary)] rounded flex items-center gap-1 dark:hover:text-[var(--secondary)] dark:hover:bg-[var(--primary)]'
-        to='/clustermap'
+        to='/clusterview/clustermap'
       >
         <FaCircleNodes size={22} />
         Cluster Map
