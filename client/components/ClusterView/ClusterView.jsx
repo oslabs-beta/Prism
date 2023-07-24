@@ -1,3 +1,5 @@
+// WE ARE NOT USING THIS COMPONENT. I AM KEEPING IT JUST TO BE SAFE
+
 import React from 'react';
 import { ThemeProvider } from './ClusterViewHeader/themeContext';
 import ClusterMap from './Dashboard/ClusterMap';
