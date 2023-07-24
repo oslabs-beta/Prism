@@ -27,13 +27,17 @@ module.exports = {
           'sidebar main main main main main',
           'sidebar main main main main main',
           'sidebar main main main main main',
+          'sidebar main main main main main',
+          'sidebar main main main main main',
+          'sidebar main main main main main',
+          'sidebar main main main main main',
         ],
       },
       gridTemplateColumns: {
         layout: '1fr 1fr 1fr 1fr 1fr 1fr',
       },
       gridTemplateRows: {
-        layout: '1fr 1fr 1fr 1fr,1fr,1fr',
+        layout: '1fr 1fr 1fr 1fr,1fr,1fr,1fr,1fr,1fr,1fr',
       },
     },
   },

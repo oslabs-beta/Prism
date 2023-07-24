@@ -1,5 +1,12 @@
-// const ClusterView = () => {
-//   return <h1>ClusterView</h1>;
-// };
+import React from 'react';
 
-// export default ClusterView;
+const ClusterConnect = () => {
+  return (
+    <main className='flex flex-col'>
+      {' '}
+      <h1>OverView</h1>
+    </main>
+  );
+};
+
+export default ClusterConnect;
