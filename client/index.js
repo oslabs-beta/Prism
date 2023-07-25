@@ -6,7 +6,7 @@ import { createRoot } from 'react-dom/client';
 
 import { StrictMode } from 'react';
 
-import './styles.css';
+import './styles_output.css';
 
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);

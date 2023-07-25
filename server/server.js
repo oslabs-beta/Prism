@@ -1,33 +1,33 @@
-const express = require('express');
+import express, { json } from 'express';
 const app = express();
-const path = require('path');
-const PORT = 3000; // from josh's branch
+import { resolve } from 'path';
+import apiRouter from './routers/apiRouter.js';
+const PORT = 3333; // from josh's branch
 
+
+/// function to execute shell command 
 
 // convert request body, etc.  to JSON
-app.use(express.json());
-const metricsController = require('./controllers/metricsController');
+app.use(json());
+// import { testButton } from './controllers/metricsController';
 
 // serve static files (just CSS right now)
 // app.use(express.static('client')) // from josh
-
+app.use('/api', apiRouter);
 // just to get something running
 app.get('/', (req, res) => {
-  return res
-    .status(200)
-    .sendFile(path.resolve(__dirname, '../index.html'));
+  return res.status(200).sendFile(resolve(__dirname, '../index.html'));
 });
 
 // test button request from index.html
-app.get('/testBtn', metricsController.testButton, (req, res) => {
-  return res.status(200).send({ message: 'Express button test complete' });
-})
+// app.get('/testBtn', testButton, (req, res) => {
+//   return res.status(200).send({ message: 'Express button test complete' });
+// });
 
 // catch all route
 app.get('*', (req, res) => {
   return res.status(404).send('Page Not Found!');
 });
-
 
 // global error handler
 app.use((err, req, res, next) => {

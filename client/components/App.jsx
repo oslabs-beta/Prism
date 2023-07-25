@@ -12,7 +12,7 @@ import Signup from './NavBar/Signup.jsx';
 import Github from './NavBar/Github.jsx';
 import LinkedIn from './NavBar/LinkedIn.jsx';
 import ClusterConnect from './ClusterView/ClusterConnect.jsx';
-import '../styles.css';
+//import '../styles_out.css';
 import ClusterView from './ClusterView/ClusterView.jsx';
 import RootLayout from './ClusterView/RootLayout.jsx';
 import { ThemeProvider } from './ClusterView//ClusterViewHeader/themeContext.js';
