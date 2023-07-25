@@ -1,0 +1,1148 @@
+
+> prism@1.0.0 dev
+> concurrently "cross-env NODE_ENV=development webpack-dev-server --open --hot --progress --color " "nodemon ./server/server.js"
+
+[1] [33m[nodemon] 2.0.22[39m
+[1] [33m[nodemon] to restart at any time, enter `rs`[39m
+[1] [33m[nodemon] watching path(s): *.*[39m
+[1] [33m[nodemon] watching extensions: js,mjs,json[39m
+[1] [32m[nodemon] starting `node ./server/server.js`[39m
+[1] App listening on PORT 3333
+[0] <i> [webpack-dev-server] [HPM] Proxy created: /  -> http://localhost:3333
+[0] <s> [webpack.Progress] 3% setup watch run
+[0] <s> [webpack.Progress] 3% setup watch run webpack-cli
+[0] <s> [webpack.Progress] 3% setup watch run webpack-dev-middleware
+[0] <s> [webpack.Progress] 3% setup watch run
+[0] <s> [webpack.Progress] 4% setup normal module factory
+[0] <s> [webpack.Progress] 4% setup normal module factory
+[0] <s> [webpack.Progress] 5% setup context module factory
+[0] <s> [webpack.Progress] 5% setup context module factory
+[0] <s> [webpack.Progress] 6% setup before compile
+[0] <s> [webpack.Progress] 6% setup before compile ProgressPlugin
+[0] <s> [webpack.Progress] 6% setup before compile
+[0] <s> [webpack.Progress] 7% setup compile
+[0] <s> [webpack.Progress] 7% setup compile ExternalsPlugin
+[0] <s> [webpack.Progress] 7% setup compile
+[0] <s> [webpack.Progress] 8% setup compilation
+[0] <s> [webpack.Progress] 8% setup compilation ArrayPushCallbackChunkFormatPlugin
+[0] <s> [webpack.Progress] 8% setup compilation JsonpChunkLoadingPlugin
+[0] <s> [webpack.Progress] 8% setup compilation StartupChunkDependenciesPlugin
+[0] <s> [webpack.Progress] 8% setup compilation ImportScriptsChunkLoadingPlugin
+[0] <s> [webpack.Progress] 8% setup compilation FetchCompileWasmPlugin
+[0] <s> [webpack.Progress] 8% setup compilation FetchCompileAsyncWasmPlugin
+[0] <s> [webpack.Progress] 8% setup compilation WorkerPlugin
+[0] <s> [webpack.Progress] 8% setup compilation SplitChunksPlugin
+[0] <s> [webpack.Progress] 8% setup compilation ResolverCachePlugin
+[0] <s> [webpack.Progress] 8% setup compilation HtmlWebpackPlugin
+[0] <s> [webpack.Progress] 8% setup compilation
+[0] <s> [webpack.Progress] 9% setup compilation
+[0] <s> [webpack.Progress] 9% setup compilation ProgressPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ChunkPrefetchPreloadPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ModuleInfoHeaderPlugin
+[0] <s> [webpack.Progress] 9% setup compilation EvalDevToolModulePlugin
+[0] <s> [webpack.Progress] 9% setup compilation JavascriptModulesPlugin
+[0] <s> [webpack.Progress] 9% setup compilation JsonModulesPlugin
+[0] <s> [webpack.Progress] 9% setup compilation AssetModulesPlugin
+[0] <s> [webpack.Progress] 9% setup compilation EntryPlugin
+[0] <s> [webpack.Progress] 9% setup compilation RuntimePlugin
+[0] <s> [webpack.Progress] 9% setup compilation InferAsyncModulesPlugin
+[0] <s> [webpack.Progress] 9% setup compilation DataUriPlugin
+[0] <s> [webpack.Progress] 9% setup compilation FileUriPlugin
+[0] <s> [webpack.Progress] 9% setup compilation CompatibilityPlugin
+[0] <s> [webpack.Progress] 9% setup compilation HarmonyModulesPlugin
+[0] <s> [webpack.Progress] 9% setup compilation AMDPlugin
+[0] <s> [webpack.Progress] 9% setup compilation RequireJsStuffPlugin
+[0] <s> [webpack.Progress] 9% setup compilation CommonJsPlugin
+[0] <s> [webpack.Progress] 9% setup compilation LoaderPlugin
+[0] <s> [webpack.Progress] 9% setup compilation LoaderPlugin
+[0] <s> [webpack.Progress] 9% setup compilation NodeStuffPlugin
+[0] <s> [webpack.Progress] 9% setup compilation APIPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ExportsInfoApiPlugin
+[0] <s> [webpack.Progress] 9% setup compilation WebpackIsIncludedPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ConstPlugin
+[0] <s> [webpack.Progress] 9% setup compilation UseStrictPlugin
+[0] <s> [webpack.Progress] 9% setup compilation RequireIncludePlugin
+[0] <s> [webpack.Progress] 9% setup compilation RequireEnsurePlugin
+[0] <s> [webpack.Progress] 9% setup compilation RequireContextPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ImportPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ImportMetaContextPlugin
+[0] <s> [webpack.Progress] 9% setup compilation SystemPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ImportMetaPlugin
+[0] <s> [webpack.Progress] 9% setup compilation URLPlugin
+[0] <s> [webpack.Progress] 9% setup compilation DefaultStatsFactoryPlugin
+[0] <s> [webpack.Progress] 9% setup compilation DefaultStatsPresetPlugin
+[0] <s> [webpack.Progress] 9% setup compilation DefaultStatsPrinterPlugin
+[0] <s> [webpack.Progress] 9% setup compilation JavascriptMetaInfoPlugin
+[0] <s> [webpack.Progress] 9% setup compilation EnsureChunkConditionsPlugin
+[0] <s> [webpack.Progress] 9% setup compilation RemoveEmptyChunksPlugin
+[0] <s> [webpack.Progress] 9% setup compilation MergeDuplicateChunksPlugin
+[0] <s> [webpack.Progress] 9% setup compilation SideEffectsFlagPlugin
+[0] <s> [webpack.Progress] 9% setup compilation FlagDependencyExportsPlugin
+[0] <s> [webpack.Progress] 9% setup compilation NamedModuleIdsPlugin
+[0] <s> [webpack.Progress] 9% setup compilation NamedChunkIdsPlugin
+[0] <s> [webpack.Progress] 9% setup compilation DefinePlugin
+[0] <s> [webpack.Progress] 9% setup compilation TemplatedPathPlugin
+[0] <s> [webpack.Progress] 9% setup compilation RecordIdsPlugin
+[0] <s> [webpack.Progress] 9% setup compilation WarnCaseSensitiveModulesPlugin
+[0] <s> [webpack.Progress] 9% setup compilation EntryPlugin
+[0] <s> [webpack.Progress] 9% setup compilation EntryPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ProvidePlugin
+[0] <s> [webpack.Progress] 9% setup compilation HotModuleReplacementPlugin
+[0] <s> [webpack.Progress] 9% setup compilation
+[0] <s> [webpack.Progress] 10% building
+[0] <s> [webpack.Progress] 10% building 0/1 entries 0/0 dependencies 0/0 modules
+[0] <i> [webpack-dev-server] Project is running at:
+[0] <i> [webpack-dev-server] Loopback: [36mhttp://localhost:8080/[39m, [36mhttp://[::1]:8080/[39m
+[0] <i> [webpack-dev-server] Content not from webpack is served from '[36m/Users/nls.pglenn/github/Codesmith/Prism/build[39m' directory
+[0] <i> [webpack-dev-server] 404s will fallback to '[36m/index.html[39m'
+[0] <s> [webpack.Progress] 10% building import loader ./node_modules/babel-loader/lib/index.js
+[0] <s> [webpack.Progress] 10% building 0/3 entries 3/3 dependencies 0/3 modules
+[0] <i> [webpack-dev-middleware] wait until bundle finished: /
+[0] <s> [webpack.Progress] 10% building 0/3 entries 7/15 dependencies 0/6 modules
+[0] <s> [webpack.Progress] 10% building import loader ./node_modules/style-loader/dist/cjs.js
+[0] <s> [webpack.Progress] 10% building import loader ./node_modules/css-loader/dist/cjs.js
+[0] <s> [webpack.Progress] 10% building import loader ./node_modules/postcss-loader/dist/cjs.js
+[0] <s> [webpack.Progress] 10% building 0/3 entries 54/58 dependencies 16/41 modules
+[0] <s> [webpack.Progress] 10% building 0/3 entries 64/95 dependencies 17/46 modules
+[0] <s> [webpack.Progress] 28% building 1/3 entries 97/106 dependencies 30/53 modules
+[0] <s> [webpack.Progress] 46% building 2/3 entries 113/124 dependencies 46/59 modules
+[0] <s> [webpack.Progress] 46% building 2/3 entries 200/252 dependencies 59/97 modules
+[0] <s> [webpack.Progress] 65% building 3/3 entries 492/492 dependencies 197/197 modules
+[0] <s> [webpack.Progress] 65% building
+[0] <s> [webpack.Progress] 69% building finish
+[0] <s> [webpack.Progress] 69% building finish
+[0] <s> [webpack.Progress] 70% sealing finish module graph
+[0] <s> [webpack.Progress] 70% sealing finish module graph ResolverCachePlugin
+[0] <s> [webpack.Progress] 70% sealing finish module graph InferAsyncModulesPlugin
+[0] <s> [webpack.Progress] 70% sealing finish module graph FlagDependencyExportsPlugin
+[0] <s> [webpack.Progress] 70% sealing finish module graph
+[0] <s> [webpack.Progress] 70% sealing plugins
+[0] <s> [webpack.Progress] 70% sealing plugins WarnCaseSensitiveModulesPlugin
+[0] <s> [webpack.Progress] 70% sealing plugins
+[0] <s> [webpack.Progress] 71% sealing dependencies optimization
+[0] <s> [webpack.Progress] 71% sealing dependencies optimization SideEffectsFlagPlugin
+[0] <s> [webpack.Progress] 71% sealing dependencies optimization
+[0] <s> [webpack.Progress] 71% sealing after dependencies optimization
+[0] <s> [webpack.Progress] 71% sealing after dependencies optimization
+[0] <s> [webpack.Progress] 72% sealing chunk graph
+[0] <s> [webpack.Progress] 72% sealing chunk graph
+[0] <s> [webpack.Progress] 73% sealing after chunk graph
+[0] <s> [webpack.Progress] 73% sealing after chunk graph
+[0] <s> [webpack.Progress] 73% sealing optimizing
+[0] <s> [webpack.Progress] 73% sealing optimizing
+[0] <s> [webpack.Progress] 74% sealing module optimization
+[0] <s> [webpack.Progress] 74% sealing module optimization
+[0] <s> [webpack.Progress] 75% sealing after module optimization
+[0] <s> [webpack.Progress] 75% sealing after module optimization
+[0] <s> [webpack.Progress] 75% sealing chunk optimization
+[0] <s> [webpack.Progress] 75% sealing chunk optimization EnsureChunkConditionsPlugin
+[0] <s> [webpack.Progress] 75% sealing chunk optimization RemoveEmptyChunksPlugin
+[0] <s> [webpack.Progress] 75% sealing chunk optimization MergeDuplicateChunksPlugin
+[0] <s> [webpack.Progress] 75% sealing chunk optimization SplitChunksPlugin
+[0] <s> [webpack.Progress] 75% sealing chunk optimization RemoveEmptyChunksPlugin
+[0] <s> [webpack.Progress] 75% sealing chunk optimization
+[0] <s> [webpack.Progress] 76% sealing after chunk optimization
+[0] <s> [webpack.Progress] 76% sealing after chunk optimization
+[0] <s> [webpack.Progress] 77% sealing module and chunk tree optimization
+[0] <s> [webpack.Progress] 77% sealing module and chunk tree optimization PersistentChildCompilerSingletonPlugin
+[0] <s> [webpack.Progress] 77% sealing module and chunk tree optimization
+[0] <s> [webpack.Progress] 77% sealing after module and chunk tree optimization
+[0] <s> [webpack.Progress] 77% sealing after module and chunk tree optimization
+[0] <s> [webpack.Progress] 78% sealing chunk modules optimization
+[0] <s> [webpack.Progress] 78% sealing chunk modules optimization
+[0] <s> [webpack.Progress] 78% sealing after chunk modules optimization
+[0] <s> [webpack.Progress] 78% sealing after chunk modules optimization
+[0] <s> [webpack.Progress] 79% sealing module reviving
+[0] <s> [webpack.Progress] 79% sealing module reviving RecordIdsPlugin
+[0] <s> [webpack.Progress] 79% sealing module reviving
+[0] <s> [webpack.Progress] 80% sealing before module ids
+[0] <s> [webpack.Progress] 80% sealing before module ids
+[0] <s> [webpack.Progress] 80% sealing module ids
+[0] <s> [webpack.Progress] 80% sealing module ids NamedModuleIdsPlugin
+[0] <s> [webpack.Progress] 80% sealing module ids
+[0] <s> [webpack.Progress] 81% sealing module id optimization
+[0] <s> [webpack.Progress] 81% sealing module id optimization
+[0] <s> [webpack.Progress] 82% sealing module id optimization
+[0] <s> [webpack.Progress] 82% sealing module id optimization
+[0] <s> [webpack.Progress] 82% sealing chunk reviving
+[0] <s> [webpack.Progress] 82% sealing chunk reviving RecordIdsPlugin
+[0] <s> [webpack.Progress] 82% sealing chunk reviving
+[0] <s> [webpack.Progress] 83% sealing before chunk ids
+[0] <s> [webpack.Progress] 83% sealing before chunk ids
+[0] <s> [webpack.Progress] 84% sealing chunk ids
+[0] <s> [webpack.Progress] 84% sealing chunk ids NamedChunkIdsPlugin
+[0] <s> [webpack.Progress] 84% sealing chunk ids
+[0] <s> [webpack.Progress] 84% sealing chunk id optimization
+[0] <s> [webpack.Progress] 84% sealing chunk id optimization
+[0] <s> [webpack.Progress] 85% sealing after chunk id optimization
+[0] <s> [webpack.Progress] 85% sealing after chunk id optimization
+[0] <s> [webpack.Progress] 86% sealing record modules
+[0] <s> [webpack.Progress] 86% sealing record modules RecordIdsPlugin
+[0] <s> [webpack.Progress] 86% sealing record modules
+[0] <s> [webpack.Progress] 86% sealing record chunks
+[0] <s> [webpack.Progress] 86% sealing record chunks RecordIdsPlugin
+[0] <s> [webpack.Progress] 86% sealing record chunks
+[0] <s> [webpack.Progress] 87% sealing module hashing
+[0] <s> [webpack.Progress] 87% sealing module hashing
+[0] <s> [webpack.Progress] 87% sealing code generation
+[0] <s> [webpack.Progress] 87% sealing code generation
+[0] <s> [webpack.Progress] 88% sealing runtime requirements
+[0] <s> [webpack.Progress] 88% sealing runtime requirements
+[0] <s> [webpack.Progress] 89% sealing hashing
+[0] <s> [webpack.Progress] 89% sealing hashing
+[0] <s> [webpack.Progress] 89% sealing after hashing
+[0] <s> [webpack.Progress] 89% sealing after hashing
+[0] <s> [webpack.Progress] 90% sealing record hash
+[0] <s> [webpack.Progress] 90% sealing record hash
+[0] <s> [webpack.Progress] 91% sealing module assets processing
+[0] <s> [webpack.Progress] 91% sealing module assets processing
+[0] <s> [webpack.Progress] 91% sealing chunk assets processing
+[0] <s> [webpack.Progress] 91% sealing chunk assets processing
+[0] <s> [webpack.Progress] 92% sealing asset processing
+[0] <s> [webpack.Progress] 92% sealing asset processing HotModuleReplacementPlugin
+[0] <s> [webpack.Progress] 92% sealing asset processing PersistentChildCompilerSingletonPlugin
+[0] <s> [webpack.Progress] 92% sealing asset processing HtmlWebpackPlugin
+[0] <s> [webpack.Progress] 92% sealing asset processing
+[0] <s> [webpack.Progress] 93% sealing after asset optimization
+[0] <s> [webpack.Progress] 93% sealing after asset optimization
+[0] <s> [webpack.Progress] 93% sealing recording
+[0] <s> [webpack.Progress] 93% sealing recording HotModuleReplacementPlugin
+[0] <s> [webpack.Progress] 93% sealing recording
+[0] <s> [webpack.Progress] 94% sealing after seal
+[0] <s> [webpack.Progress] 94% sealing after seal
+[0] <s> [webpack.Progress] 95% emitting emit
+[0] <s> [webpack.Progress] 95% emitting emit
+[0] <s> [webpack.Progress] 98% emitting after emit
+[0] <s> [webpack.Progress] 98% emitting after emit
+[0] <s> [webpack.Progress] 99% done plugins
+[0] <s> [webpack.Progress] 99% done plugins webpack-dev-server
+[0] <s> [webpack.Progress] 99% done plugins webpack-dev-middleware
+[0] <s> [webpack.Progress] 99% done plugins
+[0] <s> [webpack.Progress] 99% 
+[0] 
+[0] <s> [webpack.Progress] 99% cache store build dependencies
+[0] <s> [webpack.Progress] 99% cache store build dependencies
+[0] <s> [webpack.Progress] 99% cache begin idle
+[0] <s> [webpack.Progress] 99% cache begin idle
+[0] <s> [webpack.Progress] 100% 
+[0] 
+[0] assets by path [1m[32mimages/*.png[39m[22m 32.3 KiB
+[0]   asset [1m[32mimages/425fbda39fa4ad65035b.png[39m[22m 16.2 KiB [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [from: client/assets/prism-logo.png] (auxiliary name: main)
+[0]   asset [1m[32mimages/e47a6b01142e8c4e1bc7.png[39m[22m 16.1 KiB [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [from: client/assets/prism-logo-dark-mode.png] (auxiliary name: main)
+[0] asset [1m[32mbundle.js[39m[22m 8.72 MiB [1m[32m[emitted][39m[22m (name: main)
+[0] asset [1m[32mindex.html[39m[22m 524 bytes [1m[32m[emitted][39m[22m
+[0] runtime modules 27.5 KiB 14 modules
+[0] orphan modules 628 KiB [1m[33m[orphan][39m[22m 1 module
+[0] modules by path [1m./node_modules/[39m[22m 7.12 MiB
+[0]   javascript modules 6.87 MiB 155 modules
+[0]   json modules 262 KiB 11 modules
+[0] modules by path [1m./client/[39m[22m 71.8 KiB (javascript) 32.3 KiB (asset)
+[0]   modules by path [1m./client/components/[39m[22m 51.9 KiB 21 modules
+[0]   modules by path [1m./client/*.css[39m[22m 19.3 KiB 2 modules
+[0]   asset modules 84 bytes (javascript) 32.3 KiB (asset) 2 modules
+[0]   + 1 module
+[0] [1mhttp (ignored)[39m[22m 15 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+[0] [1m./streams (ignored)[39m[22m 15 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+[0] [1m./extend-node (ignored)[39m[22m 15 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+[0] [1m./util.inspect (ignored)[39m[22m 15 bytes [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+[0] 
+[0] [1m[33mWARNING[39m[22m in [1m./node_modules/express/lib/view.js[39m[22m [1m[32m81:13-25[39m[22m
+[0] [1mCritical dependency: the request of a dependency is an expression[39m[22m
+[0]  @ ./node_modules/express/lib/application.js 22:11-28
+[0]  @ ./node_modules/express/lib/express.js 18:12-36
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[33mWARNING[39m[22m in [1m./node_modules/on-finished/index.js[39m[22m [1m[32m207:11-33[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'async_hooks' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/on-finished'[39m[22m
+[0]  @ ./node_modules/express/lib/response.js 23:17-39
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[33mWARNING[39m[22m in [1m./node_modules/raw-body/index.js[39m[22m [1m[32m302:11-33[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'async_hooks' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/raw-body'[39m[22m
+[0]  @ ./node_modules/body-parser/lib/read.js 16:14-33
+[0]  @ ./node_modules/body-parser/lib/types/json.js 19:11-29
+[0]  @ ./node_modules/body-parser/index.js 141:15-42
+[0]  @ ./node_modules/express/lib/express.js 15:17-39
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] 3 warnings have detailed information that is not shown.
+[0] Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/body-parser/lib/read.js[39m[22m [1m[32m20:11-26[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zlib' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/body-parser/lib'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "zlib": require.resolve("browserify-zlib") }'
+[0] 	- install 'browserify-zlib'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "zlib": false }[39m[22m
+[0]  @ ./node_modules/body-parser/lib/types/json.js 19:11-29
+[0]  @ ./node_modules/body-parser/index.js 141:15-42
+[0]  @ ./node_modules/express/lib/express.js 15:17-39
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/body-parser/lib/types/urlencoded.js[39m[22m [1m[32m228:12-34[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'querystring' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/body-parser/lib/types'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "querystring": require.resolve("querystring-es3") }'
+[0] 	- install 'querystring-es3'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "querystring": false }[39m[22m
+[0]  @ ./node_modules/body-parser/index.js 150:15-48
+[0]  @ ./node_modules/express/lib/express.js 15:17-39
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/cookie-signature/index.js[39m[22m [1m[32m5:13-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'crypto' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/cookie-signature'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "crypto": require.resolve("crypto-browserify") }'
+[0] 	- install 'crypto-browserify'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "crypto": false }[39m[22m
+[0]  @ ./node_modules/express/lib/response.js 27:11-43
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/destroy/index.js[39m[22m [1m[32m16:17-41[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'fs' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/destroy'[39m[22m
+[0]  @ ./node_modules/send/index.js 18:14-32
+[0]  @ ./node_modules/express/lib/response.js 32:11-26
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/destroy/index.js[39m[22m [1m[32m17:13-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'stream' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/destroy'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "stream": require.resolve("stream-browserify") }'
+[0] 	- install 'stream-browserify'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "stream": false }[39m[22m
+ @ ./node_modules/send/index.js 18:14-32
+[0]  @ ./node_modules/express/lib/response.js 32:11-26
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/destroy/index.js[39m[22m [1m[32m18:11-26[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zlib' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/destroy'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "zlib": require.resolve("browserify-zlib") }'
+[0] 	- install 'browserify-zlib'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "zlib": false }[39m[22m
+[0]  @ ./node_modules/send/index.js 18:14-32
+[0]  @ ./node_modules/express/lib/response.js 32:11-26
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/etag/index.js[39m[22m [1m[32m21:13-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'crypto' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/etag'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "crypto": require.resolve("crypto-browserify") }'
+[0] 	- install 'crypto-browserify'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "crypto": false }[39m[22m
+[0]  @ ./node_modules/express/lib/utils.js 21:11-26
+[0]  @ ./node_modules/express/lib/application.js 24:18-48 25:25-62 26:19-50
+[0]  @ ./node_modules/express/lib/express.js 18:12-36
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/etag/index.js[39m[22m [1m[32m22:12-31[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'fs' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/etag'[39m[22m
+[0]  @ ./node_modules/express/lib/utils.js 21:11-26
+[0]  @ ./node_modules/express/lib/application.js 24:18-48 25:25-62 26:19-50
+[0]  @ ./node_modules/express/lib/express.js 18:12-36
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/express/lib/application.js[39m[22m [1m[32m23:11-26[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'http' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/express/lib'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "http": require.resolve("stream-http") }'
+[0] 	- install 'stream-http'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "http": false }[39m[22m
+[0]  @ ./node_modules/express/lib/express.js 18:12-36
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/express/lib/request.js[39m[22m [1m[32m18:11-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'net' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/express/lib'[39m[22m
+[0]  @ ./node_modules/express/lib/express.js 21:10-30
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/express/lib/request.js[39m[22m [1m[32m20:11-26[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'http' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/express/lib'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "http": require.resolve("stream-http") }'
+[0] 	- install 'stream-http'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "http": false }[39m[22m
+[0]  @ ./node_modules/express/lib/express.js 21:10-30
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/express/lib/response.js[39m[22m [1m[32m21:11-26[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'http' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/express/lib'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "http": require.resolve("stream-http") }'
+[0] 	- install 'stream-http'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "http": false }[39m[22m
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/express/lib/utils.js[39m[22m [1m[32m24:18-40[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'querystring' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/express/lib'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "querystring": require.resolve("querystring-es3") }'
+[0] 	- install 'querystring-es3'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "querystring": false }[39m[22m
+[0]  @ ./node_modules/express/lib/application.js 24:18-48 25:25-62 26:19-50
+[0]  @ ./node_modules/express/lib/express.js 18:12-36
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/express/lib/view.js[39m[22m [1m[32m18:9-22[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'fs' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/express/lib'[39m[22m
+[0]  @ ./node_modules/express/lib/application.js 22:11-28
+ @ ./node_modules/express/lib/express.js 18:12-36
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/mime/mime.js[39m[22m [1m[32m2:9-22[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'fs' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/mime'[39m[22m
+[0]  @ ./node_modules/send/index.js 24:11-26
+[0]  @ ./node_modules/express/lib/response.js 32:11-26
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/safe-buffer/index.js[39m[22m [1m[32m3:13-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'buffer' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/safe-buffer'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "buffer": require.resolve("buffer/") }'
+[0] 	- install 'buffer'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "buffer": false }[39m[22m
+[0]  @ ./node_modules/express/lib/response.js 15:13-42
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/safer-buffer/safer.js[39m[22m [1m[32m5:13-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'buffer' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/safer-buffer'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "buffer": require.resolve("buffer/") }'
+[0] 	- install 'buffer'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "buffer": false }[39m[22m
+[0]  @ ./node_modules/iconv-lite/lib/index.js 5:13-43
+[0]  @ ./node_modules/body-parser/lib/read.js 17:12-33
+[0]  @ ./node_modules/body-parser/lib/types/json.js 19:11-29
+[0]  @ ./node_modules/body-parser/index.js 141:15-42
+[0]  @ ./node_modules/express/lib/express.js 15:17-39
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/send/index.js[39m[22m [1m[32m23:9-22[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'fs' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/send'[39m[22m
+[0]  @ ./node_modules/express/lib/response.js 32:11-26
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/send/index.js[39m[22m [1m[32m30:13-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'stream' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/send'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "stream": require.resolve("stream-browserify") }'
+[0] 	- install 'stream-browserify'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "stream": false }[39m[22m
+[0]  @ ./node_modules/express/lib/response.js 32:11-26
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[33m19 errors have detailed information that is not shown.
+[0] Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.[39m[22m
+[0] 
+[0] webpack 5.88.2 compiled with [1m[31m19 errors[39m[22m and [1m[33m3 warnings[39m[22m in 6601 ms
+[0] <s> [webpack.Progress] 0% 
+[0] 
+[0] <s> [webpack.Progress] 1% cache end idle
+[0] <s> [webpack.Progress] 1% cache end idle
+[0] <s> [webpack.Progress] 3% setup watch run
+[0] <s> [webpack.Progress] 3% setup watch run webpack-cli
+[0] <s> [webpack.Progress] 3% setup watch run webpack-dev-middleware
+[0] <s> [webpack.Progress] 3% setup watch run
+[0] <s> [webpack.Progress] 4% setup normal module factory
+[0] <s> [webpack.Progress] 4% setup normal module factory
+[0] <s> [webpack.Progress] 5% setup context module factory
+[0] <s> [webpack.Progress] 5% setup context module factory
+[0] <s> [webpack.Progress] 6% setup before compile
+[0] <s> [webpack.Progress] 6% setup before compile ProgressPlugin
+[0] <s> [webpack.Progress] 6% setup before compile
+[0] <s> [webpack.Progress] 7% setup compile
+[0] <s> [webpack.Progress] 7% setup compile ExternalsPlugin
+[0] <s> [webpack.Progress] 7% setup compile
+[0] <s> [webpack.Progress] 8% setup compilation
+[0] <s> [webpack.Progress] 8% setup compilation ArrayPushCallbackChunkFormatPlugin
+[0] <s> [webpack.Progress] 8% setup compilation JsonpChunkLoadingPlugin
+[1] [32m[nodemon] restarting due to changes...[39m
+[0] <s> [webpack.Progress] 8% setup compilation StartupChunkDependenciesPlugin
+[0] <s> [webpack.Progress] 8% setup compilation ImportScriptsChunkLoadingPlugin
+[0] <s> [webpack.Progress] 8% setup compilation FetchCompileWasmPlugin
+[0] <s> [webpack.Progress] 8% setup compilation FetchCompileAsyncWasmPlugin
+[0] <s> [webpack.Progress] 8% setup compilation WorkerPlugin
+[0] <s> [webpack.Progress] 8% setup compilation SplitChunksPlugin
+[0] <s> [webpack.Progress] 8% setup compilation ResolverCachePlugin
+[0] <s> [webpack.Progress] 8% setup compilation HtmlWebpackPlugin
+[0] <s> [webpack.Progress] 8% setup compilation
+[0] <s> [webpack.Progress] 9% setup compilation
+[0] <s> [webpack.Progress] 9% setup compilation ProgressPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ChunkPrefetchPreloadPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ModuleInfoHeaderPlugin
+[0] <s> [webpack.Progress] 9% setup compilation EvalDevToolModulePlugin
+[0] <s> [webpack.Progress] 9% setup compilation JavascriptModulesPlugin
+[0] <s> [webpack.Progress] 9% setup compilation JsonModulesPlugin
+[0] <s> [webpack.Progress] 9% setup compilation AssetModulesPlugin
+[0] <s> [webpack.Progress] 9% setup compilation EntryPlugin
+[0] <s> [webpack.Progress] 9% setup compilation RuntimePlugin
+[0] <s> [webpack.Progress] 9% setup compilation InferAsyncModulesPlugin
+[0] <s> [webpack.Progress] 9% setup compilation DataUriPlugin
+[0] <s> [webpack.Progress] 9% setup compilation FileUriPlugin
+[0] <s> [webpack.Progress] 9% setup compilation CompatibilityPlugin
+[0] <s> [webpack.Progress] 9% setup compilation HarmonyModulesPlugin
+[0] <s> [webpack.Progress] 9% setup compilation AMDPlugin
+[0] <s> [webpack.Progress] 9% setup compilation RequireJsStuffPlugin
+[0] <s> [webpack.Progress] 9% setup compilation CommonJsPlugin
+[0] <s> [webpack.Progress] 9% setup compilation LoaderPlugin
+[0] <s> [webpack.Progress] 9% setup compilation LoaderPlugin
+[0] <s> [webpack.Progress] 9% setup compilation NodeStuffPlugin
+[0] <s> [webpack.Progress] 9% setup compilation APIPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ExportsInfoApiPlugin
+[0] <s> [webpack.Progress] 9% setup compilation WebpackIsIncludedPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ConstPlugin
+[0] <s> [webpack.Progress] 9% setup compilation UseStrictPlugin
+[0] <s> [webpack.Progress] 9% setup compilation RequireIncludePlugin
+[0] <s> [webpack.Progress] 9% setup compilation RequireEnsurePlugin
+[0] <s> [webpack.Progress] 9% setup compilation RequireContextPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ImportPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ImportMetaContextPlugin
+[0] <s> [webpack.Progress] 9% setup compilation SystemPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ImportMetaPlugin
+[0] <s> [webpack.Progress] 9% setup compilation URLPlugin
+[0] <s> [webpack.Progress] 9% setup compilation DefaultStatsFactoryPlugin
+[0] <s> [webpack.Progress] 9% setup compilation DefaultStatsPresetPlugin
+[0] <s> [webpack.Progress] 9% setup compilation DefaultStatsPrinterPlugin
+[0] <s> [webpack.Progress] 9% setup compilation JavascriptMetaInfoPlugin
+[0] <s> [webpack.Progress] 9% setup compilation EnsureChunkConditionsPlugin
+[0] <s> [webpack.Progress] 9% setup compilation RemoveEmptyChunksPlugin
+[0] <s> [webpack.Progress] 9% setup compilation MergeDuplicateChunksPlugin
+[0] <s> [webpack.Progress] 9% setup compilation SideEffectsFlagPlugin
+[0] <s> [webpack.Progress] 9% setup compilation FlagDependencyExportsPlugin
+[0] <s> [webpack.Progress] 9% setup compilation NamedModuleIdsPlugin
+[0] <s> [webpack.Progress] 9% setup compilation NamedChunkIdsPlugin
+[0] <s> [webpack.Progress] 9% setup compilation DefinePlugin
+[0] <s> [webpack.Progress] 9% setup compilation TemplatedPathPlugin
+[0] <s> [webpack.Progress] 9% setup compilation RecordIdsPlugin
+[0] <s> [webpack.Progress] 9% setup compilation WarnCaseSensitiveModulesPlugin
+[0] <s> [webpack.Progress] 9% setup compilation EntryPlugin
+[0] <s> [webpack.Progress] 9% setup compilation EntryPlugin
+[0] <s> [webpack.Progress] 9% setup compilation ProvidePlugin
+[0] <s> [webpack.Progress] 9% setup compilation HotModuleReplacementPlugin
+[0] <s> [webpack.Progress] 9% setup compilation
+[0] <s> [webpack.Progress] 10% building
+[0] <s> [webpack.Progress] 10% building 0/1 entries 0/0 dependencies 0/0 modules
+[1] [32m[nodemon] starting `node ./server/server.js`[39m
+[0] <s> [webpack.Progress] 14% building 1/3 entries 4/5 dependencies 16/4 modules
+[0] <s> [webpack.Progress] 20% building 2/3 entries 35/35 dependencies 39/27 modules
+[0] <s> [webpack.Progress] 23% building import loader ./node_modules/css-loader/dist/cjs.js
+[0] <s> [webpack.Progress] 23% building import loader ./node_modules/postcss-loader/dist/cjs.js
+[0] <s> [webpack.Progress] 23% building 2/3 entries 38/38 dependencies 50/28 modules
+[0] <s> [webpack.Progress] 46% building 2/3 entries 62/64 dependencies 165/33 modules
+[1] App listening on PORT 3333
+[0] <s> [webpack.Progress] 46% building 2/3 entries 65/66 dependencies 192/34 modules
+[0] <s> [webpack.Progress] 65% building 3/3 entries 66/66 dependencies 197/35 modules
+[0] <s> [webpack.Progress] 65% building
+[0] <s> [webpack.Progress] 69% building finish
+[0] <s> [webpack.Progress] 69% building finish
+[0] <s> [webpack.Progress] 70% sealing finish module graph
+[0] <s> [webpack.Progress] 70% sealing finish module graph ResolverCachePlugin
+[0] <s> [webpack.Progress] 70% sealing finish module graph InferAsyncModulesPlugin
+[0] <s> [webpack.Progress] 70% sealing finish module graph FlagDependencyExportsPlugin
+[0] <s> [webpack.Progress] 70% sealing finish module graph
+[0] <s> [webpack.Progress] 70% sealing plugins
+[0] <s> [webpack.Progress] 70% sealing plugins WarnCaseSensitiveModulesPlugin
+[0] <s> [webpack.Progress] 70% sealing plugins
+[0] <s> [webpack.Progress] 71% sealing dependencies optimization
+[0] <s> [webpack.Progress] 71% sealing dependencies optimization SideEffectsFlagPlugin
+[0] <s> [webpack.Progress] 71% sealing dependencies optimization
+[0] <s> [webpack.Progress] 71% sealing after dependencies optimization
+[0] <s> [webpack.Progress] 71% sealing after dependencies optimization
+[0] <s> [webpack.Progress] 72% sealing chunk graph
+[0] <s> [webpack.Progress] 72% sealing chunk graph
+[0] <s> [webpack.Progress] 73% sealing after chunk graph
+[0] <s> [webpack.Progress] 73% sealing after chunk graph
+[0] <s> [webpack.Progress] 73% sealing optimizing
+[0] <s> [webpack.Progress] 73% sealing optimizing
+[0] <s> [webpack.Progress] 74% sealing module optimization
+[0] <s> [webpack.Progress] 74% sealing module optimization
+[0] <s> [webpack.Progress] 75% sealing after module optimization
+[0] <s> [webpack.Progress] 75% sealing after module optimization
+[0] <s> [webpack.Progress] 75% sealing chunk optimization
+[0] <s> [webpack.Progress] 75% sealing chunk optimization EnsureChunkConditionsPlugin
+[0] <s> [webpack.Progress] 75% sealing chunk optimization RemoveEmptyChunksPlugin
+[0] <s> [webpack.Progress] 75% sealing chunk optimization MergeDuplicateChunksPlugin
+[0] <s> [webpack.Progress] 75% sealing chunk optimization SplitChunksPlugin
+[0] <s> [webpack.Progress] 75% sealing chunk optimization RemoveEmptyChunksPlugin
+[0] <s> [webpack.Progress] 75% sealing chunk optimization
+[0] <s> [webpack.Progress] 76% sealing after chunk optimization
+[0] <s> [webpack.Progress] 76% sealing after chunk optimization
+[0] <s> [webpack.Progress] 77% sealing module and chunk tree optimization
+[0] <s> [webpack.Progress] 77% sealing module and chunk tree optimization PersistentChildCompilerSingletonPlugin
+[0] <s> [webpack.Progress] 77% sealing module and chunk tree optimization
+[0] <s> [webpack.Progress] 77% sealing after module and chunk tree optimization
+[0] <s> [webpack.Progress] 77% sealing after module and chunk tree optimization
+[0] <s> [webpack.Progress] 78% sealing chunk modules optimization
+[0] <s> [webpack.Progress] 78% sealing chunk modules optimization
+[0] <s> [webpack.Progress] 78% sealing after chunk modules optimization
+[0] <s> [webpack.Progress] 78% sealing after chunk modules optimization
+[0] <s> [webpack.Progress] 79% sealing module reviving
+[0] <s> [webpack.Progress] 79% sealing module reviving RecordIdsPlugin
+[0] <s> [webpack.Progress] 79% sealing module reviving
+[0] <s> [webpack.Progress] 80% sealing before module ids
+[0] <s> [webpack.Progress] 80% sealing before module ids
+[0] <s> [webpack.Progress] 80% sealing module ids
+[0] <s> [webpack.Progress] 80% sealing module ids NamedModuleIdsPlugin
+[0] <s> [webpack.Progress] 80% sealing module ids
+[0] <s> [webpack.Progress] 81% sealing module id optimization
+[0] <s> [webpack.Progress] 81% sealing module id optimization
+[0] <s> [webpack.Progress] 82% sealing module id optimization
+[0] <s> [webpack.Progress] 82% sealing module id optimization
+[0] <s> [webpack.Progress] 82% sealing chunk reviving
+[0] <s> [webpack.Progress] 82% sealing chunk reviving RecordIdsPlugin
+[0] <s> [webpack.Progress] 82% sealing chunk reviving
+[0] <s> [webpack.Progress] 83% sealing before chunk ids
+[0] <s> [webpack.Progress] 83% sealing before chunk ids
+[0] <s> [webpack.Progress] 84% sealing chunk ids
+[0] <s> [webpack.Progress] 84% sealing chunk ids NamedChunkIdsPlugin
+[0] <s> [webpack.Progress] 84% sealing chunk ids
+[0] <s> [webpack.Progress] 84% sealing chunk id optimization
+[0] <s> [webpack.Progress] 84% sealing chunk id optimization
+[0] <s> [webpack.Progress] 85% sealing after chunk id optimization
+[0] <s> [webpack.Progress] 85% sealing after chunk id optimization
+[0] <s> [webpack.Progress] 86% sealing record modules
+[0] <s> [webpack.Progress] 86% sealing record modules RecordIdsPlugin
+[0] <s> [webpack.Progress] 86% sealing record modules
+[0] <s> [webpack.Progress] 86% sealing record chunks
+[0] <s> [webpack.Progress] 86% sealing record chunks RecordIdsPlugin
+[0] <s> [webpack.Progress] 86% sealing record chunks
+[0] <s> [webpack.Progress] 87% sealing module hashing
+[0] <s> [webpack.Progress] 87% sealing module hashing
+[0] <s> [webpack.Progress] 87% sealing code generation
+[0] <s> [webpack.Progress] 87% sealing code generation
+[0] <s> [webpack.Progress] 88% sealing runtime requirements
+[0] <s> [webpack.Progress] 88% sealing runtime requirements
+[0] <s> [webpack.Progress] 89% sealing hashing
+[0] <s> [webpack.Progress] 89% sealing hashing
+[0] <s> [webpack.Progress] 89% sealing after hashing
+[0] <s> [webpack.Progress] 89% sealing after hashing
+[0] <s> [webpack.Progress] 90% sealing record hash
+[0] <s> [webpack.Progress] 90% sealing record hash
+[0] <s> [webpack.Progress] 91% sealing module assets processing
+[0] <s> [webpack.Progress] 91% sealing module assets processing
+[0] <s> [webpack.Progress] 91% sealing chunk assets processing
+[0] <s> [webpack.Progress] 91% sealing chunk assets processing
+[0] <s> [webpack.Progress] 92% sealing asset processing
+[0] <s> [webpack.Progress] 92% sealing asset processing HotModuleReplacementPlugin
+[0] <s> [webpack.Progress] 92% sealing asset processing PersistentChildCompilerSingletonPlugin
+[0] <s> [webpack.Progress] 92% sealing asset processing HtmlWebpackPlugin
+[0] <s> [webpack.Progress] 92% sealing asset processing
+[0] <s> [webpack.Progress] 93% sealing after asset optimization
+[0] <s> [webpack.Progress] 93% sealing after asset optimization
+[0] <s> [webpack.Progress] 93% sealing recording
+[0] <s> [webpack.Progress] 93% sealing recording HotModuleReplacementPlugin
+[0] <s> [webpack.Progress] 93% sealing recording
+[0] <s> [webpack.Progress] 94% sealing after seal
+[0] <s> [webpack.Progress] 94% sealing after seal
+[0] <s> [webpack.Progress] 95% emitting emit
+[0] <s> [webpack.Progress] 95% emitting emit
+[0] <s> [webpack.Progress] 98% emitting after emit
+[0] <s> [webpack.Progress] 98% emitting after emit
+[0] <s> [webpack.Progress] 99% done plugins
+[0] <s> [webpack.Progress] 99% done plugins webpack-dev-server
+[0] <s> [webpack.Progress] 99% done plugins webpack-dev-middleware
+[0] <s> [webpack.Progress] 99% done plugins
+[0] <s> [webpack.Progress] 99% 
+[0] 
+[0] <s> [webpack.Progress] 99% cache store build dependencies
+[0] <s> [webpack.Progress] 99% cache store build dependencies
+[0] <s> [webpack.Progress] 99% cache begin idle
+[0] <s> [webpack.Progress] 99% cache begin idle
+[0] <s> [webpack.Progress] 100% 
+[0] 
+[0] assets by status 32.3 KiB [1m[32m[cached][39m[22m 2 assets
+[0] assets by status 8.72 MiB [1m[32m[emitted][39m[22m
+[0]   assets by path [1m[32m*.js[39m[22m 8.72 MiB
+[0]     asset [1m[32mbundle.js[39m[22m 8.72 MiB [1m[32m[emitted][39m[22m (name: main)
+[0]     asset [1m[32mmain.164574d2a0c5f9a22028.hot-update.js[39m[22m 848 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[hmr][39m[22m (name: main)
+[0]   asset [1m[32mindex.html[39m[22m 524 bytes [1m[32m[emitted][39m[22m
+[0]   asset [1m[32mmain.164574d2a0c5f9a22028.hot-update.json[39m[22m 28 bytes [1m[32m[emitted][39m[22m [1m[32m[immutable][39m[22m [1m[32m[hmr][39m[22m
+[0] Entrypoint [1mmain[39m[22m 8.72 MiB (32.3 KiB) = [1m[32mbundle.js[39m[22m 8.72 MiB [1m[32mmain.164574d2a0c5f9a22028.hot-update.js[39m[22m 848 bytes 2 auxiliary assets
+[0] cached modules 7.79 MiB (javascript) 32.3 KiB (asset) [1m[32m[cached][39m[22m 196 modules
+[0] runtime modules 27.5 KiB 14 modules
+[0] ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js![1m./client/styles_output.css[39m[22m 16.9 KiB [1m[33m[built][39m[22m
+[0] 
+[0] [1m[33mWARNING[39m[22m in [1m./node_modules/express/lib/view.js[39m[22m [1m[32m81:13-25[39m[22m
+[0] [1mCritical dependency: the request of a dependency is an expression[39m[22m
+[0]  @ ./node_modules/express/lib/application.js 22:11-28
+[0]  @ ./node_modules/express/lib/express.js 18:12-36
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[33mWARNING[39m[22m in [1m./node_modules/on-finished/index.js[39m[22m [1m[32m207:11-33[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'async_hooks' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/on-finished'[39m[22m
+[0]  @ ./node_modules/express/lib/response.js 23:17-39
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[33mWARNING[39m[22m in [1m./node_modules/raw-body/index.js[39m[22m [1m[32m302:11-33[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'async_hooks' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/raw-body'[39m[22m
+[0]  @ ./node_modules/body-parser/lib/read.js 16:14-33
+[0]  @ ./node_modules/body-parser/lib/types/json.js 19:11-29
+[0]  @ ./node_modules/body-parser/index.js 141:15-42
+[0]  @ ./node_modules/express/lib/express.js 15:17-39
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] 3 warnings have detailed information that is not shown.
+[0] Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/body-parser/lib/read.js[39m[22m [1m[32m20:11-26[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zlib' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/body-parser/lib'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "zlib": require.resolve("browserify-zlib") }'
+[0] 	- install 'browserify-zlib'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "zlib": false }[39m[22m
+[0]  @ ./node_modules/body-parser/lib/types/json.js 19:11-29
+[0]  @ ./node_modules/body-parser/index.js 141:15-42
+[0]  @ ./node_modules/express/lib/express.js 15:17-39
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/body-parser/lib/types/urlencoded.js[39m[22m [1m[32m228:12-34[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'querystring' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/body-parser/lib/types'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "querystring": require.resolve("querystring-es3") }'
+[0] 	- install 'querystring-es3'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "querystring": false }[39m[22m
+[0]  @ ./node_modules/body-parser/index.js 150:15-48
+[0]  @ ./node_modules/express/lib/express.js 15:17-39
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/cookie-signature/index.js[39m[22m [1m[32m5:13-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'crypto' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/cookie-signature'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "crypto": require.resolve("crypto-browserify") }'
+[0] 	- install 'crypto-browserify'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "crypto": false }[39m[22m
+[0]  @ ./node_modules/express/lib/response.js 27:11-43
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/destroy/index.js[39m[22m [1m[32m16:17-41[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'fs' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/destroy'[39m[22m
+[0]  @ ./node_modules/body-parser/lib/read.js 15:14-32
+[0]  @ ./node_modules/body-parser/lib/types/json.js 19:11-29
+[0]  @ ./node_modules/body-parser/index.js 141:15-42
+[0]  @ ./node_modules/express/lib/express.js 15:17-39
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/destroy/index.js[39m[22m [1m[32m17:13-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'stream' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/destroy'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "stream": require.resolve("stream-browserify") }'
+[0] 	- install 'stream-browserify'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "stream": false }[39m[22m
+[0]  @ ./node_modules/body-parser/lib/read.js 15:14-32
+[0]  @ ./node_modules/body-parser/lib/types/json.js 19:11-29
+[0]  @ ./node_modules/body-parser/index.js 141:15-42
+[0]  @ ./node_modules/express/lib/express.js 15:17-39
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+ @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/destroy/index.js[39m[22m [1m[32m18:11-26[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'zlib' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/destroy'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "zlib": require.resolve("browserify-zlib") }'
+[0] 	- install 'browserify-zlib'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "zlib": false }[39m[22m
+[0]  @ ./node_modules/body-parser/lib/read.js 15:14-32
+[0]  @ ./node_modules/body-parser/lib/types/json.js 19:11-29
+[0]  @ ./node_modules/body-parser/index.js 141:15-42
+[0]  @ ./node_modules/express/lib/express.js 15:17-39
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/etag/index.js[39m[22m [1m[32m21:13-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'crypto' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/etag'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "crypto": require.resolve("crypto-browserify") }'
+[0] 	- install 'crypto-browserify'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "crypto": false }[39m[22m
+[0]  @ ./node_modules/express/lib/utils.js 21:11-26
+[0]  @ ./node_modules/express/lib/application.js 24:18-48 25:25-62 26:19-50
+[0]  @ ./node_modules/express/lib/express.js 18:12-36
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/etag/index.js[39m[22m [1m[32m22:12-31[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'fs' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/etag'[39m[22m
+[0]  @ ./node_modules/express/lib/utils.js 21:11-26
+[0]  @ ./node_modules/express/lib/application.js 24:18-48 25:25-62 26:19-50
+[0]  @ ./node_modules/express/lib/express.js 18:12-36
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/express/lib/application.js[39m[22m [1m[32m23:11-26[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'http' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/express/lib'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "http": require.resolve("stream-http") }'
+[0] 	- install 'stream-http'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "http": false }[39m[22m
+[0]  @ ./node_modules/express/lib/express.js 18:12-36
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/express/lib/request.js[39m[22m [1m[32m18:11-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'net' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/express/lib'[39m[22m
+[0]  @ ./node_modules/express/lib/express.js 21:10-30
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/express/lib/request.js[39m[22m [1m[32m20:11-26[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'http' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/express/lib'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "http": require.resolve("stream-http") }'
+[0] 	- install 'stream-http'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "http": false }[39m[22m
+[0]  @ ./node_modules/express/lib/express.js 21:10-30
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/express/lib/response.js[39m[22m [1m[32m21:11-26[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'http' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/express/lib'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "http": require.resolve("stream-http") }'
+[0] 	- install 'stream-http'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "http": false }[39m[22m
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/express/lib/utils.js[39m[22m [1m[32m24:18-40[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'querystring' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/express/lib'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "querystring": require.resolve("querystring-es3") }'
+[0] 	- install 'querystring-es3'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "querystring": false }[39m[22m
+[0]  @ ./node_modules/express/lib/application.js 24:18-48 25:25-62 26:19-50
+[0]  @ ./node_modules/express/lib/express.js 18:12-36
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/express/lib/view.js[39m[22m [1m[32m18:9-22[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'fs' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/express/lib'[39m[22m
+[0]  @ ./node_modules/express/lib/application.js 22:11-28
+[0]  @ ./node_modules/express/lib/express.js 18:12-36
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+ @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/mime/mime.js[39m[22m [1m[32m2:9-22[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'fs' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/mime'[39m[22m
+[0]  @ ./node_modules/send/index.js 24:11-26
+[0]  @ ./node_modules/express/lib/response.js 32:11-26
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/safe-buffer/index.js[39m[22m [1m[32m3:13-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'buffer' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/safe-buffer'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "buffer": require.resolve("buffer/") }'
+[0] 	- install 'buffer'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "buffer": false }[39m[22m
+[0]  @ ./node_modules/express/lib/response.js 15:13-42
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/safer-buffer/safer.js[39m[22m [1m[32m5:13-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'buffer' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/safer-buffer'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "buffer": require.resolve("buffer/") }'
+[0] 	- install 'buffer'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "buffer": false }[39m[22m
+[0]  @ ./node_modules/iconv-lite/lib/index.js 5:13-43
+[0]  @ ./node_modules/body-parser/lib/read.js 17:12-33
+[0]  @ ./node_modules/body-parser/lib/types/json.js 19:11-29
+[0]  @ ./node_modules/body-parser/index.js 141:15-42
+[0]  @ ./node_modules/express/lib/express.js 15:17-39
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/send/index.js[39m[22m [1m[32m23:9-22[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'fs' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/send'[39m[22m
+[0]  @ ./node_modules/express/lib/response.js 32:11-26
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[31mERROR[39m[22m in [1m./node_modules/send/index.js[39m[22m [1m[32m30:13-30[39m[22m
+[0] [1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'stream' in '/Users/nls.pglenn/github/Codesmith/Prism/node_modules/send'
+[0] 
+[0] [1m[31mBREAKING CHANGE[39m[22m[1m: webpack < 5 used to include polyfills for node.js core modules by default.
+[0] This is no longer the case. Verify if you need this module and configure a polyfill for it.
+[0] 
+[0] If you want to include a polyfill, you need to:
+[0] 	- add a fallback 'resolve.fallback: { "stream": require.resolve("stream-browserify") }'
+[0] 	- install 'stream-browserify'
+[0] If you don't want to include a polyfill, you can use an empty module like this:
+[0] 	resolve.fallback: { "stream": false }[39m[22m
+[0]  @ ./node_modules/express/lib/response.js 32:11-26
+[0]  @ ./node_modules/express/lib/express.js 22:10-31
+[0]  @ ./node_modules/express/index.js 11:0-41
+[0]  @ ./client/components/ClusterView/Dashboard/Overview.jsx 1:0-35
+[0]  @ ./client/components/App.jsx 22:0-57 61:46-54
+[0]  @ ./client/index.js 3:0-39 9:157-160
+[0] 
+[0] [1m[33m19 errors have detailed information that is not shown.
+[0] Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.[39m[22m
+[0] 
+[0] webpack 5.88.2 compiled with [1m[31m19 errors[39m[22m and [1m[33m3 warnings[39m[22m in 2346 ms
+[0] <i> [webpack-dev-server] Gracefully shutting down. To force exit, press ^C again. Please wait...
+[1] nodemon ./server/server.js exited with code 143
+[0] <s> [webpack.Progress] 99% end closing watch compilation
+[0] <s> [webpack.Progress] 99% end closing watch compilation
+[0] <s> [webpack.Progress] 99% cache shutdown
+[0] <s> [webpack.Progress] 99% cache shutdown MemoryCachePlugin
+[0] <s> [webpack.Progress] 99% cache shutdown
+[0] <s> [webpack.Progress] 100% 
+[0] 
+[0] cross-env NODE_ENV=development webpack-dev-server --open --hot --progress --color  exited with code 0

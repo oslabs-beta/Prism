@@ -4,8 +4,7 @@ import { resolve } from 'path';
 import apiRouter from './routers/apiRouter.js';
 const PORT = 3333; // from josh's branch
 
-
-/// function to execute shell command 
+/// function to execute shell command
 
 // convert request body, etc.  to JSON
 app.use(json());
@@ -15,7 +14,7 @@ app.use(json());
 // app.use(express.static('client')) // from josh
 app.use('/api', apiRouter);
 // just to get something running
-app.get('/', (req, res) => {
+app.use((req, res) => {
   return res.status(200).sendFile(resolve(__dirname, '../index.html'));
 });
 
@@ -40,7 +39,7 @@ app.use((err, req, res, next) => {
   console.log(errorObj.log);
   return res.status(errorObj.status).json(errorObj.message);
 });
-
+// hi
 //listens on port 3000 -> http://localhost:3000/
 app.listen(PORT, () => {
   console.log(`App listening on PORT ${PORT}`);
