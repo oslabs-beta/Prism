@@ -6,8 +6,11 @@ const router = Router();
 // routes :
 
 // create dashboard
-router.post('/', metricsController.createDashboard, (req, res) =>
-  res.status(200).json(res.locals.dashboard)
+router.post(
+  '/',
+  metricsController.createDashboard,
+  metricsController.getDashboardURL,
+  (req, res) => res.status(200).send(res.locals.iframe)
 );
 
 // get dashboard panel with specific id

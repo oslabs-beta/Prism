@@ -37,11 +37,17 @@ const metricsController = {
         .readFileSync(path.resolve(__dirname, '../../sample_dashboard.json'))
         .toString()
     );
+    const dashboardObject = {
+      dashboard: dashboardJSON,
+      overwrite: true,
+    };
     // res.locals.dashboard = dashboardJSON;
 
     //🎯 TODO:  make request to create dashboard in grafana
     // post fetch request with authorization header
-    console.log(dashboardJSON);
+    const dashboardProvision = JSON.stringify(dashboardObject);
+    //console.log(dashboardProvision);
+    //console.log('type: ', typeof dashboardProvision);
     fetch('http://localhost:3000/api/dashboards/db', {
       method: 'POST',
       headers: {
@@ -49,12 +55,13 @@ const metricsController = {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${apiKey}`,
       },
-      body: dashboardJSON,
+      body: dashboardProvision,
     })
       .then((response) => response.json())
       .then((data) => {
-        res.locals.dashboard = data;
-
+        res.locals.dashboardURL = data.url;
+        // sample response url property : /d/a0568fed-94d0-4eba-a617-6507426ad032/production-overview
+        console.log(res.locals.dashboardURL);
         return next();
       })
       .catch((err) =>
@@ -70,13 +77,16 @@ const metricsController = {
   getDashboardURL: (req, res, next) => {
     // make fetch request for dashboard to get its url
     // this can be source for iframe
-    const apiKey = readAPIKey();
-    const dashboardURLTest =
-      'http://localhost:64090/d/e13e401a-7d5e-456b-a57f-9a745508ceca/production-overview';
+    // const apiKey = readAPIKey();
+    //const dashboardURLTest =
+    //  'http://localhost:64090/d/e13e401a-7d5e-456b-a57f-9a745508ceca/production-overview';
+    const dashboardURL = res.locals.dashboardURL;
+    // console.log('in DashboardURL', dashboardURL);
     // url comes in as something like :
-    // we need to turn into:  http://localhost:64090/d-solo/e13e401a-7d5e-456b-a57f-9a745508ceca/production-overview?orgId=1&refresh=5s&from=1690209750061&to=1690231350061&panelId=2
-    let dashboardURLTestSrc = dashboardURLTest.replace('/d/', '/d-solo/');
-    res.locals.iframe = dashboardURLTestSrc;
+    // we need to turn into:  http://localhost:64090/d-solo/e13e401a-7d5e-456b-a57f-9a745508ceca/production-overview?panelId=2
+    let dashboardURLTestSrc = dashboardURL.replace('/d/', '/d-solo/');
+    res.locals.iframe = `http://localhost:3000${dashboardURLTestSrc}?panelId=1`;
+    // console.log('iframe', res.locals.iframe);
     return next();
   },
 };
