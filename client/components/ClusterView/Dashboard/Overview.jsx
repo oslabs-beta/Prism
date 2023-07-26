@@ -21,17 +21,23 @@ const OverView = () => {
   //   <Iframe url={url ? url.replace('panelId=1', 'panelId=5') : ''} />,
   // ];
   // console.log('iframe array ', iframeArray);
+  // effect hook
   React.useEffect(() => {
     getURL()
       .then((urlString) => {
         const frameArray = [];
+        const panelIdArray = [4, 5, 6]; // the panels we want to access
         // console.log('effect hook running: ', urlString);
         if (urlString) {
-          frameArray.push(
-            <Iframe url={urlString.replace('panelId=1', 'panelId=5')} />
-          );
-          frameArray.push(
-            <Iframe url={urlString.replace('panelId=1', 'panelId=6')} />
+          // iterate through panel ids that we want and edit the url for each one , pushing to panels array
+          panelIdArray.forEach((id) =>
+            frameArray.push(
+              <Iframe
+                key={id}
+                className='overviewpanels'
+                url={urlString.replace('panelId=1', `panelId=${id}`)}
+              />
+            )
           );
         }
         // state hook updates array
@@ -42,8 +48,8 @@ const OverView = () => {
 
   return (
     <main className='flex flex-col'>
-      {/* {iframeArray} */}
       <h1>OverView Overiew</h1>
+      {/* render iframes */}
       {frames}
     </main>
   );
