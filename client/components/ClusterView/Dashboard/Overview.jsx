@@ -25,16 +25,19 @@ const OverView = () => {
     getURL()
       .then((urlString) => {
         const frameArray = [];
-        console.log('effect hook running: ', urlString);
+        // console.log('effect hook running: ', urlString);
         if (urlString) {
           frameArray.push(
             <Iframe url={urlString.replace('panelId=1', 'panelId=5')} />
           );
+          frameArray.push(
+            <Iframe url={urlString.replace('panelId=1', 'panelId=6')} />
+          );
         }
-        console.log('frame Array: ', frameArray);
+        // state hook updates array
         updateFrames(frameArray);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(`Error in effect hook: \n ${err}`));
   }, []);
 
   return (
