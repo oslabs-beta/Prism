@@ -26,7 +26,7 @@ const OverView = () => {
     getURL()
       .then((urlString) => {
         const frameArray = [];
-        const panelIdArray = [4, 5, 6]; // the panels we want to access
+        const panelIdArray = [1,5,3,4]; // the panels we want to access
         // console.log('effect hook running: ', urlString);
         if (urlString) {
           // iterate through panel ids that we want and edit the url for each one , pushing to panels array
