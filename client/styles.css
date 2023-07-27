@@ -11,7 +11,8 @@
   --primary: #aaeec4;
   --primary-dark: #aaeec4ad;
   --secondary: #22252b;
-  --primary-white: #ffffff;
+  /* --primary-white: #ffffff; */
+  --primary-white: #ffffffec;
   --primary-grey: #e8e8e8;
 }
 
@@ -41,4 +42,96 @@
 
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.panelContainerBig {
+  display: flex;
+  justify-content: center;
+  /* justify-items: center; */
+  /* margin: 2rem auto; */
+  /* align-items: center; */
+  /* border: 2px solid red; */
+}
+
+.panelContainer {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr; */
+  /* grid-column-start: ; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem 1rem;
+  gap: 2rem;
+  width: min-content;
+  width: 95%;
+  height: fit-content;
+  /* border: 2px solid yellow; */
+}
+
+.panel1 {
+  width: 300px;
+  height: auto;
+  /* flex: 0 0 calc(33.33% - 10px); */
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+  /* width: 700px; */
+  /* border-radius: 50%; */
+}
+.panel3 {
+  width: 300px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+  /* flex: 0 0 calc(33.33% - 10px); */
+}
+
+.panel4 {
+  width: 300px;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+  /* flex: 0 0 calc(33.33% - 10px); */
+}
+
+.panel5 {
+  width: 960px;
+  height: 300px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+  /* width: 700px; */
+}
+.panel6 {
+  width: 960px;
+  height: 300px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+  /* width: 700px; */
+}
+@media screen and (max-width: 1024px) {
+  .panelContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 0 calc(100% - 10px);
+    border-radius: 1rem;
+    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+    padding: 0 3px;
+  }
+
+  .panel1 {
+    width: 400px;
+  }
+  .panel3 {
+    width: 400px;
+  }
+  .panel4 {
+    width: 400px;
+  }
+  .panel5 {
+    width: 400px;
+  }
+  .panel6 {
+    width: 400px;
+  }
 }
