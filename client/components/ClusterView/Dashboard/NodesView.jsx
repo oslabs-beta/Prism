@@ -1,13 +1,8 @@
 import React from 'react';
 const NodesView = () => {
   return (
-    <main className='flex'>
+    <main className='grid items-center'>
       {' '}
-      <h1>NodesView</h1>
-      <h1>NodesView</h1>
-      <h1>NodesView</h1>
-      <h1>NodesView</h1>
-      <h1>NodesView</h1>
       <h1>NodesView</h1>
     </main>
   );
