@@ -104,7 +104,7 @@ const metricsController = {
           path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json')
         )
         .toString();
-      res.locals.urlSaved = true;
+      res.locals.urlSaved = res.locals.dashboardURL.length > 0;
     } catch {
       res.locals.urlSaved = false;
     }

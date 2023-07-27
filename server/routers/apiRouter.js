@@ -1,8 +1,9 @@
 import { Router } from 'express';
 import metricsController from '../controllers/metricsController.js';
+//import userController from '../controllers/userController.js';
 const router = Router();
 // get api key
-
+// when authorization is implemented here, we should route certain api calls through verifytoken middleware
 // routes :
 
 // create dashboard

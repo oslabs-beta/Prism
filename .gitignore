@@ -1,2 +1,5 @@
 node_modules
 .env
+grafanaInfo/api_token.json
+grafanaInfo/dashboardURL.json
+build
