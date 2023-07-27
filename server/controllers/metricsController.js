@@ -61,7 +61,8 @@ const metricsController = {
       .then((data) => {
         res.locals.dashboardURL = data.url;
         // sample response url property : /d/a0568fed-94d0-4eba-a617-6507426ad032/production-overview
-        console.log(res.locals.dashboardURL);
+        console.log('data: ', data);
+        console.log('data URL: ', res.locals.dashboardURL);
         return next();
       })
       .catch((err) =>
@@ -73,19 +74,63 @@ const metricsController = {
       );
   },
 
+  writeDashboardURL: (req, res, next) => {
+    // only write the dashboard if it doesn't already exist
+    if (!res.locals.urlSaved) {
+      const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+      console.log('entering write dashboard url middleware');
+
+      console.log(
+        'writing dashboard URL : ',
+        res.locals.dashboardURL,
+        'to ',
+        path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json')
+      );
+      fs.writeFileSync(
+        path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json'),
+        res.locals.dashboardURL
+      );
+    }
+
+    return next();
+  },
+
+  readDashboardURL: (req, res, next) => {
+    console.log('entering read dashboard middleware');
+    const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+    try {
+      res.locals.dashboardURL = fs
+        .readFileSync(
+          path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json')
+        )
+        .toString();
+      res.locals.urlSaved = true;
+    } catch {
+      res.locals.urlSaved = false;
+    }
+
+    return next();
+  },
+
   // get dashboard iframe info
-  getDashboardURL: (req, res, next) => {
+  getDashboardIframeURL: (req, res, next) => {
     // make fetch request for dashboard to get its url
     // this can be source for iframe
     // const apiKey = readAPIKey();
     //const dashboardURLTest =
     //  'http://localhost:64090/d/e13e401a-7d5e-456b-a57f-9a745508ceca/production-overview';
     const dashboardURL = res.locals.dashboardURL;
+    console.log('dashboard URL in controller: ', res.locals.dashboardURL);
     // console.log('in DashboardURL', dashboardURL);
     // url comes in as something like :
     // we need to turn into:  http://localhost:64090/d-solo/e13e401a-7d5e-456b-a57f-9a745508ceca/production-overview?panelId=2
-    let dashboardURLTestSrc = dashboardURL.replace('/d/', '/d-solo/');
-    res.locals.iframe = `http://localhost:3000${dashboardURLTestSrc}?panelId=1`;
+    //let dashboardURLTestSrc = dashboardURL.replace('/d/', '/d-solo/');
+    res.locals.iframe = {
+      frameURL: `http://localhost:3000${dashboardURL.replace(
+        '/d/',
+        '/d-solo/'
+      )}?panelId=1`,
+    };
     // console.log('iframe', res.locals.iframe);
     return next();
   },
