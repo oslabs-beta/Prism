@@ -57,6 +57,7 @@ export default function App() {
               />
             </Route>
           </Routes>
+          {/* <RootLayout /> */}
         </ThemeProvider>
       </div>
     </>

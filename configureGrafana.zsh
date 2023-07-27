@@ -26,9 +26,9 @@ kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-passwor
 # pot forward :  kubectl --namespace default port-forward $POD_NAME 3000
 minikube service grafana-np --url &
 sleep 60
-kubectl port-forward deployment/grafana 3000 &
+while true; do kubectl port-forward deployment/grafana 3000; done  &
 sleep 5  
-curl -X POST -H "Content-Type: application/json" -d '{"name":"apikeycurl0", "role": "Admin"}' http://admin:`cat grafanaInfo/secret.txt`@localhost:3000/api/auth/keys > grafanaInfo/api_token.json
+curl -X POST -H "Content-Type: application/json" -d '{"name":"apikeycurl1", "role": "Admin"}' http://admin:`cat grafanaInfo/secret.txt`@localhost:3000/api/auth/keys > grafanaInfo/api_token.json
 
 # the terminal will be left open so you can see your url to log into grafana. 
 # Add data source: http://prometheus-server:80  

@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import ClusterViewHeader from './ClusterViewHeader/ClusterViewHeader';
 import SidePanel from './SidePanel/SidePanel';
-
+import OverView from './Dashboard/Overview';
 export default function RootLayout() {
   return (
     <div className=' flex flex-col  sm:grid sm:grid-areas-layout sm:grid-cols-layout sm:grid-rows-layout min-h-screen '>
@@ -14,9 +14,10 @@ export default function RootLayout() {
         <SidePanel />
       </section>
       <main
-        className=' bg-[var(--primary-white)] grid text-[var(--secondary)] dark:bg-[var(--secondary)] sm:grid-in-main  dark:text-[var(--primary)] h-full
+        className=' bg-[var(--primary-white)]  text-[var(--secondary)] dark:bg-[var(--secondary)] sm:grid-in-main  dark:text-[var(--primary)]  panelContainerBig  
       '
       >
+        {/* <OverView /> */}
         <Outlet />
       </main>
     </div>
