@@ -35,7 +35,6 @@ const OverView = () => {
   // console.log('iframe array ', iframeArray);
   // effect hook
   React.useEffect(() => {
-    console.log('THIS MEANS RERENDEREING');
     getURL()
       .then((urlString) => {
         const frameArray = [];
