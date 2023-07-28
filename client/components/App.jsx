@@ -40,21 +40,15 @@ export default function App() {
               <Route path='/signup' element={<Signup />}></Route>
               <Route path='/github' element={<Github />}></Route>
               <Route path='/linkedin' element={<LinkedIn />}></Route>
-              <Route
-                path='/connectcluster'
-                element={<ClusterConnect />}
-              ></Route>
+              <Route path='/connectcluster' element={<ClusterConnect />}>
+              </Route>
             </Route>
 
-            <Route path='/clusterview' element={<RootLayout />}>
-              <Route index element={<OverView />} />
-              <Route exact path='/clusterview/nodes' element={<NodesView />} />
+            <Route path='/clusterview' element={<OverView />}>
+              {/* <Route index element={<OverView />} /> */}
+              {/* <Route exact path='/clusterview/nodes' element={<NodesView />} />
               <Route exact path='/clusterview/pods' element={<PodsView />} />
-              <Route
-                exact
-                path='/clusterview/clustermap'
-                element={<ClusterMap />}
-              />
+              <Route exact path='/clusterview/clustermap' element={<ClusterMap />} /> */}
             </Route>
           </Routes>
           {/* <RootLayout /> */}

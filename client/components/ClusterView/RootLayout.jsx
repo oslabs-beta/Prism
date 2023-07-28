@@ -3,7 +3,7 @@ import { Outlet, NavLink } from 'react-router-dom';
 import ClusterViewHeader from './ClusterViewHeader/ClusterViewHeader';
 import SidePanel from './SidePanel/SidePanel';
 import OverView from './Dashboard/Overview';
-export default function RootLayout() {
+export default function RootLayout({ setViewOverview, setViewNode, setViewPods, setViewClusterMap }) {
   return (
     <div className=' flex flex-col  sm:grid sm:grid-areas-layout sm:grid-cols-layout sm:grid-rows-layout min-h-screen '>
       {' '}
@@ -11,7 +11,7 @@ export default function RootLayout() {
         <ClusterViewHeader />
       </header>
       <section className='h-[10rem] sm:h-full bg-[var(--primary-grey)] sm:grid-in-sidebar sm:justify dark:text-[var(--primary)] dark:bg-[var(--secondary)] drop-shadow-2xl dark:drop-shadow-3xl '>
-        <SidePanel />
+        <SidePanel setViewOverview={setViewOverview} setViewNode={setViewNode} setViewPods={setViewPods} setViewClusterMap={setViewClusterMap} />
       </section>
       <main
         className=' bg-[var(--primary-white)]  text-[var(--secondary)] dark:bg-[var(--secondary)] sm:grid-in-main  dark:text-[var(--primary)]  panelContainerBig  
