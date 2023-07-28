@@ -86,6 +86,9 @@ const metricsController = {
         'to ',
         path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json')
       );
+      // set url to session cookie instead of writing to file
+      res.cookie('url', res.locals.dashboardURL);
+      // saves to file - changing this to cookie
       fs.writeFileSync(
         path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json'),
         res.locals.dashboardURL
@@ -98,16 +101,20 @@ const metricsController = {
   readDashboardURL: (req, res, next) => {
     console.log('entering read dashboard middleware');
     const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-    try {
-      res.locals.dashboardURL = fs
-        .readFileSync(
-          path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json')
-        )
-        .toString();
-      res.locals.urlSaved = res.locals.dashboardURL.length > 0;
-    } catch {
-      res.locals.urlSaved = false;
+
+    if (req.cookie.url) res.locals.dashboardURL = req.cookie.url;
+    else {
+      try {
+        res.locals.dashboardURL = fs
+          .readFileSync(
+            path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json')
+          )
+          .toString();
+      } catch {
+        res.locals.urlSaved = false;
+      }
     }
+    res.locals.urlSaved = res.locals.dashboardURL.length > 0;
 
     return next();
   },
