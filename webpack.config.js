@@ -1,7 +1,10 @@
-const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-
-module.exports = {
+// const path = require('path');
+import path from 'path';
+// const HTMLWebpackPlugin = require('html-webpack-plugin');
+import HTMLWebpackPlugin from 'html-webpack-plugin';
+import url from 'url';
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+export default {
   mode: process.env.NODE_ENV,
   entry: path.resolve(__dirname, '/client/index.js'),
 
@@ -23,7 +26,7 @@ module.exports = {
     port: '8080',
     hot: true,
     proxy: {
-      '/': 'http://localhost:3000',
+      '/': 'http://localhost:3333',
       secure: false,
       changeOrigin: true,
     },
