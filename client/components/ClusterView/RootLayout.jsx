@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import ClusterViewHeader from './ClusterViewHeader/ClusterViewHeader';
 import SidePanel from './SidePanel/SidePanel';
 import OverView from './Dashboard/Overview';
-export default function RootLayout({ setViewOverview, setViewNode, setViewPods, setViewClusterMap }) {
+export default function RootLayout() {
+  const [viewOverview, setViewOverview] = useState(true);
+  const [viewNode, setViewNode] = useState(false);
+  const [viewPods, setViewPods] = useState(false);
+  const [viewClusterMap, setViewClusterMap] = useState(false);
+
   return (
     <div className=' flex flex-col  sm:grid sm:grid-areas-layout sm:grid-cols-layout sm:grid-rows-layout min-h-screen '>
       {' '}
@@ -11,13 +16,23 @@ export default function RootLayout({ setViewOverview, setViewNode, setViewPods, 
         <ClusterViewHeader />
       </header>
       <section className='h-[10rem] sm:h-full bg-[var(--primary-grey)] sm:grid-in-sidebar sm:justify dark:text-[var(--primary)] dark:bg-[var(--secondary)] drop-shadow-2xl dark:drop-shadow-3xl '>
-        <SidePanel setViewOverview={setViewOverview} setViewNode={setViewNode} setViewPods={setViewPods} setViewClusterMap={setViewClusterMap} />
+        <SidePanel
+          setViewOverview={setViewOverview}
+          setViewNode={setViewNode}
+          setViewPods={setViewPods}
+          setViewClusterMap={setViewClusterMap}
+        />
       </section>
       <main
         className=' bg-[var(--primary-white)]  text-[var(--secondary)] dark:bg-[var(--secondary)] sm:grid-in-main  dark:text-[var(--primary)]  panelContainerBig  
       '
       >
-        {/* <OverView /> */}
+        <OverView
+          viewOverview={viewOverview}
+          viewNode={viewNode}
+          viewPods={viewPods}
+          ViewClusterMap={viewClusterMap}
+        />
         <Outlet />
       </main>
     </div>

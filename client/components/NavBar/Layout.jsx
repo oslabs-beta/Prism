@@ -4,7 +4,7 @@ import Header from './Header.jsx';
 
 export default function Layout() {
   return (
-    <main className='bg-[var(--primary-white)] p-10'>
+    <main className='bg-red-500'>
       <Header />
       <Outlet />
     </main>

@@ -17,14 +17,9 @@ const getURL = async () => {
   return urlObj.frameURL;
 };
 
-const OverView = () => {
-
-  const [viewOverview, setViewOverview] = useState(true);
-  const [viewNode, setViewNode] = useState(false);
-  const [viewPods, setViewPods] = useState(false);
-  const [viewClusterMap, setViewClusterMap] = useState(false);
-
+const OverView = (props) => {
   const [frames, updateFrames] = React.useState([]);
+  const { viewClusterMap, viewNode, viewPods, viewOverview } = props;
   // create array of iframe elements with source frameURL, changing the number each time (we'll use 5+6 )
   // first we can hardcode the array
   // const url = await getURL(); // contains url string
@@ -48,34 +43,37 @@ const OverView = () => {
                 key={id}
                 className={`rounded w-52 h-64  panel${id}`}
                 url={urlString.replace('panelId=1', `panelId=${id}`)}
-              // width='500'
-              // height='250'
+                // width='500'
+                // height='250'
               />
             )
           );
         }
         // state hook updates array
         updateFrames(frameArray);
-
       })
       .catch((err) => console.log(`Error in effect hook: \n ${err}`));
   }, []);
 
   return (
-    <>
-      <RootLayout setViewOverview={setViewOverview} setViewNode={setViewNode} setViewPods={setViewPods} setViewClusterMap={setViewClusterMap} />
+    // <>
+    //   <RootLayout
+    //     setViewOverview={setViewOverview}
+    //     setViewNode={setViewNode}
+    //     setViewPods={setViewPods}
+    //     setViewClusterMap={setViewClusterMap}
+    //   />
 
-      <div className=' panelContainer '>
-        {/* // <h1>OverView Overiew</h1> */}
-        {/* render iframes */}
-        {/* {frames} */}
-        {viewOverview ? frames : null}
-        {viewNode ? <NodesView /> : null}
-        {viewPods ? <PodsView /> : null}
-        {viewClusterMap ? <ClusterMap /> : null}
-      </div>
-
-    </>
+    <div className=' panelContainer '>
+      {/* // <h1>OverView Overiew</h1> */}
+      {/* render iframes */}
+      {/* {frames} */}
+      {viewOverview ? frames : null}
+      {viewNode ? <NodesView /> : null}
+      {viewPods ? <PodsView /> : null}
+      {viewClusterMap ? <ClusterMap /> : null}
+    </div>
+    // </>
   );
 };
 
