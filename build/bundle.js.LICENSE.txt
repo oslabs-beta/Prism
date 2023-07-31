@@ -1,8 +1,11 @@
-<<<<<<< HEAD
-=======
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
 /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
 
->>>>>>> dev
 /**
  * @license React
  * react-dom.production.min.js
@@ -43,8 +46,6 @@
  *
  * @license MIT
  */
-<<<<<<< HEAD
-=======
 
 /**
  * React Router DOM v6.14.2
@@ -67,4 +68,3 @@
  *
  * @license MIT
  */
->>>>>>> dev
