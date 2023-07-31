@@ -4,11 +4,6 @@ import ClusterViewHeader from './ClusterViewHeader/ClusterViewHeader';
 import SidePanel from './SidePanel/SidePanel';
 import OverView from './Dashboard/Overview';
 export default function RootLayout() {
-  const [viewOverview, setViewOverview] = useState(true);
-  const [viewNode, setViewNode] = useState(false);
-  const [viewPods, setViewPods] = useState(false);
-  const [viewClusterMap, setViewClusterMap] = useState(false);
-
   return (
     <div className=' flex flex-col  sm:grid sm:grid-areas-layout sm:grid-cols-layout sm:grid-rows-layout min-h-screen '>
       {' '}
