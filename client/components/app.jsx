@@ -36,6 +36,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<AppIntro />}></Route>
+              <Route path="/login" element={<Login />}></Route>
+              <Route path="/signup" element={<Signup />}></Route>
               <Route path="/github" element={<Github />}></Route>
               <Route path="/linkedin" element={<LinkedIn />}></Route>
               <Route
@@ -44,8 +46,6 @@ export default function App() {
               ></Route>
             </Route>
 
-            <Route path="/login" element={<Login />}></Route>
-            <Route path="/signup" element={<Signup />}></Route>
             <Route path="/clusterview" element={<RootLayout />}>
               <Route index element={<OverView />} />
               <Route exact path="/clusterview/nodes" element={<NodesView />} />
