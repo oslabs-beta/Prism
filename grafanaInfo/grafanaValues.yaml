@@ -50,8 +50,8 @@ autoscaling:
   enabled: false
   minReplicas: 1
   maxReplicas: 5
-  targetCPU: '60'
-  targetMemory: ''
+  targetCPU: "60"
+  targetMemory: ""
   behavior: {}
 
 ## See `kubectl explain poddisruptionbudget.spec` for more
@@ -86,8 +86,8 @@ livenessProbe:
 image:
   repository: docker.io/grafana/grafana
   # Overrides the Grafana image tag whose default is the chart appVersion
-  tag: ''
-  sha: ''
+  tag: ""
+  sha: ""
   pullPolicy: IfNotPresent
 
   ## Optionally specify an array of imagePullSecrets.
@@ -101,7 +101,7 @@ image:
 testFramework:
   enabled: true
   image: docker.io/bats/bats
-  tag: 'v1.4.1'
+  tag: "v1.4.1"
   imagePullPolicy: IfNotPresent
   securityContext: {}
 
@@ -146,12 +146,12 @@ extraLabels: {}
 downloadDashboardsImage:
   repository: docker.io/curlimages/curl
   tag: 7.85.0
-  sha: ''
+  sha: ""
   pullPolicy: IfNotPresent
 
 downloadDashboards:
   env: {}
-  envFromSecret: ''
+  envFromSecret: ""
   resources: {}
   securityContext:
     allowPrivilegeEscalation: false
@@ -193,7 +193,7 @@ service:
   labels: {}
   portName: service
   # Adds the appProtocol field to the service. This allows to work with istio protocol selection. Ex: "http" or "tcp"
-  appProtocol: ''
+  appProtocol: ""
 
 serviceMonitor:
   ## If true, a ServiceMonitor CRD is created for a prometheus operator
@@ -296,7 +296,7 @@ topologySpreadConstraints: []
 extraInitContainers: []
 
 ## Enable an Specify container in extraContainers. This is meant to allow adding an authentication proxy to a grafana pod
-extraContainers: ''
+extraContainers: ""
 # extraContainers: |
 # - name: proxy
 #   image: quay.io/gambol99/keycloak-proxy:latest
@@ -363,8 +363,8 @@ initChownData:
   ##
   image:
     repository: docker.io/library/busybox
-    tag: '1.31.1'
-    sha: ''
+    tag: "1.31.1"
+    sha: ""
     pullPolicy: IfNotPresent
 
   ## initChownData resource requests and limits
@@ -393,7 +393,7 @@ adminUser: admin
 # Use an existing secret for the admin user.
 admin:
   ## Name of the secret. Can be templated.
-  existingSecret: ''
+  existingSecret: ""
   userKey: admin-user
   passwordKey: admin-password
 
@@ -453,7 +453,7 @@ envValueFrom:
 
 ## The name of a secret in the same kubernetes namespace which contain values to be added to the environment
 ## This can be useful for auth tokens, etc. Value is templated.
-envFromSecret: ''
+envFromSecret: ""
 
 ## Sensible environment variables that will be rendered as new secret object
 ## This can be useful for auth tokens, etc.
@@ -657,7 +657,7 @@ dashboardProviders:
   dashboardproviders.yaml:
     apiVersion: 1
     providers:
-      - name: 'default'
+      - name: "default"
         orgId: 1
         type: file
         updateIntervalSecond: 10
@@ -777,9 +777,9 @@ ldap:
   enabled: false
   # `existingSecret` is a reference to an existing secret containing the ldap configuration
   # for Grafana in a key `ldap-toml`.
-  existingSecret: ''
+  existingSecret: ""
   # `config` is the content of `ldap.toml` that will be stored in the created secret
-  config: ''
+  config: ""
   # config: |-
   #   verbose_logging = true
 
@@ -797,9 +797,9 @@ ldap:
 smtp:
   # `existingSecret` is a reference to an existing secret containing the smtp configuration
   # for Grafana.
-  existingSecret: ''
-  userKey: 'user'
-  passwordKey: 'password'
+  existingSecret: ""
+  userKey: "user"
+  passwordKey: "password"
 
 ## Sidecars that collect the configmaps with specified label and stores the included files them into the respective folders
 ## Requires at least Grafana 5 to work and can't be used together with parameters dashboardProviders, datasources and dashboards
@@ -807,7 +807,7 @@ sidecar:
   image:
     repository: quay.io/kiwigrid/k8s-sidecar
     tag: 1.24.6
-    sha: ''
+    sha: ""
   imagePullPolicy: IfNotPresent
   resources: {}
   #   limits:
@@ -839,7 +839,7 @@ sidecar:
     # label that the configmaps with alert are marked with
     label: grafana_alert
     # value of label that the configmaps with alert are set to
-    labelValue: ''
+    labelValue: ""
     # Log level. Can be one of: DEBUG, INFO, WARN, ERROR, CRITICAL.
     # logLevel: INFO
     # If specified, the sidecar will search for alert config-maps inside this namespace.
@@ -861,7 +861,7 @@ sidecar:
     # watchClientTimeout: 60
     #
     # Endpoint to send request to reload alerts
-    reloadURL: 'http://localhost:3000/api/admin/provisioning/alerting/reload'
+    reloadURL: "http://localhost:3000/api/admin/provisioning/alerting/reload"
     # Absolute path to shell script to execute after a alert got reloaded
     script: null
     skipReload: false
@@ -880,7 +880,7 @@ sidecar:
     # label that the configmaps with dashboards are marked with
     label: grafana_dashboard
     # value of label that the configmaps with dashboards are set to
-    labelValue: ''
+    labelValue: ""
     # Log level. Can be one of: DEBUG, INFO, WARN, ERROR, CRITICAL.
     # logLevel: INFO
     # folder in the pod that should hold the collected dashboards (unless `defaultFolderName` is set)
@@ -899,7 +899,7 @@ sidecar:
     # You can use this parameter together with `provider.foldersFromFilesStructure`to annotate configmaps and create folder structure.
     folderAnnotation: null
     # Endpoint to send request to reload alerts
-    reloadURL: 'http://localhost:3000/api/admin/provisioning/dashboards/reload'
+    reloadURL: "http://localhost:3000/api/admin/provisioning/dashboards/reload"
     # Absolute path to shell script to execute after a configmap got reloaded
     script: null
     skipReload: false
@@ -920,7 +920,7 @@ sidecar:
       # orgid as configured in grafana
       orgid: 1
       # folder in which the dashboards should be imported in grafana
-      folder: ''
+      folder: ""
       # type of the provider
       type: file
       # disableDelete to activate a import-only behaviour
@@ -942,7 +942,7 @@ sidecar:
     # label that the configmaps with datasources are marked with
     label: grafana_datasource
     # value of label that the configmaps with datasources are set to
-    labelValue: ''
+    labelValue: ""
     # Log level. Can be one of: DEBUG, INFO, WARN, ERROR, CRITICAL.
     # logLevel: INFO
     # If specified, the sidecar will search for datasource config-maps inside this namespace.
@@ -964,7 +964,7 @@ sidecar:
     # watchClientTimeout: 60
     #
     # Endpoint to send request to reload datasources
-    reloadURL: 'http://localhost:3000/api/admin/provisioning/datasources/reload'
+    reloadURL: "http://localhost:3000/api/admin/provisioning/datasources/reload"
     # Absolute path to shell script to execute after a datasource got reloaded
     script: null
     skipReload: false
@@ -982,7 +982,7 @@ sidecar:
     # label that the configmaps with plugins are marked with
     label: grafana_plugin
     # value of label that the configmaps with plugins are set to
-    labelValue: ''
+    labelValue: ""
     # Log level. Can be one of: DEBUG, INFO, WARN, ERROR, CRITICAL.
     # logLevel: INFO
     # If specified, the sidecar will search for plugin config-maps inside this namespace.
@@ -1004,7 +1004,7 @@ sidecar:
     # watchClientTimeout: 60
     #
     # Endpoint to send request to reload plugins
-    reloadURL: 'http://localhost:3000/api/admin/provisioning/plugins/reload'
+    reloadURL: "http://localhost:3000/api/admin/provisioning/plugins/reload"
     # Absolute path to shell script to execute after a plugin got reloaded
     script: null
     skipReload: false
@@ -1022,7 +1022,7 @@ sidecar:
     # label that the configmaps with notifiers are marked with
     label: grafana_notifier
     # value of label that the configmaps with notifiers are set to
-    labelValue: ''
+    labelValue: ""
     # Log level. Can be one of: DEBUG, INFO, WARN, ERROR, CRITICAL.
     # logLevel: INFO
     # If specified, the sidecar will search for notifier config-maps inside this namespace.
@@ -1044,7 +1044,7 @@ sidecar:
     # watchClientTimeout: 60
     #
     # Endpoint to send request to reload notifiers
-    reloadURL: 'http://localhost:3000/api/admin/provisioning/notifications/reload'
+    reloadURL: "http://localhost:3000/api/admin/provisioning/notifications/reload"
     # Absolute path to shell script to execute after a notifier got reloaded
     script: null
     skipReload: false
@@ -1056,7 +1056,7 @@ sidecar:
 
 ## Override the deployment namespace
 ##
-namespaceOverride: ''
+namespaceOverride: ""
 
 ## Number of old ReplicaSets to retain
 ##
@@ -1072,8 +1072,8 @@ imageRenderer:
     enabled: false
     minReplicas: 1
     maxReplicas: 5
-    targetCPU: '60'
-    targetMemory: ''
+    targetCPU: "60"
+    targetMemory: ""
     behavior: {}
   image:
     # image-renderer Image repository
@@ -1081,12 +1081,12 @@ imageRenderer:
     # image-renderer Image tag
     tag: latest
     # image-renderer Image sha (optional)
-    sha: ''
+    sha: ""
     # image-renderer ImagePullPolicy
     pullPolicy: Always
   # extra environment variables
   env:
-    HTTP_HOST: '0.0.0.0'
+    HTTP_HOST: "0.0.0.0"
     # RENDERING_ARGS: --no-sandbox,--disable-gpu,--window-size=1280x758
     # RENDERING_MODE: clustered
     # IGNORE_HTTPS_ERRORS: true
@@ -1107,7 +1107,7 @@ imageRenderer:
     #      key: value_key
 
   # image-renderer deployment serviceAccount
-  serviceAccountName: ''
+  serviceAccountName: ""
   # image-renderer deployment securityContext
   securityContext: {}
   # image-renderer deployment container securityContext
@@ -1115,23 +1115,23 @@ imageRenderer:
     seccompProfile:
       type: RuntimeDefault
     capabilities:
-      drop: ['ALL']
+      drop: ["ALL"]
     allowPrivilegeEscalation: false
     readOnlyRootFilesystem: true
   # image-renderer deployment Host Aliases
   hostAliases: []
   # image-renderer deployment priority class
-  priorityClassName: ''
+  priorityClassName: ""
   service:
     # Enable the image-renderer service
     enabled: true
     # image-renderer service port name
-    portName: 'http'
+    portName: "http"
     # image-renderer service port used by both service and deployment
     port: 8081
     targetPort: 8081
     # Adds the appProtocol field to the image-renderer service. This allows to work with istio protocol selection. Ex: "http" or "tcp"
-    appProtocol: ''
+    appProtocol: ""
   serviceMonitor:
     ## If true, a ServiceMonitor CRD is created for a prometheus operator
     ## https://github.com/coreos/prometheus-operator
@@ -1153,7 +1153,7 @@ imageRenderer:
   # If https is enabled in Grafana, this needs to be set as 'https' to correctly configure the callback used in Grafana
   grafanaProtocol: http
   # In case a sub_path is used this needs to be added to the image renderer callback
-  grafanaSubPath: ''
+  grafanaSubPath: ""
   # name of the image-renderer port on the pod
   podPortName: http
   # number of image-renderer replica sets to keep
