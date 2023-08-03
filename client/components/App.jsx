@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Route,
-  Routes,
-  createBrowserRouter,
-  createRoutesFromElements,
-} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import AppIntro from './AppIntro.jsx';
 import Layout from './NavBar/Layout.jsx';
 import Login from './NavBar/Login.jsx';
@@ -17,20 +12,13 @@ import ClusterConnect from './ClusterView/ClusterConnect.jsx';
 import RootLayout from './ClusterView/RootLayout.jsx';
 import { ThemeProvider } from './ClusterView//ClusterViewHeader/themeContext.js';
 
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <Route path = '/'
-//   )
-// )
-
 export default function App() {
   const [user, setUser] = useState({});
 
   return (
     <>
-      <div>
-        <ThemeProvider>
-          {/* <Routes>
+      <ThemeProvider>
+        {/* <Routes>
             <Route path='/' element={<Layout />}>
               <Route index element={<AppIntro />}></Route>
               <Route path='/login' element={<Login />}></Route>
@@ -45,9 +33,8 @@ export default function App() {
             <Route path='/clusterview' element={<RootLayout />}></Route>
           </Routes> */}
 
-          <RootLayout />
-        </ThemeProvider>
-      </div>
+        <RootLayout />
+      </ThemeProvider>
     </>
   );
 }

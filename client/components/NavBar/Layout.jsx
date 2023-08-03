@@ -7,6 +7,7 @@ export default function Layout() {
     <main className='bg-red-500'>
       <Header />
       <Outlet />
+      <div></div>
     </main>
   );
 }
