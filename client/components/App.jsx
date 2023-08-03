@@ -28,10 +28,6 @@ import PodsView from './ClusterView//Dashboard/PodsView';
 
 export default function App() {
   const [user, setUser] = useState({});
-  const [viewOverview, setViewOverview] = useState(true);
-  const [viewNode, setViewNode] = useState(false);
-  const [viewPods, setViewPods] = useState(false);
-  const [viewClusterMap, setViewClusterMap] = useState(false);
 
   return (
     <>
@@ -49,8 +45,8 @@ export default function App() {
                 element={<ClusterConnect />}
               ></Route>
             </Route>
-
-            <Route path='/clusterview' element={<RootLayout />}>
+            <Route path='/clusterview' element={<RootLayout />}></Route>
+            {/* <Route path='/clusterview' element={<RootLayout />}>
               <Route index element={<OverView viewOverview={viewOverview} />} />
               <Route
                 exact
@@ -67,7 +63,7 @@ export default function App() {
                 path='/clusterview/clustermap'
                 element={<ClusterMap ViewClusterMap={viewClusterMap} />}
               />
-            </Route>
+            </Route> */}
           </Routes>
         </ThemeProvider>
       </div>
