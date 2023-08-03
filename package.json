@@ -26,6 +26,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.3.1",
     "nodemon": "^2.0.22",
     "pg": "^8.11.1",
@@ -37,6 +38,7 @@
     "react-iframe": "^1.8.5",
     "react-router": "^6.14.0",
     "react-router-dom": "^6.14.2",
+    "saslprep": "^1.0.3",
     "style-loader": "^3.3.3",
     "url": "^0.11.1"
   },
