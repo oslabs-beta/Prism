@@ -7,8 +7,8 @@ import {
 } from 'react-router-dom';
 import AppIntro from './AppIntro.jsx';
 import Layout from './NavBar/Layout.jsx';
-import Login from './NavBar/Login.jsx';
-import Signup from './NavBar/Signup.jsx';
+import Login from './Login';
+import Signup from './Signup.jsx';
 import Github from './NavBar/Github.jsx';
 import LinkedIn from './NavBar/LinkedIn.jsx';
 import ClusterConnect from './ClusterView/ClusterConnect.jsx';
@@ -20,6 +20,7 @@ import ClusterMap from './ClusterView/Dashboard/ClusterMap.jsx';
 import NodesView from './ClusterView//Dashboard/NodesView';
 import OverView from './ClusterView//Dashboard/Overview';
 import PodsView from './ClusterView//Dashboard/PodsView';
+import LandingPage from './LandingPage.jsx';
 // const router = createBrowserRouter(
 //   createRoutesFromElements(
 //     <Route path = '/'
@@ -34,18 +35,26 @@ export default function App() {
       <div>
         <ThemeProvider>
           <Routes>
-            <Route path='/' element={<Layout />}>
-              <Route index element={<AppIntro />}></Route>
-              <Route path='/login' element={<Login />}></Route>
-              <Route path='/signup' element={<Signup />}></Route>
+            <Route path='/' element={<LandingPage />}>  </Route>
+            <Route path = '/login' element = {<Login/>}></Route>
+            <Route path = '/signup' element = {<Signup/>}></Route>
+
+
+      
+            <Route path = '/dashboard' element = {<RootLayout/>}></Route>
+              {/* <Route index element={<AppIntro />}></Route>
               <Route path='/github' element={<Github />}></Route>
               <Route path='/linkedin' element={<LinkedIn />}></Route>
+              <a href="">Github</a>
+              <a href="">linkedin</a>
               <Route
                 path='/connectcluster'
                 element={<ClusterConnect />}
-              ></Route>
-            </Route>
-
+              ></Route> */}
+          
+{/* 
+            <Route path='/login' element={<Login />}></Route>
+            <Route path='/signup' element={<Signup />}></Route>
             <Route path='/clusterview' element={<RootLayout />}>
               <Route index element={<OverView />} />
               <Route exact path='/clusterview/nodes' element={<NodesView />} />
@@ -54,8 +63,8 @@ export default function App() {
                 exact
                 path='/clusterview/clustermap'
                 element={<ClusterMap />}
-              />
-            </Route>
+              /> */}
+            {/* </Route> */}
           </Routes>
           {/* <RootLayout /> */}
         </ThemeProvider>
