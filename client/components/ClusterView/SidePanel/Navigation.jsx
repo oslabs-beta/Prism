@@ -20,7 +20,7 @@ const Navigation = ({
         <span className='material-symbols-outlined'>overview</span>
         Overview
       </NavLink> */}
-      <button
+      <NavLink
         onClick={() => {
           setViewOverview(true);
           setViewNode(false);
@@ -30,7 +30,7 @@ const Navigation = ({
         className='hover:bg-[var(--secondary)] hover:px-2 hover:py-1 my-0 hover:text-[var(--primary)] rounded flex items-center gap-1 dark:hover:text-[var(--secondary)] dark:hover:bg-[var(--primary)]'
       >
         <span className='material-symbols-outlined'>overview</span>Overview
-      </button>
+      </NavLink>
       {/* END OF ONE NavLink */}
       {/* START OF ONE NavLink */}
       {/* <NavLink
@@ -40,7 +40,7 @@ const Navigation = ({
         <FaServer size={20} />
         Node
       </NavLink> */}
-      <button
+      <NavLink
         onClick={() => {
           setViewOverview(false);
           setViewNode(true);
@@ -53,7 +53,7 @@ const Navigation = ({
         {' '}
         <FaServer size={20} />
         Node{' '}
-      </button>
+      </NavLink>
       {/* END OF ONE NavLink */}
       {/* START OF ONE NavLink */}
       {/* 
@@ -64,7 +64,7 @@ const Navigation = ({
         <FaFreebsd size={21} />
         Pods
       </NavLink> */}
-      <button
+      <NavLink
         onClick={() => {
           setViewOverview(false);
           setViewNode(false);
@@ -76,7 +76,7 @@ const Navigation = ({
       >
         {' '}
         <FaFreebsd size={21} /> Pods{' '}
-      </button>
+      </NavLink>
       {/* END OF ONE NavLink */}
       {/* START OF ONE NavLink */}
       {/* <NavLink
@@ -86,7 +86,7 @@ const Navigation = ({
         <FaCircleNodes size={22} />
         Cluster Map
       </NavLink> */}
-      <button
+      <NavLink
         onClick={() => {
           setViewOverview(false);
           setViewNode(false);
@@ -98,7 +98,7 @@ const Navigation = ({
       >
         {' '}
         <FaCircleNodes size={22} /> Cluster Map
-      </button>
+      </NavLink>
       {/* END OF ONE NavLink */}
     </nav>
   );
