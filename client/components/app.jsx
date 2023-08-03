@@ -7,8 +7,8 @@ import {
 } from "react-router-dom";
 import AppIntro from "./AppIntro.jsx";
 import Layout from "./NavBar/Layout.jsx";
-import Login from "./Login.jsx";
-import Signup from "./Signup.jsx";
+import Login from "./NavBar/Login.jsx";
+import Signup from "./NavBar/Signup.jsx";
 import Github from "./NavBar/Github.jsx";
 import LinkedIn from "./NavBar/LinkedIn.jsx";
 import ClusterConnect from "./ClusterView/ClusterConnect.jsx";
