@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Login(/* {setUser} */) {
@@ -27,11 +27,19 @@ export default function Login(/* {setUser} */) {
     }
   };
 
+  useEffect(() => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const codeParam = urlParams.get("code");
+    console.log(codeParam);
+  }, []);
+
   const CLIENT_ID = "a62670300c9169ebd3b3";
   const githubLogin = () => {
     window.location.assign(
       "https://www.github.com/login/oauth/authorize?client_id=" + CLIENT_ID
     );
+    // post request to create cookie
   };
 
   return (
