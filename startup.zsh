@@ -26,6 +26,7 @@ kubectl expose service grafana  --type=NodePort --target-port=3000 --name=grafan
 # Your secret for logging into grafana will be stored in secret.txt
 secret=$(kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode)
 # pot forward :  kubectl --namespace default port-forward $POD_NAME 3000
+echo $secret > secret.txt
 # minikube service grafana-np --url &
 sleep 60
 while true; do kubectl port-forward deployment/grafana 3000; done  2>&1 &
