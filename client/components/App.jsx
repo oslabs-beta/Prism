@@ -1,26 +1,11 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import AppIntro from './AppIntro.jsx';
-import Layout from './NavBar/Layout.jsx';
 import Login from './Login';
 import Signup from './Signup.jsx';
-import Github from './NavBar/Github.jsx';
-import LinkedIn from './NavBar/LinkedIn.jsx';
-
-//import '../styles_out.css';
-
 import Dashboard from './ClusterView/Dashboard.jsx';
 import { ThemeProvider } from './ClusterView//ClusterViewHeader/themeContext.js';
-import ClusterMap from './ClusterView/Dashboard/ClusterMap.jsx';
-import NodesView from './ClusterView//Dashboard/NodesView';
-import OverView from './ClusterView//Dashboard/Overview';
-import PodsView from './ClusterView//Dashboard/PodsView';
-import LandingPage from './LandingPage.jsx';
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <Route path = '/'
-//   )
-// )
+
+import LandingPage from './LandingPage/LandingPage.jsx';
 
 export default function App() {
   const [user, setUser] = useState({});
@@ -33,7 +18,7 @@ export default function App() {
             <Route index element={<LandingPage />} />
             <Route path='/login' element={<Login />} />
             <Route path='/signup' element={<Signup />} />
-            <Route path='/dashboard' element={<RootLayout />}></Route>
+            <Route path='/dashboard' element={<Dashboard />}></Route>
             {/* <Route index element={<AppIntro />}></Route>
               <Route path='/github' element={<Github />}></Route>
               <Route path='/linkedin' element={<LinkedIn />}></Route>
@@ -58,7 +43,6 @@ export default function App() {
               /> */}
             {/* </Route> */}
           </Routes>
-          {/* <RootLayout /> */}
         </ThemeProvider>
       </div>
     </>
