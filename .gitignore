@@ -1,3 +1,7 @@
+# if you need the .env file see our OSP slack! 
 node_modules
 .env
-grafanaInfo/dashboardURL.json
+grafana/api_token.json
+grafana/dashboardURL.json
+build
+sample_dashboard.json
