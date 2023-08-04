@@ -68,17 +68,10 @@ export default function RootLayout() {
         className=' bg-[var(--primary-white)]  text-[var(--secondary)] dark:bg-[var(--secondary)] sm:grid-in-main  dark:text-[var(--primary)]  panelContainerBig  
       '
       >
-        {/* <OverView
-          viewOverview={viewOverview}
-          viewNode={viewNode}
-          viewPods={viewPods}
-          ViewClusterMap={viewClusterMap}
-        /> */}
         {viewOverview ? <OverView frames={frames} /> : null}
         {viewNode ? <NodesView /> : null}
         {viewPods ? <PodsView /> : null}
         {viewClusterMap ? <ClusterMap /> : null}
-        {/* <Outlet /> */}
       </main>
     </div>
   );
