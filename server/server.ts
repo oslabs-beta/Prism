@@ -19,10 +19,10 @@ const PORT = 3333; // from josh's branch
 // connectDB() ; /// uncomment to connect to DB
 
 type ServerError = {
-  log: string,
-  status: number,
-  message: { err: string }
-}
+  log: string;
+  status: number;
+  message: { err: string };
+};
 
 // parse request body
 app.use(json());
@@ -57,3 +57,5 @@ app.use((err: ServerError, req: Request, res: Response, next: NextFunction) => {
 app.listen(PORT, () => {
   console.log(`App listening on PORT ${PORT}`);
 });
+
+export default app;

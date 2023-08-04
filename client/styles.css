@@ -35,6 +35,7 @@
   button {
     @apply flex items-center justify-center px-2 py-1 border bg-[var(--secondary)] text-[var(--primary)] dark:bg-[var(--primary)] dark:text-[var(--secondary)] rounded border-none;
   }
+
   h2 {
     @apply text-xl font-bold;
   }

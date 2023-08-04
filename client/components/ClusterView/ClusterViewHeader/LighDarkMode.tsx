@@ -1,5 +1,5 @@
 import React, { FC, useContext } from 'react';
-import { ThemeContext } from './themeContext';
+import { ThemeContext } from './themeContext.tsx';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
 
 interface Props {

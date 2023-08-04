@@ -1,16 +1,21 @@
 import React, { FC } from 'react';
-import Navigation from './Navigation';
+import Navigation from './Navigation.tsx';
 import prismlogo from '../../../assets/prismlogo.png';
 import prismlogodarkmode from '../../../assets/prismlogodarkmode.png';
 
 interface LeftPanel {
-  setViewOverview: () => void;
-  setViewNode: () => void;
-  setViewPods: () => void;
-  setViewClusterMap: () => void;
+  setViewOverview: (value: boolean) => void;
+  setViewNode: (value: boolean) => void;
+  setViewPods: (value: boolean) => void;
+  setViewClusterMap: (value: boolean) => void;
 }
 
-const LeftPanel: FC<LeftPanel> = ({ setViewOverview, setViewNode, setViewPods, setViewClusterMap }) => {
+const LeftPanel: FC<LeftPanel> = ({
+  setViewOverview,
+  setViewNode,
+  setViewPods,
+  setViewClusterMap,
+}) => {
   return (
     <main className='flex flex-col py-7 items-center'>
       <div className=' hidden mb-1 sm:flex items-center gap-1'>
@@ -28,7 +33,12 @@ const LeftPanel: FC<LeftPanel> = ({ setViewOverview, setViewNode, setViewPods, s
           Prism
         </h1>
       </div>
-      <Navigation setViewOverview={setViewOverview} setViewNode={setViewNode} setViewPods={setViewPods} setViewClusterMap={setViewClusterMap} />
+      <Navigation
+        setViewOverview={setViewOverview}
+        setViewNode={setViewNode}
+        setViewPods={setViewPods}
+        setViewClusterMap={setViewClusterMap}
+      />
     </main>
   );
 };
