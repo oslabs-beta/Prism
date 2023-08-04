@@ -35,13 +35,10 @@ export default function App() {
       <div>
         <ThemeProvider>
           <Routes>
-            <Route path='/' element={<LandingPage />}>  </Route>
-            <Route path = '/login' element = {<Login/>}></Route>
-            <Route path = '/signup' element = {<Signup/>}></Route>
-
-
-      
-            <Route path = '/dashboard' element = {<RootLayout/>}></Route>
+            <Route index element={<LandingPage />} /> 
+              <Route path='/login' element={<Login/>} />
+              <Route path='/signup' element={<Signup/>} />
+              <Route path = '/dashboard' element = {<RootLayout/>}></Route>
               {/* <Route index element={<AppIntro />}></Route>
               <Route path='/github' element={<Github />}></Route>
               <Route path='/linkedin' element={<LinkedIn />}></Route>
