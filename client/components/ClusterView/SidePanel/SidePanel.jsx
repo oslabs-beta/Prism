@@ -3,7 +3,7 @@ import Navigation from './Navigation';
 import Logo from '../../../assets/prism-logo.png';
 import LogoDarkMode from '../../../assets/prism-logo-dark-mode.png';
 
-const LeftPanel = () => {
+const LeftPanel = ({ setViewOverview, setViewNode, setViewPods, setViewClusterMap }) => {
   return (
     <main className='flex flex-col py-7 items-center'>
       <div className=' hidden mb-1 sm:flex items-center gap-1'>
@@ -21,7 +21,7 @@ const LeftPanel = () => {
           Prism
         </h1>
       </div>
-      <Navigation />
+      <Navigation setViewOverview={setViewOverview} setViewNode={setViewNode} setViewPods={setViewPods} setViewClusterMap={setViewClusterMap} />
     </main>
   );
 };

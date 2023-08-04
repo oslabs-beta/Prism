@@ -47,16 +47,9 @@
 .panelContainerBig {
   display: flex;
   justify-content: center;
-  /* justify-items: center; */
-  /* margin: 2rem auto; */
-  /* align-items: center; */
-  /* border: 2px solid red; */
 }
 
 .panelContainer {
-  /* display: grid;
-  grid-template-columns: 1fr 1fr 1fr; */
-  /* grid-column-start: ; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
