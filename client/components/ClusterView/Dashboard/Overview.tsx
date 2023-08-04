@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import Iframe from 'react-iframe';
 import NodesView from './NodesView';
 import PodsView from './PodsView';
@@ -6,7 +6,11 @@ import ClusterMap from './ClusterMap';
 import RootLayout from '../RootLayout';
 import { Root } from 'postcss';
 
-const getURL = async () => {
+interface OveriewProps {
+
+}
+
+const getURL = async (): Promise<string> => {
   const urlObj = await fetch('/api', {
     method: 'POST',
     headers: {
@@ -17,7 +21,7 @@ const getURL = async () => {
   return urlObj.frameURL;
 };
 
-const OverView = () => {
+const OverView: FC<OveriewProps> = () => {
 
   const [viewOverview, setViewOverview] = useState(true);
   const [viewNode, setViewNode] = useState(false);
@@ -38,7 +42,7 @@ const OverView = () => {
     getURL()
       .then((urlString) => {
         const frameArray = [];
-        const panelIdArray = [1, 3, 4, 5, 6]; // the panels we want to access
+        const panelIdArray = ['1', '3', '4', '5', '6']; // the panels we want to access
         // console.log('effect hook running: ', urlString);
         if (urlString) {
           // iterate through panel ids that we want and edit the url for each one , pushing to panels array

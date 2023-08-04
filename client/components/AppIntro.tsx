@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-export default function AppIntro() {
+const AppIntro: FC = () => {
     return (
         <>
             <div>  | </div>
@@ -14,3 +14,6 @@ export default function AppIntro() {
         </>
     );
 }
+
+
+export default AppIntro;

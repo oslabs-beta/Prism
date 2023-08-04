@@ -1,10 +1,17 @@
 import { NavLink } from 'react-router-dom';
-import React from 'react';
+import React, { FC } from 'react';
 import { AiOutlineCluster } from 'react-icons/ai';
 import { FaCircleNodes, FaFreebsd } from 'react-icons/fa6';
 import { FaServer } from 'react-icons/fa';
 
-const Navigation = ({ setViewOverview, setViewNode, setViewPods, setViewClusterMap }) => {
+interface Navigation {
+  setViewOverview: (arg: boolean) => void;
+  setViewNode: (arg: boolean) => void;
+  setViewPods: (arg: boolean) => void;
+  setViewClusterMap: (arg: boolean) => void;
+}
+
+const Navigation: FC<Navigation> = ({ setViewOverview, setViewNode, setViewPods, setViewClusterMap }) => {
   return (
     <nav className='flex items-center justify-center py-7 gap-5 sm:flex-col '>
       {/* START OF ONE LINK */}

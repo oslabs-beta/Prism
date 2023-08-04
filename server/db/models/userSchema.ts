@@ -13,8 +13,8 @@ userSchema.pre('save', async function (next) {
   // if password has not been modified , we don't need to hash
   // (this is for user object updates)
   if (!this.isModified(this.password)) return next();
-  const salt = await bcrypt.genSalt(10);
-  const hashedPassword = await bcrypt.hash(this.password, salt);
+  const salt: string = await bcrypt.genSalt(10);
+  const hashedPassword: string = await bcrypt.hash(this.password, salt);
   this.password = hashedPassword;
 });
 

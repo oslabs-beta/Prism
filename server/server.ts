@@ -1,5 +1,5 @@
 // express server setup
-import express, { json } from 'express';
+import express, { NextFunction, Request, Response, json } from 'express';
 import cookieParser from 'cookie-parser';
 
 import { resolve } from 'path';
@@ -18,6 +18,12 @@ const PORT = 3333; // from josh's branch
 
 // connectDB() ; /// uncomment to connect to DB
 
+type ServerError = {
+  log: string,
+  status: number,
+  message: { err: string }
+}
+
 // parse request body
 app.use(json());
 app.use(cookieParser());
@@ -27,7 +33,7 @@ app.use(cookieParser());
 app.use('/api', apiRouter);
 // app.use('/user', userRouter);
 // just to get something running
-app.get((req, res) => {
+app.get('/', (req, res) => {
   return res.status(200).sendFile(resolve(__dirname, '../index.html'));
 });
 
@@ -37,7 +43,7 @@ app.get('*', (req, res) => {
 });
 
 // global error handler
-app.use((err, req, res, next) => {
+app.use((err: ServerError, req: Request, res: Response, next: NextFunction) => {
   const defaultErr = {
     log: 'Express error handler caught unknown middleware error',
     status: 500,
@@ -48,7 +54,6 @@ app.use((err, req, res, next) => {
   return res.status(errorObj.status).json(errorObj.message);
 });
 // hi
-//listens on port 3000 -> http://localhost:3000/
 app.listen(PORT, () => {
   console.log(`App listening on PORT ${PORT}`);
 });

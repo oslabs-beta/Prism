@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+interface Props {
+
+}
+
+export default function Header<Props>() {
 
     return (
         <>

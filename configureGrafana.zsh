@@ -12,13 +12,13 @@ minikube start --network=socket_vmnet
  # minikube service solo-project-deployment-np --url  > proj_url.txt & 
 
 # prometheus 
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+# helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm install prometheus prometheus-community/prometheus
 kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-np
 minikube service prometheus-server-np --url & 
 
 # deploy grafana 
-helm repo add grafana https://grafana.github.io/helm-charts
+# helm repo add grafana https://grafana.github.io/helm-charts
 helm install -f grafanaInfo/grafanaValues.yaml grafana grafana/grafana
 kubectl expose service grafana  --type=NodePort --target-port=3000 --name=grafana-np 
 # Your secret for logging into grafana will be stored in secret.txt

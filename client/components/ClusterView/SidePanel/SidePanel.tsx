@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Navigation from './Navigation';
-import Logo from '../../../assets/prism-logo.png';
-import LogoDarkMode from '../../../assets/prism-logo-dark-mode.png';
+import prismlogo from '../../../assets/prismlogo.png';
+import prismlogodarkmode from '../../../assets/prismlogodarkmode.png';
 
-const LeftPanel = ({ setViewOverview, setViewNode, setViewPods, setViewClusterMap }) => {
+interface LeftPanel {
+  setViewOverview: () => void;
+  setViewNode: () => void;
+  setViewPods: () => void;
+  setViewClusterMap: () => void;
+}
+
+const LeftPanel: FC<LeftPanel> = ({ setViewOverview, setViewNode, setViewPods, setViewClusterMap }) => {
   return (
     <main className='flex flex-col py-7 items-center'>
       <div className=' hidden mb-1 sm:flex items-center gap-1'>
         <img
           className='w-[2.8rem] hidden dark:block '
-          src={LogoDarkMode}
+          src={prismlogodarkmode}
           alt='LOGO'
         />
         <img
           className='w-[2.8rem] sm:block hidden dark:hidden '
-          src={Logo}
+          src={prismlogo}
           alt='LOGO'
         />
         <h1 className='text-[2.3rem] dark:text-[var(--primary)] font-bold'>

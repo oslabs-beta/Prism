@@ -1,8 +1,12 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from './Header.jsx';
+import Header from './Header';
 
-export default function Layout() {
+interface Props {
+
+}
+
+export default function Layout<Props>() {
   return (
     <main className='bg-[var(--primary-white)] p-10'>
       <Header />

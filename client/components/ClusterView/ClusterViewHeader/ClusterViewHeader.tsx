@@ -1,21 +1,25 @@
-import React from 'react';
+import React, { FC } from 'react';
 import LightDarkMode from './LighDarkMode';
 import Profile from './Profile';
-import Logo from '../../../assets/prism-logo.png';
-import LogoDarkMode from '../../../assets/prism-logo-dark-mode.png';
+import prismlogo from '../../../assets/prismlogo.png';
+import prismlogodarkmode from '../../../assets/prismlogodarkmode.png';
 
-const ClusterViewHeader = () => {
+interface Props {
+
+}
+
+const ClusterViewHeader: FC<Props> = () => {
   return (
     <div className=' flex items-center justify-between '>
       <div className='sm:hidden flex items-center gap-1'>
         <img
           className='w-[2.8rem] sm:hidden hidden dark:block '
-          src={LogoDarkMode}
+          src={prismlogodarkmode}
           alt='LOGO'
         />
         <img
           className='w-[2.8rem] sm:hidden dark:hidden '
-          src={Logo}
+          src={prismlogo}
           alt='LOGO'
         />
         <h1 className='text-[2.3rem] dark:text-[var(--primary)] font-bold'>

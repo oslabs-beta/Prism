@@ -1,11 +1,15 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Login( /* {setUser} */) {
+interface Props {
+
+}
+
+export default function Login<Props>( /* {setUser} */) {
 
     const navigate = useNavigate();
-    const username = useRef('');
-    const password = useRef('');
+    const username = useRef<HTMLInputElement | null>(null);
+    const password = useRef<HTMLInputElement | null>(null);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -16,8 +20,8 @@ export default function Login( /* {setUser} */) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                username: username.current,
-                password: password.current,
+                username: username?.current.value,
+                password: password?.current.value,
             }),
         })
 
@@ -37,7 +41,7 @@ export default function Login( /* {setUser} */) {
                     <input
                         ref={username}
                         id="login-username"
-                        onChange={(e) => username.current = e.target.value}
+                        onChange={(e) => username.current = e.target}
                         name="username"
                         type="text"
                         placeholder="Username"
@@ -46,7 +50,7 @@ export default function Login( /* {setUser} */) {
                     <input
                         ref={password}
                         id="login-password"
-                        onChange={(e) => password.current = e.target.value}
+                        onChange={(e) => password.current = e.target}
                         name="password"
                         type="password"
                         placeholder="Password"

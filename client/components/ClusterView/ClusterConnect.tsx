@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { NavLink } from 'react-router-dom';
 
-const ClusterConnect = () => {
+interface Props {
+
+}
+
+const ClusterConnect: FC<Props> = () => {
   return (
     <main className='flex flex-col items-center'>
       {' '}

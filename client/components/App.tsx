@@ -1,38 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, FC } from 'react';
 import {
   Route,
   Routes,
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import AppIntro from './AppIntro.jsx';
-import Layout from './NavBar/Layout.jsx';
-import Login from './NavBar/Login.jsx';
-import Signup from './NavBar/Signup.jsx';
-import Github from './NavBar/Github.jsx';
-import LinkedIn from './NavBar/LinkedIn.jsx';
-import ClusterConnect from './ClusterView/ClusterConnect.jsx';
+import AppIntro from './AppIntro';
+import Layout from './NavBar/Layout';
+import Login from './NavBar/Login';
+import Signup from './NavBar/Signup';
+import Github from './NavBar/Github';
+import LinkedIn from './NavBar/LinkedIn';
+import ClusterConnect from './ClusterView/ClusterConnect';
 //import '../styles_out.css';
 import ClusterView from './ClusterView/ClusterView.jsx';
 import RootLayout from './ClusterView/RootLayout.jsx';
-import { ThemeProvider } from './ClusterView//ClusterViewHeader/themeContext.js';
+import { ThemeProvider } from './ClusterView/ClusterViewHeader/themeContext';
 import ClusterMap from './ClusterView/Dashboard/ClusterMap.jsx';
-import NodesView from './ClusterView//Dashboard/NodesView';
-import OverView from './ClusterView//Dashboard/Overview';
-import PodsView from './ClusterView//Dashboard/PodsView';
+import NodesView from './ClusterView/Dashboard/NodesView.jsx';
+import OverView from './ClusterView/Dashboard/Overview';
+import PodsView from './ClusterView/Dashboard/PodsView.jsx';
 // const router = createBrowserRouter(
 //   createRoutesFromElements(
 //     <Route path = '/'
 //   )
 // )
 
-export default function App() {
+interface Props {
+
+}
+
+const App: FC<Props> = () => {
   const [user, setUser] = useState({});
+
 
   return (
     <>
       <div>
-        <ThemeProvider>
+        <ThemeProvider initialTheme={'dark'} >
           <Routes>
             <Route path='/' element={<Layout />}>
               <Route index element={<AppIntro />}></Route>
@@ -57,3 +62,5 @@ export default function App() {
     </>
   );
 }
+
+export default App;

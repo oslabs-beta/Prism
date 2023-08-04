@@ -3,6 +3,9 @@ import { Outlet, NavLink } from 'react-router-dom';
 import ClusterViewHeader from './ClusterViewHeader/ClusterViewHeader';
 import SidePanel from './SidePanel/SidePanel';
 import OverView from './Dashboard/Overview';
+
+
+
 export default function RootLayout({ setViewOverview, setViewNode, setViewPods, setViewClusterMap }) {
   return (
     <div className=' flex flex-col  sm:grid sm:grid-areas-layout sm:grid-cols-layout sm:grid-rows-layout min-h-screen '>

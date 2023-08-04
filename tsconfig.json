@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        // "allowImportingTsExtensions": true,
+        // "noEmit": true,
+        // "target": "esnext",
+        // "module": "ESNext",
+        // "moduleResolution": "NodeNext",
+        "jsx": "react",
+        "esModuleInterop": true,
+        // "noImplicitAny": true,
+        "allowJs": true,
+        "outDir": "./dist",
+    },
+    "include": [
+        "./client/**/*",
+        "./types/**/*",
+        "./server/**/*"
+    ],
+    // "exclude": [
+    //     "./client/assets/**/*",
+    // ]
+    // "files": [
+    //     "./client/components/AppIntro.tsx",
+    //     "./client/components/App.tsx",
+    // ]
+}

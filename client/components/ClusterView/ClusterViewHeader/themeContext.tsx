@@ -1,6 +1,6 @@
 import React from 'react';
 
-const getInitialTheme = () => {
+export const getInitialTheme = () => {
   if (typeof window !== 'undefined' && window.localStorage) {
     const storedPrefs = window.localStorage.getItem('current-theme');
     if (typeof storedPrefs === 'string') {
@@ -13,7 +13,7 @@ const getInitialTheme = () => {
   return 'light';
 };
 
-export const ThemeContext = React.createContext();
+export const ThemeContext = React.createContext(null);
 
 export const ThemeProvider = ({ initialTheme, children }) => {
   const [theme, setTheme] = React.useState(getInitialTheme);
