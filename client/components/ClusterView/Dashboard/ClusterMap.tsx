@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const ClusterMap = () => {
+interface Props {
+
+}
+
+const ClusterMap: FC<Props> = () => {
   return (
     <main className='grid items-center'>
       {' '}

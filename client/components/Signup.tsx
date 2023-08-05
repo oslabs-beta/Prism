@@ -1,18 +1,19 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+
 interface Props {}
 
-export default function Login<Props>(/* {setUser} */) {
+export default function Signup<Props>(/*{setUser} */) {
   const navigate = useNavigate();
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const res = await fetch('http://localhost:3000/login', {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const res = await fetch('http://localhost:3000/signup', {
       method: 'POST',
-      // mode: "cors",
+      mode: 'cors',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -21,11 +22,10 @@ export default function Login<Props>(/* {setUser} */) {
         password: password?.current.value,
       }),
     });
-
     if (res.ok) {
       // const user = await res.json();
       // setUser(user);
-      // navigate('/')
+      //   navigate('/');
     }
   };
 
@@ -33,30 +33,27 @@ export default function Login<Props>(/* {setUser} */) {
     <div>
       <div>
         <form onSubmit={handleSubmit}>
-          <p>Login Form</p>
-          <label htmlFor='login-username'>username</label>
+          <p>Signup</p>
+          <label htmlFor='signup-username'>username</label>
           <input
             ref={username}
-            id='login-username'
+            id='signup-username'
             onChange={(e) => (username.current = e.target)}
             name='username'
             type='text'
             placeholder='Username'
           />
-          <label htmlFor='login-password'>password</label>
+          <label htmlFor='signup-password'>password</label>
           <input
             ref={password}
-            id='login-password'
+            id='signup-password'
             onChange={(e) => (password.current = e.target)}
             name='password'
             type='password'
             placeholder='Password'
           />
-          <br></br>
-          <button type='button'>Login</button>
-          <br></br>
-          <NavLink to='/dashboard'> Dashboard</NavLink>
-          <button type='button' onClick={() => navigate('/dashboard')}>
+          <button>Sign Up</button>
+          <button type='button' onClick={() => navigate('/')}>
             Close
           </button>
         </form>

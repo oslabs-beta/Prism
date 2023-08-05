@@ -4,7 +4,7 @@ import path from 'path';
 import url from 'url';
 
 const readAPIKey = () => {
-  const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+  //const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
   // read JSON from file
   const apiKeyObject = JSON.parse(
     fs
@@ -26,7 +26,7 @@ const metricsController = {
   createDashboard: (req, res, next) => {
     // save api Key
     const apiKey = readAPIKey();
-    const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+    // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
     // get our dashboard json
     // eslint-disable-next-line no-undef
     // console.log('createDashboard entered');
@@ -111,7 +111,7 @@ const metricsController = {
     res.locals.urlSaved = res.locals.dashboardURL
       ? res.locals.dashboardURL.length > 0
       : false;
-    
+
     return next();
   },
 

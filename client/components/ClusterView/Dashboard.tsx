@@ -7,15 +7,27 @@ import Iframe from 'react-iframe';
 import NodesView from './Dashboard/NodesView';
 import PodsView from './Dashboard/PodsView';
 import ClusterMap from './Dashboard/ClusterMap';
+import { ComponentType } from 'react';
+import type { ReactNode } from 'react';
 
-export default function RootLayout() {
-  const [viewOverview, setViewOverview] = useState(true);
-  const [viewNode, setViewNode] = useState(false);
-  const [viewPods, setViewPods] = useState(false);
-  const [viewClusterMap, setViewClusterMap] = useState(false);
-  const [frames, updateFrames] = React.useState([]);
+interface SidePanelProps {
+  setViewOverview: (value: boolean) => void;
+  setViewNode: (value: boolean) => void;
+  setViewPods: (value: boolean) => void;
+  setViewClusterMap: (value: boolean) => void;
+}
 
-  const getURL = async () => {
+export default function Dashboard() {
+  const [viewOverview, setViewOverview] = useState<boolean>(true);
+  const [viewNode, setViewNode] = useState<boolean>(false);
+  const [viewPods, setViewPods] = useState<boolean>(false);
+  const [viewClusterMap, setViewClusterMap] = useState<boolean>(false);
+
+  const [frames, updateFrames] = React.useState<Array<ReactNode | null>>([
+    null,
+  ]);
+
+  const getURL = async (): Promise<string> => {
     const urlObj = await fetch('/api', {
       method: 'POST',
       headers: {
@@ -30,7 +42,7 @@ export default function RootLayout() {
     getURL()
       .then((urlString) => {
         const frameArray = [];
-        const panelIdArray = [1, 3, 4, 5, 6]; // the panels we want to access
+        const panelIdArray = ['1', '3', '4', '5', '6']; // the panels we want to access
         // console.log('effect hook running: ', urlString);
         if (urlString) {
           // iterate through panel ids that we want and edit the url for each one , pushing to panels array

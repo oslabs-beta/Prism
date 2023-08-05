@@ -4,26 +4,18 @@ const { Schema } = mongoose;
 import bcrypt from 'bcrypt';
 
 const userSchema = new Schema({
-  username: {
-    type: String,
-    required: true,
-  },
-  email: {
-    type: String,
-  },
-  password: {
-    type: String,
-    required: true,
-  },
+  name: String,
+  password: String,
 });
 
 // pre-save to hash password
 userSchema.pre('save', async function (next) {
   // if password has not been modified , we don't need to hash
   // (this is for user object updates)
-  if (!this.isModified('password')) next();
-  const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
+  if (!this.isModified(this.password)) return next();
+  const salt: string = await bcrypt.genSalt(10);
+  const hashedPassword: string = await bcrypt.hash(this.password, salt);
+  this.password = hashedPassword;
 });
 
 // method for comparing passwords stored on user schema

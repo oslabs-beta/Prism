@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const Profile = () => {
+interface Props {
+
+}
+
+const Profile: FC<Props> = () => {
   return (
     <div className='flex items-center justify-center gap-2'>
       <h3 className='dark:text-[var(--primary)]'>OSP-2</h3>
