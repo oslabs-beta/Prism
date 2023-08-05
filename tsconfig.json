@@ -7,7 +7,7 @@
     "baseUrl": "./",
     // "noEmit": true,
     // "allowImportingTsExtensions": true,
-    // "noImplicitAny": true,
+    "noImplicitAny": true,
     "allowJs": true,
     "outDir": "./dist"
   },

@@ -1,21 +1,27 @@
 import fs from 'fs';
-//import fsCallback from 'fs';
 import path from 'path';
+import { Controller, middlewareError } from 'types/types';
 
-const readAPIKey = () => {
+interface apiKeyObject {
+  id?: number;
+  name?: string;
+  key?: string;
+  message?: string;
+}
+
+const readAPIKey = (): apiKeyObject => {
   // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
   // read JSON from file
-  const apiKeyObject = JSON.parse(
+  return JSON.parse(
     fs
       .readFileSync(path.resolve(__dirname, '../../grafana/api_token.json'))
       .toString()
   );
 
   // ‼️ NOTE: authorization header must be 'Bearer ' + apiKey ‼️
-  return apiKeyObject.key;
 };
 
-const metricsController = {
+const metricsController: Controller = {
   //testButton method
 
   // methodName: (req, res, next) => {},
@@ -24,23 +30,32 @@ const metricsController = {
   // createDashboard
   createDashboard: (req, res, next) => {
     // save api Key
-    console.log('entering create dashboard middleware');
-    const apiKey = readAPIKey();
-    console.log('api key: ', apiKey);
+    const apiKeyObj: apiKeyObject = readAPIKey();
+    const apiKey: string | undefined = apiKeyObj.key;
+
+    // if api key comes back undefined, something is wrong
+    if (!apiKey) {
+      const error: middlewareError = {
+        log: 'Error occurred in createDashboard middleware',
+        status: 424,
+        message: { error: new Error(apiKeyObj.message) },
+      };
+      return next(error);
+    }
     // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
     // get our dashboard json
     // eslint-disable-next-line no-undef
     // console.log('createDashboard entered');
     // console.log(__dirname);
     // consoMle.log(path.resolve(__dirname, '../../sample_dashboard.json'));
-    const dashboardJSON = JSON.parse(
+    const dashboardJSON: Object = JSON.parse(
       fs
         .readFileSync(
           path.resolve(__dirname, '../../grafana/dashboards/mvp_dashboard.json')
         )
         .toString()
     );
-    const dashboardObject = {
+    const dashboardObject: Object = {
       dashboard: dashboardJSON,
       overwrite: true,
     };
@@ -48,7 +63,7 @@ const metricsController = {
 
     //🎯 TODO:  make request to create dashboard in grafana
     // post fetch request with authorization header
-    const dashboardProvision = JSON.stringify(dashboardObject);
+    const dashboardProvision: string = JSON.stringify(dashboardObject);
     //console.log(dashboardProvision);
     //console.log('type: ', typeof dashboardProvision);
     fetch('http://localhost:3000/api/dashboards/db', {
@@ -62,7 +77,7 @@ const metricsController = {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (!data.url) return new Promise.reject(new Error(data.message));
+        if (!data.url) return Promise.reject(new Error(data.message));
         res.locals.dashboardURL = data.url;
         // sample response url property : /d/a0568fed-94d0-4eba-a617-6507426ad032/production-overview
         console.log('data: ', data);
@@ -81,34 +96,16 @@ const metricsController = {
   writeDashboardURL: (req, res, next) => {
     // only write the dashboard if it doesn't already exist as a cookie - and save it as one
     if (res.locals.dashboardURL) {
-      // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-      console.log('entering write dashboard url middleware');
-
-      console.log(
-        'writing dashboard URL : ',
-        res.locals.dashboardURL,
-        'to cookie'
-        //path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json')
-      );
       // set url to session cookie instead of writing to file
       res.cookie('url', res.locals.dashboardURL);
-      // saves to file - changing this to cookie
-      // fs.writeFileSync(
-      //   path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json'),
-      //   res.locals.dashboardURL
-      // );
     }
 
     return next();
   },
 
   readDashboardURL: (req, res, next) => {
-    //console.log('entering read dashboard middleware');
-    //// const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-
     if (req.cookies.url) res.locals.dashboardURL = req.cookies.url;
 
-    //console.log('dashboard URL in readDashboardURL: ', res.locals.dashboardURL);
     res.locals.urlSaved = res.locals.dashboardURL
       ? res.locals.dashboardURL.length > 0
       : false;
@@ -120,10 +117,8 @@ const metricsController = {
   getDashboardIframeURL: (req, res, next) => {
     // make fetch request for dashboard to get its url
     // this can be source for iframe
-    // const apiKey = readAPIKey();
-    //const dashboardURLTest =
-    //  'http://localhost:64090/d/e13e401a-7d5e-456b-a57f-9a745508ceca/production-overview';
-    const dashboardURL = res.locals.dashboardURL;
+
+    const dashboardURL: string = res.locals.dashboardURL;
     console.log('dashboard URL in controller: ', res.locals.dashboardURL);
     // console.log('in DashboardURL', dashboardURL);
     // url comes in as something like :
