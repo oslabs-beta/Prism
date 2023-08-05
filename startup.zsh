@@ -28,7 +28,7 @@ secret=$(kubectl get secret --namespace default grafana -o jsonpath="{.data.admi
 # pot forward :  kubectl --namespace default port-forward $POD_NAME 3000
 # minikube service grafana-np --url &
 sleep 60
-while true; do kubectl port-forward deployment/grafana 3000 2>&1 &; done  
+while true; do kubectl port-forward deployment/grafana 3000; done 2>&1 &
 sleep 5  
 # curl -X POST -H "Content-Type: application/json" -d '{"name":"apikeycurl0", "role": "Admin"}' http://admin:$secret@localhost:3000/api/auth/keys > grafana/api_token.json
 curl -X POST -H "Content-Type: application/json" -d '{"name":"apikeycurl0", "role": "Admin"}' http://admin:$(kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode)@localhost:3000/api/auth/keys > grafana/api_token.json

@@ -15,6 +15,7 @@ router.post(
       // do nothing
       return next();
     } else {
+      console.log('calling createDashboard');
       return metricsController.createDashboard(req, res, next);
     }
   },

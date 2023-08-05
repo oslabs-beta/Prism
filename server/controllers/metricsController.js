@@ -24,7 +24,9 @@ const metricsController = {
   // createDashboard
   createDashboard: (req, res, next) => {
     // save api Key
-    const apiKey = JSON.parse(req.cookies.apiToken).key; // readAPIKey();
+    console.log('entering create dashboard middleware');
+    const apiKey = readAPIKey();
+    console.log('api key: ', apiKey);
     // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
     // get our dashboard json
     // eslint-disable-next-line no-undef
@@ -101,12 +103,12 @@ const metricsController = {
   },
 
   readDashboardURL: (req, res, next) => {
-    console.log('entering read dashboard middleware');
+    //console.log('entering read dashboard middleware');
     //// const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
     if (req.cookies.url) res.locals.dashboardURL = req.cookies.url;
 
-    console.log('dashboard URL in readDashboardURL: ', res.locals.dashboardURL);
+    //console.log('dashboard URL in readDashboardURL: ', res.locals.dashboardURL);
     res.locals.urlSaved = res.locals.dashboardURL
       ? res.locals.dashboardURL.length > 0
       : false;
