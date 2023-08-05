@@ -1,6 +1,5 @@
 import { Router } from 'express';
-import metricsController from '../controllers/metricsController.js';
-//import userController from '../controllers/userController.js';
+import metricsController from '../controllers/metricsController';
 const router = Router();
 // get api key
 // when authorization is implemented here, we should route certain api calls through verifytoken middleware
@@ -16,6 +15,7 @@ router.post(
       // do nothing
       return next();
     } else {
+      console.log('calling createDashboard');
       return metricsController.createDashboard(req, res, next);
     }
   },
@@ -31,5 +31,9 @@ router.get(
   metricsController.getDashboardIframeURL,
   (req, res) => res.json(res.locals.iframe)
 );
+
+// router.get('/install', installPrometheus, installGrafana, (req, res) => {
+//   return res.status(200).send('installed');
+// });
 
 export default router;
