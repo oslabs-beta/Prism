@@ -4,5 +4,6 @@ module.exports = {
           "runtime": "automatic"
          }],
     "@babel/preset-env",  
+    "@babel/preset-typescript"
     ]
  }

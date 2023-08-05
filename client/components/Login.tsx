@@ -8,6 +8,14 @@ export default function Login<Props>(/* {setUser} */) {
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
 
+  const Button = () => {
+    return <div>
+    <button type='button' onClick={() => navigate('/dashboard')}>
+      Close
+    </button>
+    </div>
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const res = await fetch('http://localhost:3000/login', {
@@ -28,7 +36,7 @@ export default function Login<Props>(/* {setUser} */) {
       // navigate('/')
     }
   };
-
+  // <NavLink to='/dashboard'></NavLink>
   return (
     <div>
       <div>
@@ -55,10 +63,11 @@ export default function Login<Props>(/* {setUser} */) {
           <br></br>
           <button type='button'>Login</button>
           <br></br>
-          <NavLink to='/dashboard'> Dashboard</NavLink>
+          <Button />
+          {/* <NavLink to='/dashboard'> Dashboard</NavLink>
           <button type='button' onClick={() => navigate('/dashboard')}>
             Close
-          </button>
+          </button> */}
         </form>
       </div>
     </div>
