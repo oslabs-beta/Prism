@@ -1,12 +1,12 @@
-// const path = require('path');
-import path from 'path';
-// const HTMLWebpackPlugin = require('html-webpack-plugin');
-import HTMLWebpackPlugin from 'html-webpack-plugin';
-import url from 'url';
-const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-export default {
+const path = require('path');
+// import path from 'path';
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+// import HTMLWebpackPlugin from 'html-webpack-plugin';
+// import url from 'url';
+// const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+module.exports = {
   mode: process.env.NODE_ENV,
-  entry: path.resolve(__dirname, '/client/index.js'),
+  entry: path.resolve(__dirname, '/client/index.tsx'),
 
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -40,6 +40,12 @@ export default {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: ['ts-loader'],
+      },
+
+      {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
@@ -57,9 +63,13 @@ export default {
         test: /\.png/,
         type: 'asset/resource',
       },
+      {
+        test: /\\.(png|jp(e*)g|svg|gif)$/,
+        use: ['file-loader'],
+      },
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx', '.png'],
   },
 };
