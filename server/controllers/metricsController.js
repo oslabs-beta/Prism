@@ -138,4 +138,4 @@ const metricsController = {
   },
 };
 
-module.exports = metricsController;
+export default metricsController;
