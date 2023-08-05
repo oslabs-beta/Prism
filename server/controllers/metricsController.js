@@ -1,14 +1,13 @@
 import fs from 'fs';
 //import fsCallback from 'fs';
 import path from 'path';
-import url from 'url';
 
 const readAPIKey = () => {
-  //const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+  // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
   // read JSON from file
   const apiKeyObject = JSON.parse(
     fs
-      .readFileSync(path.resolve(__dirname, '../../grafanaInfo/api_token.json'))
+      .readFileSync(path.resolve(__dirname, '../../grafana/api_token.json'))
       .toString()
   );
 
@@ -25,7 +24,7 @@ const metricsController = {
   // createDashboard
   createDashboard: (req, res, next) => {
     // save api Key
-    const apiKey = readAPIKey();
+    const apiKey = JSON.parse(req.cookies.apiToken).key; // readAPIKey();
     // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
     // get our dashboard json
     // eslint-disable-next-line no-undef
@@ -34,7 +33,9 @@ const metricsController = {
     // consoMle.log(path.resolve(__dirname, '../../sample_dashboard.json'));
     const dashboardJSON = JSON.parse(
       fs
-        .readFileSync(path.resolve(__dirname, '../../sample_dashboard.json'))
+        .readFileSync(
+          path.resolve(__dirname, '../../grafana/dashboards/mvp_dashboard.json')
+        )
         .toString()
     );
     const dashboardObject = {
@@ -59,6 +60,7 @@ const metricsController = {
     })
       .then((response) => response.json())
       .then((data) => {
+        if (!data.url) return new Promise.reject(new Error(data.message));
         res.locals.dashboardURL = data.url;
         // sample response url property : /d/a0568fed-94d0-4eba-a617-6507426ad032/production-overview
         console.log('data: ', data);
@@ -75,21 +77,24 @@ const metricsController = {
   },
 
   writeDashboardURL: (req, res, next) => {
-    // only write the dashboard if it doesn't already exist
-    if (!res.locals.urlSaved) {
+    // only write the dashboard if it doesn't already exist as a cookie - and save it as one
+    if (res.locals.dashboardURL) {
       // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
       console.log('entering write dashboard url middleware');
 
       console.log(
         'writing dashboard URL : ',
         res.locals.dashboardURL,
-        'to ',
-        path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json')
+        'to cookie'
+        //path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json')
       );
-      fs.writeFileSync(
-        path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json'),
-        res.locals.dashboardURL
-      );
+      // set url to session cookie instead of writing to file
+      res.cookie('url', res.locals.dashboardURL);
+      // saves to file - changing this to cookie
+      // fs.writeFileSync(
+      //   path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json'),
+      //   res.locals.dashboardURL
+      // );
     }
 
     return next();
@@ -97,17 +102,14 @@ const metricsController = {
 
   readDashboardURL: (req, res, next) => {
     console.log('entering read dashboard middleware');
-    //const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-    try {
-      res.locals.dashboardURL = fs
-        .readFileSync(
-          path.resolve(__dirname, '../../grafanaInfo/dashboardURL.json')
-        )
-        .toString();
-      res.locals.urlSaved = true;
-    } catch {
-      res.locals.urlSaved = false;
-    }
+    //// const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+
+    if (req.cookies.url) res.locals.dashboardURL = req.cookies.url;
+
+    console.log('dashboard URL in readDashboardURL: ', res.locals.dashboardURL);
+    res.locals.urlSaved = res.locals.dashboardURL
+      ? res.locals.dashboardURL.length > 0
+      : false;
 
     return next();
   },
@@ -136,4 +138,4 @@ const metricsController = {
   },
 };
 
-export default metricsController;
+module.exports = metricsController;
