@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 import { resolve } from 'path';
 
 // route imports
-import apiRouter from './routers/apiRouter.js';
+import apiRouter from './routers/apiRouter';
 // import userRouter from './routers/userRouter.js';
 
 // database connection

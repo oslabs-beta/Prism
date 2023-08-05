@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import LightDarkMode from './LighDarkMode.tsx';
-import Profile from './Profile.tsx';
+import LightDarkMode from './LighDarkMode';
+import Profile from './Profile';
 import prismlogo from '../../../assets/prismlogo.png';
 import prismlogodarkmode from '../../../assets/prismlogodarkmode.png';
 

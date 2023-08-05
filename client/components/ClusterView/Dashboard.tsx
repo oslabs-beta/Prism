@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
-import ClusterViewHeader from './ClusterViewHeader/ClusterViewHeader.tsx';
-import SidePanel from './SidePanel/SidePanel.tsx';
-import OverView from './Dashboard/Overview.tsx';
+import ClusterViewHeader from './ClusterViewHeader/ClusterViewHeader';
+import SidePanel from './SidePanel/SidePanel';
+import OverView from './Dashboard/Overview';
 import Iframe from 'react-iframe';
-import NodesView from './Dashboard/NodesView.tsx';
-import PodsView from './Dashboard/PodsView.tsx';
-import ClusterMap from './Dashboard/ClusterMap.tsx';
+import NodesView from './Dashboard/NodesView';
+import PodsView from './Dashboard/PodsView';
+import ClusterMap from './Dashboard/ClusterMap';
 import { ComponentType } from 'react';
 import type { ReactNode } from 'react';
 
@@ -48,7 +48,6 @@ export default function Dashboard() {
           // iterate through panel ids that we want and edit the url for each one , pushing to panels array
           panelIdArray.forEach((id) =>
             frameArray.push(
-              //@ts-expect-error // this is hackery , but ... we know that Iframe is a react component from looking at its type in the node_modules folder
               <Iframe
                 key={id}
                 className={`rounded w-52 h-64  panel${id}`}

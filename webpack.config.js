@@ -1,10 +1,10 @@
-// const path = require('path');
-import path from 'path';
-// const HTMLWebpackPlugin = require('html-webpack-plugin');
-import HTMLWebpackPlugin from 'html-webpack-plugin';
-import url from 'url';
-const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-export default {
+const path = require('path');
+// import path from 'path';
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+// import HTMLWebpackPlugin from 'html-webpack-plugin';
+// import url from 'url';
+// const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+module.exports = {
   mode: process.env.NODE_ENV,
   entry: path.resolve(__dirname, '/client/index.tsx'),
 
@@ -64,7 +64,8 @@ export default {
         type: 'asset/resource',
       },
       {
-        test: /\\.(png|jp(e*)g|svg|gif)$/, use: ['file-loader'],
+        test: /\\.(png|jp(e*)g|svg|gif)$/,
+        use: ['file-loader'],
       },
     ],
   },

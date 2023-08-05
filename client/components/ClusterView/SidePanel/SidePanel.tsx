@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Navigation from './Navigation.tsx';
+import Navigation from './Navigation';
 import prismlogo from '../../../assets/prismlogo.png';
 import prismlogodarkmode from '../../../assets/prismlogodarkmode.png';
 

@@ -1,11 +1,11 @@
 import React, { useState, FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Login from './Login.tsx';
-import Signup from './Signup.tsx';
-import LandingPage from './LandingPage/LandingPage.tsx';
+import Login from './Login';
+import Signup from './Signup';
+import LandingPage from './LandingPage/LandingPage';
 
-import { ThemeProvider } from './ClusterView/ClusterViewHeader/themeContext.tsx';
-import Dashboard from './ClusterView/Dashboard.tsx';
+import { ThemeProvider } from './ClusterView/ClusterViewHeader/themeContext';
+import Dashboard from './ClusterView/Dashboard';
 
 interface Props {}
 

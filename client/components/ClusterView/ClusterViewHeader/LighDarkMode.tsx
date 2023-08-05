@@ -1,10 +1,8 @@
 import React, { FC, useContext } from 'react';
-import { ThemeContext } from './themeContext.tsx';
+import { ThemeContext } from './themeContext';
 import { MdLightMode, MdDarkMode } from 'react-icons/md';
 
-interface Props {
-
-}
+interface Props {}
 
 const LightDarkMode: FC<Props> = () => {
   const { theme, setTheme } = useContext(ThemeContext);

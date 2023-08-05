@@ -4,7 +4,7 @@ import path from 'path';
 import url from 'url';
 
 const readAPIKey = () => {
-  const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+  //const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
   // read JSON from file
   const apiKeyObject = JSON.parse(
     fs
@@ -26,7 +26,7 @@ const metricsController = {
   createDashboard: (req, res, next) => {
     // save api Key
     const apiKey = readAPIKey();
-    const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+    // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
     // get our dashboard json
     // eslint-disable-next-line no-undef
     // console.log('createDashboard entered');
@@ -77,7 +77,7 @@ const metricsController = {
   writeDashboardURL: (req, res, next) => {
     // only write the dashboard if it doesn't already exist
     if (!res.locals.urlSaved) {
-      const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+      // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
       console.log('entering write dashboard url middleware');
 
       console.log(
@@ -97,7 +97,7 @@ const metricsController = {
 
   readDashboardURL: (req, res, next) => {
     console.log('entering read dashboard middleware');
-    const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
+    //const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
     try {
       res.locals.dashboardURL = fs
         .readFileSync(
