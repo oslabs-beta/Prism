@@ -1,3 +1,4 @@
 node_modules
 .env
 grafanaInfo/dashboardURL.json
+electron_config
