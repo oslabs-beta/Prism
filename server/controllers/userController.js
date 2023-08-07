@@ -16,7 +16,7 @@ userController.createUser = async function (req, res, next) {
 userController.authUser = async function (req, res, next) {
   // username nand password should come in on response body
 
-  // // check if a cookie exists
+  // // check if a cookie exists, either github or bcrypt
 
   // const checkCookie = async (req, res, next) => {
   //   try {

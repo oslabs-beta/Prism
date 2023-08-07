@@ -27,12 +27,12 @@ export default function Login(/* {setUser} */) {
     }
   };
 
-  useEffect(() => {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const codeParam = urlParams.get("code");
-    console.log(codeParam);
-  }, []);
+  // useEffect(() => {
+  //   const queryString = window.location.search;
+  //   const urlParams = new URLSearchParams(queryString);
+  //   const codeParam = urlParams.get("code");
+  //   console.log(codeParam);
+  // }, []);
 
   const CLIENT_ID = "a62670300c9169ebd3b3";
   const githubLogin = () => {

@@ -1,21 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom';
-import App from './components/App.jsx';
-import { createRoot } from 'react-dom/client';
+import {
+  BrowserRouter,
+  HashRouter,
+  BrowserRouter as Router,
+} from "react-router-dom";
+import App from "./components/App.jsx";
+import { createRoot } from "react-dom/client";
 
-import { StrictMode } from 'react';
+import { StrictMode } from "react";
 
-import './styles_output.css';
-import './styles.css';
+import "./styles_output.css";
+import "./styles.css";
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
