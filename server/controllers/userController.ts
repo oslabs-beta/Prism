@@ -74,7 +74,10 @@ userController.verifyToken = (req, res, next) => {
 
   // verify jwt
   try {
-    const decodedToken = jwt.verify(req.cookies.token, process.env.JWT_SECRET); // will return null if decoding fails
+    const decodedToken: Object = jwt.verify(
+      req.cookies.token,
+      process.env.JWT_SECRET
+    ); // will return null if decoding fails
     if (decodedToken) {
       res.locals.user = { username: decodedToken, auth: true };
     } else {

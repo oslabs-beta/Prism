@@ -4,6 +4,5 @@ node_modules
 grafana/api_token.json
 grafana/dashboardURL.json
 build
-sample_dashboard.json
 grafanaInfo/dashboardURL.json
 electron_config

@@ -36,18 +36,12 @@ const metricsController: Controller = {
     // if api key comes back undefined, something is wrong
     if (!apiKey) {
       const error: middlewareError = {
-        log: 'Error occurred in createDashboard middleware',
+        log: `Error occurred in createDashboard middleware: ${apiKeyObj.message}`,
         status: 424,
-        message: { error: new Error(apiKeyObj.message) },
       };
       return next(error);
     }
-    // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-    // get our dashboard json
-    // eslint-disable-next-line no-undef
-    // console.log('createDashboard entered');
-    // console.log(__dirname);
-    // consoMle.log(path.resolve(__dirname, '../../sample_dashboard.json'));
+
     const dashboardJSON: Object = JSON.parse(
       fs
         .readFileSync(
@@ -55,6 +49,7 @@ const metricsController: Controller = {
         )
         .toString()
     );
+
     const dashboardObject: Object = {
       dashboard: dashboardJSON,
       overwrite: true,
@@ -119,7 +114,7 @@ const metricsController: Controller = {
     // this can be source for iframe
 
     const dashboardURL: string = res.locals.dashboardURL;
-    console.log('dashboard URL in controller: ', res.locals.dashboardURL);
+    //console.log('dashboard URL in controller: ', res.locals.dashboardURL);
     // console.log('in DashboardURL', dashboardURL);
     // url comes in as something like :
     // we need to turn into:  http://localhost:64090/d-solo/e13e401a-7d5e-456b-a57f-9a745508ceca/production-overview?panelId=2

@@ -1,3 +1,5 @@
+// types import
+import { middlewareError } from 'types/types';
 // express server setup
 import express, { NextFunction, Request, Response, json } from 'express';
 import cookieParser from 'cookie-parser';
@@ -6,17 +8,16 @@ import { resolve } from 'path';
 
 // route imports
 import apiRouter from './routers/apiRouter';
-// import userRouter from './routers/userRouter.js';
+import userRouter from './routers/userRouter';
 
 // database connection
-import connectDB from './db/db.js';
+import connectDB from './db/db';
 
 // const declarations
 const app = express();
 
 const PORT = 3333; // from josh's branch
-
-// connectDB() ; /// uncomment to connect to DB
+connectDB(); /// uncomment to connect to DB
 
 type ServerError = {
   log: string;
@@ -44,10 +45,10 @@ app.get('*', (req, res) => {
 
 // global error handler
 app.use((err: ServerError, req: Request, res: Response, next: NextFunction) => {
-  const defaultErr = {
+  const defaultErr: middlewareError = {
     log: 'Express error handler caught unknown middleware error',
     status: 500,
-    message: { err: 'An error occurred' },
+    message: { error: 'An error occurred' },
   };
   const errorObj = Object.assign({}, defaultErr, err);
   console.log(errorObj.log);
