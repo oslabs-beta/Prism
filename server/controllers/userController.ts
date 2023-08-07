@@ -37,11 +37,10 @@ userController.authUser = async function (req, res, next) {
   // username nand password should come in on response body
   const { username, password } = req.body;
   const user: HydratedDocument<IUser> = await User.findOne({ username });
-
   // authenticate passsword with comparison method on user model
   res.locals.user = {
-    username: true,
-    authStatus: await user.matchPassword(password),
+    username: username,
+    authStatus: user && (await user.matchPassword(password)),
   };
 
   return next();
