@@ -8,7 +8,7 @@ export default function Signup<Props>(/*{setUser} */) {
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
     const res = await fetch('http://localhost:3000/signup', {
