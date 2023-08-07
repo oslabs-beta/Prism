@@ -41,7 +41,7 @@ export default function Dashboard() {
   React.useEffect(() => {
     getURL()
       .then((urlString) => {
-        const frameArray = [];
+        const frameArray: Array<ReactNode | undefined> = [];
         const panelIdArray = ['1', '3', '4', '5', '6']; // the panels we want to access
         // console.log('effect hook running: ', urlString);
         if (urlString) {

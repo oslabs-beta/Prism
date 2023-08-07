@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { SyntheticEvent, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 interface Props {}
@@ -8,7 +8,17 @@ export default function Login<Props>(/* {setUser} */) {
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
 
-  const handleSubmit = async (event) => {
+  const Button = () => {
+    return (
+      <div>
+        <button type='button' onClick={() => navigate('/dashboard')}>
+          Close
+        </button>
+      </div>
+    );
+  };
+
+  const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
     const res = await fetch('http://localhost:3000/login', {
       method: 'POST',
@@ -28,7 +38,7 @@ export default function Login<Props>(/* {setUser} */) {
       // navigate('/')
     }
   };
-
+  // <NavLink to='/dashboard'></NavLink>
   return (
     <div>
       <div>
@@ -55,10 +65,11 @@ export default function Login<Props>(/* {setUser} */) {
           <br></br>
           <button type='button'>Login</button>
           <br></br>
-          <NavLink to='/dashboard'> Dashboard</NavLink>
+          <Button />
+          {/* <NavLink to='/dashboard'> Dashboard</NavLink>
           <button type='button' onClick={() => navigate('/dashboard')}>
             Close
-          </button>
+          </button> */}
         </form>
       </div>
     </div>

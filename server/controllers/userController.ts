@@ -1,19 +1,29 @@
 // user authentication middleware
-import User from '../db/models/userSchema.js'; // import user model
+import User, { HydratedDocument, IUser } from '../db/models/userSchema'; // import user model
 import jwt from 'jsonwebtoken';
+import { RequestHandler } from 'express';
+import { Controller } from 'types/types';
 // mvp of this stretch feature: basic user auth, lasts while window is open
 // stretch feature level 1: sets a JWT in cookie to use for auth purposes
 // stretch feature level
-const userController = {};
+interface JwtPayload {
+  username: string;
+}
+const userController: Controller = {};
 
 userController.createUser = async function (req, res, next) {
   // username nand password should come in on response body
 
   const { username, password } = req.body;
-  const existingUser = await User.findOne({ username });
+  const existingUser: HydratedDocument<IUser> | undefined = await User.findOne({
+    username,
+  });
   // console.log('user exists? ', ); // show when user doesn't exist
   if (!existingUser) {
-    const user = await User.create({ username, password });
+    const user: HydratedDocument<IUser> = await User.create({
+      username,
+      password,
+    });
     res.locals.user = { username: user.username, created: true };
   } else {
     res.locals.user = { created: false };
@@ -24,7 +34,7 @@ userController.createUser = async function (req, res, next) {
 userController.authUser = async function (req, res, next) {
   // username nand password should come in on response body
   const { username, password } = req.body;
-  const user = await User.findOne({ username });
+  const user: HydratedDocument<IUser> = await User.findOne({ username });
 
   // authenticate passsword with comparison method on user model
   res.locals.user = {
@@ -48,7 +58,7 @@ userController.setToken = function (req, res, next) {
     );
     // store token in cookie
     res.cookie('token', res.locals.jwt, {
-      maxAge: 3600000,
+      maxAge: 3600000, // one hour
       secure: process.env.NODE_ENV !== 'development',
       httpOnly: true,
     });
@@ -57,23 +67,23 @@ userController.setToken = function (req, res, next) {
 };
 // verifyToken: verify JWT
 userController.verifyToken = (req, res, next) => {
-  const token = req.cookies.token;
-  // if there is no token, that's bad -
-  if (!token) {
+  if (!req.cookies.token) {
     res.locals.user = { auth: false, message: 'missing token' };
     return next();
   }
 
   // verify jwt
   try {
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET); // will return null if decoding fails
+    const decodedToken: Object = jwt.verify(
+      req.cookies.token,
+      process.env.JWT_SECRET
+    ); // will return null if decoding fails
     if (decodedToken) {
-      res.locals.user = { username: decodedToken.user, auth: true };
+      res.locals.user = { username: decodedToken, auth: true };
     } else {
       res.locals.user = { auth: false, message: 'TokenInvalid' };
     }
   } catch (err) {
-    console.log(err.name);
     if (err.name === 'TokenExpiredError') {
       res.locals.user = { auth: false, message: 'TokenExpired' };
     } else {

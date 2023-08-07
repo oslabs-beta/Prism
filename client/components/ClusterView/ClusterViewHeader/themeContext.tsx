@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+import { ThemeProps } from 'types/types';
 
-export const getInitialTheme = () => {
+export const getInitialTheme = (): string => {
   if (typeof window !== 'undefined' && window.localStorage) {
     const storedPrefs = window.localStorage.getItem('current-theme');
     if (typeof storedPrefs === 'string') {
@@ -15,10 +16,10 @@ export const getInitialTheme = () => {
 
 export const ThemeContext = React.createContext(null);
 
-export const ThemeProvider = ({ initialTheme, children }) => {
-  const [theme, setTheme] = React.useState(getInitialTheme);
+export const ThemeProvider = ({ initialTheme, children }: ThemeProps) => {
+  const [theme, setTheme] = React.useState<string>(getInitialTheme);
 
-  const checkTheme = (existing) => {
+  const checkTheme = (existing: string): void => {
     const root = window.document.documentElement;
     const isDark = existing === 'dark';
 

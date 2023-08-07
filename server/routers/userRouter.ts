@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import userController from '../controllers/userController.js';
+import userController from '../controllers/userController';
 
 // destructure imports into variables
-const router = Router();
+const router: Router = Router();
 const { createUser, authUser, setToken } = userController; // destructure imports
 
 router.post('/signup', createUser, setToken, (req, res) => {
