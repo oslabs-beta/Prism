@@ -83,6 +83,7 @@ userController.verifyToken = (req, res, next) => {
       process.env.JWT_SECRET
     ) as jwtPayload; // will return null if decoding fails
     if (decodedToken.username) {
+      console.log('token authenticated');
       res.locals.user = { username: decodedToken.username, auth: true };
     } else {
       res.locals.user = { auth: false, message: 'TokenInvalid' };
@@ -107,6 +108,14 @@ userController.deleteUser = async (req, res, next) => {
 
   // deletion authorization is tied to either the password or the jwt to prevent unauthorized users from using this method.
   const authorized: boolean = res.locals.user.auth;
+  if (!authorized) {
+    res.locals.user = {
+      username: username,
+      deleted: false,
+      message: 'insufficient permissions',
+    };
+    return next();
+  }
   const deleted: boolean =
     (await User.deleteOne({ username: username })).deletedCount === 1;
 

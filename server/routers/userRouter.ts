@@ -16,7 +16,7 @@ router.post('/login', authUser, setToken, (req, res) => {
   res.status(202).json(res.locals.user);
 });
 
-router.delete('/', deleteUser, (req, res) => {
+router.delete('/', verifyToken, authUser, deleteUser, (req, res) => {
   res.status(202).json(res.locals.user);
 });
 

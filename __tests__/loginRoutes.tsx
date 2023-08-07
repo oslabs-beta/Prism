@@ -34,7 +34,7 @@ describe('login route tests', () => {
       .send({ username: 'Test', password: 'password' })
       .expect(202)
       .then((response) => {
-        console.log(response.body);
+        expect(response.body.auth).toBe(true);
       });
   });
 });
