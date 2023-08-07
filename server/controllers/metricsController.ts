@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { Controller, middlewareError } from 'types/types';
+import { execFile, spawn } from 'node:child_process';
 
 interface apiKeyObject {
   id?: number;
@@ -10,8 +11,7 @@ interface apiKeyObject {
 }
 
 const readAPIKey = (): apiKeyObject => {
-  // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-  // read JSON from file
+  // we're reading the api token from a file here. we could store it in a cookie instead, but
   return JSON.parse(
     fs
       .readFileSync(path.resolve(__dirname, '../../grafana/api_token.json'))
@@ -92,7 +92,7 @@ const metricsController: Controller = {
     // only write the dashboard if it doesn't already exist as a cookie - and save it as one
     if (res.locals.dashboardURL) {
       // set url to session cookie instead of writing to file
-      res.cookie('url', res.locals.dashboardURL);
+      res.cookie('url', res.locals.dashboardURL, { maxAge: 60 * 60 * 1000 });
     }
 
     return next();
@@ -128,6 +128,7 @@ const metricsController: Controller = {
     // console.log('iframe', res.locals.iframe);
     return next();
   },
+
 };
 
 export default metricsController;

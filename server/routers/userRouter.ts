@@ -3,7 +3,8 @@ import userController from '../controllers/userController';
 
 // destructure imports into variables
 const router: Router = Router();
-const { createUser, authUser, setToken } = userController; // destructure imports
+const { createUser, authUser, setToken, deleteUser, verifyToken } =
+  userController; // destructure imports
 
 router.post('/signup', createUser, setToken, (req, res) => {
   // set cookie
@@ -13,6 +14,10 @@ router.post('/signup', createUser, setToken, (req, res) => {
 
 router.post('/login', authUser, setToken, (req, res) => {
   res.json(res.locals.user);
+});
+
+router.delete('/', deleteUser, (req, res) => {
+  res.status(202).json(res.locals.user);
 });
 
 export default router;

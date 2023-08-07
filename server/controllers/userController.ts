@@ -1,7 +1,6 @@
 // user authentication middleware
 import User, { HydratedDocument, IUser } from '../db/models/userSchema'; // import user model
 import jwt from 'jsonwebtoken';
-import { RequestHandler } from 'express';
 import { Controller } from 'types/types';
 // mvp of this stretch feature: basic user auth, lasts while window is open
 // stretch feature level 1: sets a JWT in cookie to use for auth purposes
@@ -18,6 +17,7 @@ userController.createUser = async function (req, res, next) {
   const existingUser: HydratedDocument<IUser> | undefined = await User.findOne({
     username,
   });
+
   // console.log('user exists? ', ); // show when user doesn't exist
   if (!existingUser) {
     const user: HydratedDocument<IUser> = await User.create({
@@ -25,7 +25,9 @@ userController.createUser = async function (req, res, next) {
       password,
     });
     res.locals.user = { username: user.username, created: true };
+    res.status(201);
   } else {
+    res.status(202);
     res.locals.user = { created: false };
   }
   return next();
@@ -98,4 +100,13 @@ userController.verifyToken = (req, res, next) => {
   }
 };
 
+userController.deleteUser = async (req, res, next) => {
+  const { username, password } = req.body;
+
+  const deleted: boolean =
+    (await User.deleteOne({ username: username })).deletedCount === 1;
+
+  res.locals.user = { username: username, deleted: deleted };
+  return next();
+};
 export default userController;
