@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen} from "@testing-library/react";
 import '@testing-library/jest-dom/extend-expect'
 import Login from "../client/components/Login";
+import Dashboard from '../client/components/ClusterView/Dashboard'
 import { beforeEach, describe, expect, jest, test } from '@jest/globals'
 import { useNavigate } from "react-router";
 // to import Jest and mocking useNavigate
@@ -39,6 +40,9 @@ test('If username and password input bars render', () => {
 
 })
 
+test('If clicking close goes to dashboard', () => {
+    
+})
 // function beforeEach(arg0: () => void) {
 //     throw new Error("Function not implemented.");
 // }
