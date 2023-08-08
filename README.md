@@ -7,6 +7,7 @@ Prism is a Kubernetes and Docker visualizer that helps users understand the stat
 # Geting Started
 
 # Installation 
+# Read More
 
 # Authors
 
