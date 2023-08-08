@@ -1,7 +1,7 @@
 // user authentication middleware
 import User, { HydratedDocument, IUser } from '../db/models/userSchema'; // import user model
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import { Controller } from '../../types/types';
+import { Controller, LocalUser as LocalUser } from '../../types/types';
 // mvp of this stretch feature: basic user auth, lasts while window is open
 // stretch feature level 1: sets a JWT in cookie to use for auth purposes
 // stretch feature level
@@ -36,7 +36,8 @@ userController.createUser = async function (req, res, next) {
 // authenticate user by comparing password with database hash
 userController.authUser = async function (req, res, next) {
   // if user is already token authenticated, we can continue
-  if (res.locals.user.auth) return next();
+  const usr: LocalUser = req.body;
+  if (usr.auth) return next();
   // username nand password should come in on response body
   const { username, password } = req.body;
   const user: HydratedDocument<IUser> = await User.findOne({ username });
@@ -45,6 +46,7 @@ userController.authUser = async function (req, res, next) {
     username: username,
     auth: user && (await user.matchPassword(password)),
   };
+  res.status(res.locals.user.auth ? 200 : 401);
 
   return next();
 };
@@ -53,9 +55,10 @@ userController.authUser = async function (req, res, next) {
 // use this for authorization
 userController.setToken = function (req, res, next) {
   // set JWT only if eitther user has successfully been created (signup) or authenticated (signin)
-  if (res.locals.user.auth || res.locals.user.created) {
+  const usr: LocalUser = res.locals.user;
+  if (usr.auth || usr.created) {
     res.locals.jwt = jwt.sign(
-      { username: res.locals.user.username },
+      { username: usr.username },
       process.env.JWT_SECRET,
       {
         expiresIn: 3600, // set expiry to 1 hour
@@ -109,10 +112,9 @@ userController.verifyToken = (req, res, next) => {
 // The deleteUser middleware here is mainly used for testing.
 userController.deleteUser = async (req, res, next) => {
   const { username } = req.body;
-
+  const usr: LocalUser = res.locals.user;
   // deletion authorization is tied to either the password or the jwt to prevent unauthorized users from using this method.
-  const authorized: boolean =
-    res.locals.user.auth && res.locals.user.username === username;
+  const authorized: boolean = usr.auth && usr.username === username;
   if (!authorized) {
     res.locals.user = {
       username: username,
@@ -127,4 +129,5 @@ userController.deleteUser = async (req, res, next) => {
   res.locals.user = { username: username, deleted: deleted };
   return next();
 };
+
 export default userController;

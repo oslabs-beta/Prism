@@ -68,7 +68,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.3",
     "jest": "^29.6.2",
-    "jest-environment-jsdom": "^29.6.0",
+    "jest-environment-jsdom": "^29.6.2",
     "msw": "^1.2.3",
     "nodemon": "^2.0.22",
     "path": "^0.12.7",

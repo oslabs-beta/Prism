@@ -13,11 +13,11 @@ router.post('/signup', createUser, setToken, (req, res) => {
 });
 
 router.post('/login', authUser, setToken, (req, res) => {
-  res.status(202).json(res.locals.user);
+  res.json(res.locals.user);
 });
 
 router.delete('/', verifyToken, authUser, deleteUser, (req, res) => {
-  res.status(202).json(res.locals.user);
+  res.json(res.locals.user);
 });
 
 export default router;
