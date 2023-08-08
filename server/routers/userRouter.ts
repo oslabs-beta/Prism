@@ -1,18 +1,18 @@
-import { Router } from "express";
-import userController from "../controllers/userController";
+import { Router } from 'express';
+import userController from '../controllers/userController';
 
 // destructure imports into variables
 const router: Router = Router();
-const { createUser, authUser, setToken, deleteUser, verifyToken } =
+const { createUser, authUser, setUserToken, deleteUser, verifyToken } =
   userController; // destructure imports
 
-router.post("/signup", createUser, setUserToken, (req, res) => {
+router.post('/signup', createUser, setUserToken, (req, res) => {
   // set cookie
   // res.cookie('user', res.locals.user.username, { maxAge: 3600000 }); // level 1 authentication: regular cookie
   res.json(res.locals.user);
 });
 
-router.post("/login", authUser, setUserToken, (req, res) => {
+router.post('/login', authUser, setUserToken, (req, res) => {
   res.json(res.locals.user);
 });
 
@@ -22,22 +22,22 @@ router.delete('/', verifyToken, authUser, deleteUser, (req, res) => {
 
 // oauth
 router.get(
-  "/getAccessToken",
+  '/getAccessToken',
   async (req, res, next) => {
     console.log(req.query.code);
 
     const params =
-      "?client_id=" +
+      '?client_id=' +
       process.env.CLIENT_ID +
-      "&client_secret=" +
+      '&client_secret=' +
       process.env.CLIENT_SECRET +
-      "&code=" +
+      '&code=' +
       req.query.code;
 
-    await fetch("https://github.com/login/oauth/access_token" + params, {
-      method: "POST",
+    await fetch('https://github.com/login/oauth/access_token' + params, {
+      method: 'POST',
       headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
       },
     })
       .then((response) => response.json())
@@ -54,12 +54,12 @@ router.get(
 );
 
 // getUserData
-router.get("/getUserData", async function (req, res) {
-  req.get("Authorization");
-  await fetch("https://api.github.com/user", {
-    method: "GET",
+router.get('/getUserData', async function (req, res) {
+  req.get('Authorization');
+  await fetch('https://api.github.com/user', {
+    method: 'GET',
     headers: {
-      Authorization: req.get("Authorization"),
+      Authorization: req.get('Authorization'),
     },
   })
     .then((data) => {
