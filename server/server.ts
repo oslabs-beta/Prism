@@ -3,7 +3,7 @@ import { middlewareError } from 'types/types';
 // express server setup
 import express, { NextFunction, Request, Response, json } from 'express';
 import cookieParser from 'cookie-parser';
-
+import cors from "cors"
 import { resolve } from 'path';
 
 // route imports
@@ -15,7 +15,7 @@ import connectDB from './db/db';
 
 // const declarations
 const app = express();
-
+app.use(cors())
 const PORT = 3333; // from josh's branch
 connectDB(); /// uncomment to connect to DB
 
@@ -32,7 +32,7 @@ app.use(cookieParser());
 // serve static files (just CSS right now)
 // app.use(express.static('client')) // from josh
 app.use('/api', apiRouter);
-// app.use('/user', userRouter);
+app.use('/user', userRouter);
 // just to get something running
 app.get('/', (req, res) => {
   return res.status(200).sendFile(resolve(__dirname, '../index.html'));
