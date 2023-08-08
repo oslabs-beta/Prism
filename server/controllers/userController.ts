@@ -1,8 +1,8 @@
 // user authentication middleware
-import User, { HydratedDocument, IUser } from '../db/models/userSchema'; // import user model
-import jwt from 'jsonwebtoken';
-import { RequestHandler } from 'express';
-import { Controller } from 'types/types';
+import User, { HydratedDocument, IUser } from "../db/models/userSchema"; // import user model
+import jwt from "jsonwebtoken";
+import { RequestHandler } from "express";
+import { Controller } from "types/types";
 // mvp of this stretch feature: basic user auth, lasts while window is open
 // stretch feature level 1: sets a JWT in cookie to use for auth purposes
 // stretch feature level
@@ -48,7 +48,7 @@ userController.authUser = async function (req, res, next) {
 userController.setToken = function (req, res, next) {
   // set JWT only if eitther user has successfully been created (signup) or authenticated (signin)
   if (res.locals.user.authStatus || res.locals.user.created) {
-    console.log('login/signup successful');
+    console.log("login/signup successful");
     res.locals.jwt = jwt.sign(
       { user: res.locals.user.username },
       process.env.JWT_SECRET,
@@ -57,9 +57,9 @@ userController.setToken = function (req, res, next) {
       }
     );
     // store token in cookie
-    res.cookie('token', res.locals.jwt, {
+    res.cookie("token", res.locals.jwt, {
       maxAge: 3600000, // one hour
-      secure: process.env.NODE_ENV !== 'development',
+      secure: process.env.NODE_ENV !== "development",
       httpOnly: true,
     });
   }
@@ -68,7 +68,7 @@ userController.setToken = function (req, res, next) {
 // verifyToken: verify JWT
 userController.verifyToken = (req, res, next) => {
   if (!req.cookies.token) {
-    res.locals.user = { auth: false, message: 'missing token' };
+    res.locals.user = { auth: false, message: "missing token" };
     return next();
   }
 
@@ -81,15 +81,15 @@ userController.verifyToken = (req, res, next) => {
     if (decodedToken) {
       res.locals.user = { username: decodedToken, auth: true };
     } else {
-      res.locals.user = { auth: false, message: 'TokenInvalid' };
+      res.locals.user = { auth: false, message: "TokenInvalid" };
     }
   } catch (err) {
-    if (err.name === 'TokenExpiredError') {
-      res.locals.user = { auth: false, message: 'TokenExpired' };
+    if (err.name === "TokenExpiredError") {
+      res.locals.user = { auth: false, message: "TokenExpired" };
     } else {
       return next({
-        message: { err: 'An error occured ' },
-        log: 'Error occurred in verifying JWT in verifyToken middleware',
+        message: { err: "An error occured " },
+        log: "Error occurred in verifying JWT in verifyToken middleware",
         error: err,
       });
     }
