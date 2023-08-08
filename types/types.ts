@@ -1,4 +1,4 @@
-import { NextFunction, Request, Response, RequestHandler } from 'express';
+import { RequestHandler } from 'express';
 interface middlewareError {
   log: string;
   status: number;
@@ -14,6 +14,11 @@ interface ThemeProps {
   children: any;
 }
 
-export { middlewareError, Controller };
+type LUser = {
+  username: string;
+  password?: string;
+  auth?: boolean;
+  created?: boolean;
+};
 
-export { ThemeProps };
+export { middlewareError, Controller, ThemeProps, LUser as LocalUser };

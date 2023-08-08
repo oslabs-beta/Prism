@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import LightDarkMode from './ClusterView/ClusterViewHeader/LighDarkMode';
 
@@ -12,24 +12,7 @@ export default function Signup<Props>(/*{setUser} */) {
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    // const res = await fetch('http://localhost:3000/signup', {
-    //   method: 'POST',
-    //   mode: 'cors',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     username: username?.current.value,
-    //     password: password?.current.value,
-    //   }),
-    // });
-    // if (res.ok) {
-    //   // const user = await res.json();
-    //   // setUser(user);
-    //   //   navigate('/');
-    // }
-    console.log(username.current.value)
-    fetch('http://localhost:3333/user/signup', {
+    const res = await fetch('/signup', {
       method: 'POST',
       body: JSON.stringify({
         username: username.current.value,
@@ -46,6 +29,23 @@ export default function Signup<Props>(/*{setUser} */) {
     .then((data) => {
       console.log(data)
     })
+  };
+  };
+
+  useEffect(() => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    // codeParam is the access token
+    const codeParam = urlParams.get('code');
+    console.log(codeParam);
+  }, []);
+
+  const CLIENT_ID = 'a62670300c9169ebd3b3';
+  const githubLogin = () => {
+    window.location.assign(
+      'https://www.github.com/login/oauth/authorize?client_id=' + CLIENT_ID
+    );
+    // add a post request to create a cookie???
   };
 
   return (
@@ -82,6 +82,15 @@ export default function Signup<Props>(/*{setUser} */) {
             <Link className='text-sm hover:font-bold' to="/login">Login</Link>
           </div> 
         </form>
+      </div>
+      <div>
+        <hr />
+        <div>
+          <div>
+            <button onClick={githubLogin}>Sign up with GitHub here</button>
+          </div>
+          <hr />
+        </div>
       </div>
     </div>
   );

@@ -19,14 +19,9 @@ app.use(cors())
 const PORT = 3333; // from josh's branch
 connectDB(); /// uncomment to connect to DB
 
-type ServerError = {
-  log: string;
-  status: number;
-  message: { err: string };
-};
-
 // parse request body
 app.use(json());
+app.use(cors());
 app.use(cookieParser());
 
 // serve static files (just CSS right now)
@@ -44,16 +39,18 @@ app.get('*', (req, res) => {
 });
 
 // global error handler
-app.use((err: ServerError, req: Request, res: Response, next: NextFunction) => {
-  const defaultErr: middlewareError = {
-    log: 'Express error handler caught unknown middleware error',
-    status: 500,
-    message: { error: 'An error occurred' },
-  };
-  const errorObj = Object.assign({}, defaultErr, err);
-  console.log(errorObj.log);
-  return res.status(errorObj.status).json(errorObj.message);
-});
+app.use(
+  (err: middlewareError, req: Request, res: Response, next: NextFunction) => {
+    const defaultErr: middlewareError = {
+      log: 'Express error handler caught unknown middleware error',
+      status: 500,
+      message: { error: 'An error occurred' },
+    };
+    const errorObj = Object.assign({}, defaultErr, err);
+    console.log(errorObj.log);
+    return res.status(errorObj.status).json(errorObj.message);
+  }
+);
 // hi
 app.listen(PORT, () => {
   console.log(`App listening on PORT ${PORT}`);

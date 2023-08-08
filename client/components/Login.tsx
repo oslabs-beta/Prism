@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useRef } from 'react';
+import React, { SyntheticEvent, useRef, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import LightDarkMode from './ClusterView/ClusterViewHeader/LighDarkMode';
@@ -15,37 +15,37 @@ export default function Login<Props>(/* {setUser} */) {
   const handleSubmit = async (event: SyntheticEvent) => {
     console.log('sumbit was handled', password.current.value)
     event.preventDefault();
-    // const res = await fetch('http://localhost:3333/login', {
-    //   method: 'POST',
-    //   // mode: "cors",
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     username: username?.current.value,
-    //     password: password?.current.value,
-    //   }),
-    // });
-    // if (res.ok) {
-    //   const user = await res.json();
-    //   setUser(user);
-    //   navigate('/')
-    // }
-    fetch('http://localhost:3333/user/login', {
+    console.log(username?.current.value);
+    // const res = await fetch('http://localhost:3333/user/login', {
+    const res = await fetch('/user/login', {
       method: 'POST',
       headers: {
         'Content-Type' : 'application/json'
       },
+      credentials: 'include',
       body: JSON.stringify({
-        username: username.current.value,
-        password: password.current.value
-      })
-    })
-    .then((data) => data.json())
-    .then((data) => {
-      console.log(data)
-    })
+        username: username?.current.value,
+        password: password?.current.value,
+      }),
+    }).then((response) => response.json());
+    console.log(res);
+    if (res.auth) {
+      // const user = await res.json();
+      // setUser(user);
+      navigate('/dashboard');
+    } else {
+      alert('incorrect username or password');
+    }
   };
+
+  const CLIENT_ID = 'a62670300c9169ebd3b3';
+  const githubLogin = () => {
+    window.location.assign(
+      'https://www.github.com/login/oauth/authorize?client_id=' + CLIENT_ID
+    );
+  };
+
+  // <NavLink to='/dashboard'></NavLink>
   return (
     <div className='dark:bg-[var(--secondary)] dark:text-[var(--primary)]'>
       <div className='h-screen flex flex-col items-center justify-center'>
@@ -79,6 +79,17 @@ export default function Login<Props>(/* {setUser} */) {
             <Link className='text-sm hover:font-bold' to="/signup">Sign Up</Link>
           </div>
         </form>
+
+        <hr />
+        <br />
+        <hr />
+
+        <div>
+          <div>
+            <button onClick={githubLogin}>Sign in with GitHub here</button>
+          </div>
+          <hr />
+        </div>
       </div>
     </div>
   );
