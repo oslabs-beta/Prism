@@ -81,12 +81,6 @@ export default function Signup<Props>(/*{setUser} */) {
             <button onClick={githubLogin}>Sign up with GitHub here</button>
           </div>
           <hr />
-          {/* <div>
-            <form>
-              <label>email address:</label>
-              <input placeholder="hello@example.com"></input>
-            </form>
-          </div> */}
         </div>
       </div>
     </div>

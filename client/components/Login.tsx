@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useRef, useEffect } from "react";
+import React, { SyntheticEvent, useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 interface Props {}
@@ -20,31 +20,28 @@ export default function Login<Props>(/* {setUser} */) {
 
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
-    const res = await fetch("http://localhost:3000/login", {
+    console.log(username?.current.value);
+    const res = await fetch("http://localhost:3333/user/login", {
       method: "POST",
       // mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
+
       body: JSON.stringify({
         username: username?.current.value,
         password: password?.current.value,
       }),
-    });
-
-    if (res.ok) {
+    }).then((response) => response.json());
+    console.log(res);
+    if (res.authStatus) {
       // const user = await res.json();
       // setUser(user);
-      // navigate('/')
+      navigate("/dashboard");
+    } else {
+      alert("incorrect username or password");
     }
   };
-
-  useEffect(() => {
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const codeParam = urlParams.get("code");
-    console.log(codeParam);
-  }, []);
 
   const CLIENT_ID = "a62670300c9169ebd3b3";
   const githubLogin = () => {
@@ -79,29 +76,22 @@ export default function Login<Props>(/* {setUser} */) {
             placeholder="Password"
           />
           <br></br>
-          <button type="button">Login</button>
+          <button type="submit" value="Login">
+            Login
+          </button>
           <br></br>
           <Button />
-          {/* <NavLink to='/dashboard'> Dashboard</NavLink>
-          <button type='button' onClick={() => navigate('/dashboard')}>
-            Close
-          </button> */}
         </form>
 
         <hr />
         <br />
         <hr />
+
         <div>
           <div>
             <button onClick={githubLogin}>Sign in with GitHub here</button>
           </div>
           <hr />
-          {/* <div>
-            <form>
-              <label>email address:</label>
-              <input placeholder="hello@example.com"></input>
-            </form>
-          </div> */}
         </div>
       </div>
     </div>

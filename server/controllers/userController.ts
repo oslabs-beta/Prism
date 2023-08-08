@@ -44,8 +44,9 @@ userController.authUser = async function (req, res, next) {
 
   return next();
 };
+
 // setToken : create JWT for authenticated users
-userController.setToken = function (req, res, next) {
+userController.setUserToken = function (req, res, next) {
   // set JWT only if eitther user has successfully been created (signup) or authenticated (signin)
   if (res.locals.user.authStatus || res.locals.user.created) {
     console.log("login/signup successful");
@@ -57,7 +58,7 @@ userController.setToken = function (req, res, next) {
       }
     );
     // store token in cookie
-    res.cookie("token", res.locals.jwt, {
+    res.cookie("userToken", res.locals.jwt, {
       maxAge: 3600000, // one hour
       secure: process.env.NODE_ENV !== "development",
       httpOnly: true,
@@ -65,6 +66,27 @@ userController.setToken = function (req, res, next) {
   }
   return next();
 };
+
+userController.setOauthToken = function (req, res, next) {
+  console.log("entering setOauthToken middleware");
+  res.locals.jwt = jwt.sign(
+    { gitUser: res.locals.token },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: 3600, // set expiry to 1 hour
+    }
+  );
+  // store token in cookie
+  console.log("right before cookie");
+  res.cookie("oauthToken", res.locals.jwt, {
+    maxAge: 3600000, // one hour
+    secure: process.env.NODE_ENV !== "development",
+    httpOnly: true,
+  });
+  console.log("after cookie: ", res.locals.jwt);
+  return next();
+};
+
 // verifyToken: verify JWT
 userController.verifyToken = (req, res, next) => {
   if (!req.cookies.token) {

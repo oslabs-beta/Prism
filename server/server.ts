@@ -17,8 +17,8 @@ import connectDB from "./db/db";
 // const declarations
 const app = express();
 
-const PORT = 3333; // from josh's branch
-connectDB(); /// uncomment to connect to DB
+const PORT = 3333;
+connectDB();
 
 type ServerError = {
   log: string;
@@ -32,7 +32,7 @@ app.use(cookieParser());
 app.use(cors());
 
 app.use("/api", apiRouter);
-// app.use('/user', userRouter);
+app.use("/user", userRouter);
 
 app.get("/", (req, res) => {
   return res.status(200).sendFile(resolve(__dirname, "../index.html"));
@@ -41,21 +41,6 @@ app.get("/", (req, res) => {
 // github oauth — include from .env
 import dotenv from "dotenv";
 dotenv.config();
-
-// oauth
-app.get("/getAccesstoken", async (req, res) => {
-  console.log(req.query.code);
-
-  const params =
-    "?client_id=" +
-    process.env.CLIENT_ID +
-    "&client_secret=" +
-    process.env.CLIENT_SECRET +
-    "&code=" +
-    req.query.code;
-
-  await fetch("https://github.com/login/oauth/access_token" + params, {});
-});
 
 // catch all route
 app.get("*", (req, res) => {
