@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {}
 
@@ -11,11 +11,11 @@ export default function Signup<Props>(/*{setUser} */) {
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:3000/signup", {
-      method: "POST",
-      mode: "cors",
+    const res = await fetch('/signup', {
+      method: 'POST',
+      mode: 'cors',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
         username: username?.current.value,
@@ -33,14 +33,14 @@ export default function Signup<Props>(/*{setUser} */) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     // codeParam is the access token
-    const codeParam = urlParams.get("code");
+    const codeParam = urlParams.get('code');
     console.log(codeParam);
   }, []);
 
-  const CLIENT_ID = "a62670300c9169ebd3b3";
+  const CLIENT_ID = 'a62670300c9169ebd3b3';
   const githubLogin = () => {
     window.location.assign(
-      "https://www.github.com/login/oauth/authorize?client_id=" + CLIENT_ID
+      'https://www.github.com/login/oauth/authorize?client_id=' + CLIENT_ID
     );
     // add a post request to create a cookie???
   };
@@ -50,26 +50,26 @@ export default function Signup<Props>(/*{setUser} */) {
       <div>
         <form onSubmit={handleSubmit}>
           <p>Signup</p>
-          <label htmlFor="signup-username">username</label>
+          <label htmlFor='signup-username'>username</label>
           <input
             ref={username}
-            id="signup-username"
+            id='signup-username'
             onChange={(e) => (username.current = e.target)}
-            name="username"
-            type="text"
-            placeholder="Username"
+            name='username'
+            type='text'
+            placeholder='Username'
           />
-          <label htmlFor="signup-password">password</label>
+          <label htmlFor='signup-password'>password</label>
           <input
             ref={password}
-            id="signup-password"
+            id='signup-password'
             onChange={(e) => (password.current = e.target)}
-            name="password"
-            type="password"
-            placeholder="Password"
+            name='password'
+            type='password'
+            placeholder='Password'
           />
           <button>Sign Up</button>
-          <button type="button" onClick={() => navigate("/")}>
+          <button type='button' onClick={() => navigate('/')}>
             Close
           </button>
         </form>

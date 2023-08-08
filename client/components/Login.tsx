@@ -21,13 +21,14 @@ export default function Login<Props>(/* {setUser} */) {
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
     console.log(username?.current.value);
-    const res = await fetch('http://localhost:3333/user/login', {
+    // const res = await fetch('http://localhost:3333/user/login', {
+    const res = await fetch('/user/login', {
       method: 'POST',
       // mode: "cors",
       headers: {
         'Content-Type': 'application/json',
       },
-
+      credentials: 'include',
       body: JSON.stringify({
         username: username?.current.value,
         password: password?.current.value,
@@ -48,7 +49,6 @@ export default function Login<Props>(/* {setUser} */) {
     window.location.assign(
       'https://www.github.com/login/oauth/authorize?client_id=' + CLIENT_ID
     );
-    // add a post request to create a cookie???
   };
 
   // <NavLink to='/dashboard'></NavLink>

@@ -1,11 +1,11 @@
-import React, { useState, FC, useEffect } from "react";
-import { Route, Routes } from "react-router-dom";
-import Login from "./Login";
-import Signup from "./Signup";
-import LandingPage from "./LandingPage/LandingPage";
+import React, { useState, FC, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Login from './Login';
+import Signup from './Signup';
+import LandingPage from './LandingPage/LandingPage';
 
-import { ThemeProvider } from "./ClusterView/ClusterViewHeader/themeContext";
-import Dashboard from "./ClusterView/Dashboard";
+import { ThemeProvider } from './ClusterView/ClusterViewHeader/themeContext';
+import Dashboard from './ClusterView/Dashboard';
 
 interface Props {}
 
@@ -16,17 +16,14 @@ const App: FC<Props> = () => {
   useEffect(() => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-    const codeParam = urlParams.get("code");
+    const codeParam = urlParams.get('code');
     console.log(codeParam);
 
-    if (codeParam && localStorage.getItem("accessToken") === null) {
+    if (codeParam && localStorage.getItem('accessToken') === null) {
       async function getAccessToken() {
-        await fetch(
-          "http://localhost:3333/user/getAccessToken?code=" + codeParam,
-          {
-            method: "GET",
-          }
-        )
+        await fetch('/user/getAccessToken?code=' + codeParam, {
+          method: 'GET',
+        })
           .then((response) => {
             return response.json();
           })
@@ -34,8 +31,8 @@ const App: FC<Props> = () => {
             console.log(data);
 
             if (data.access_token) {
-              console.log("test from app.tx, then statement");
-              localStorage.setItem("accessToken", data.access_token);
+              console.log('test from app.tx, then statement');
+              localStorage.setItem('accessToken', data.access_token);
               setRerender(!rerender);
             }
           });
@@ -47,12 +44,12 @@ const App: FC<Props> = () => {
   return (
     <>
       <div>
-        <ThemeProvider initialTheme={"dark"}>
+        <ThemeProvider initialTheme={'dark'}>
           <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path='/' element={<LandingPage />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/signup' element={<Signup />} />
+            <Route path='/dashboard' element={<Dashboard />} />
 
             {/* <Route index element={<AppIntro />}></Route>
               <Route path='/login' element={<Login />}></Route>

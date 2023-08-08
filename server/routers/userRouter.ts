@@ -49,7 +49,8 @@ router.get(
   },
   userController.setOauthToken,
   (req, res) => {
-    return res.status(200).json({ auth: true });
+    return res.cookie('test', 'test').status(200).json({ auth: true });
+    // return res.cookie("token", "admin").redirect("/list");
   }
 );
 
