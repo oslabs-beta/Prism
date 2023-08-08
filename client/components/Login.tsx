@@ -1,6 +1,6 @@
-import React, { SyntheticEvent, useRef, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import React, { SyntheticEvent, useRef, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 interface Props {}
 
 export default function Login<Props>(/* {setUser} */) {
@@ -11,7 +11,7 @@ export default function Login<Props>(/* {setUser} */) {
   const Button = () => {
     return (
       <div>
-        <button type="button" onClick={() => navigate("/dashboard")}>
+        <button type='button' onClick={() => navigate('/dashboard')}>
           Close
         </button>
       </div>
@@ -21,11 +21,11 @@ export default function Login<Props>(/* {setUser} */) {
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
     console.log(username?.current.value);
-    const res = await fetch("http://localhost:3333/user/login", {
-      method: "POST",
+    const res = await fetch('http://localhost:3333/user/login', {
+      method: 'POST',
       // mode: "cors",
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
 
       body: JSON.stringify({
@@ -34,19 +34,19 @@ export default function Login<Props>(/* {setUser} */) {
       }),
     }).then((response) => response.json());
     console.log(res);
-    if (res.authStatus) {
+    if (res.auth) {
       // const user = await res.json();
       // setUser(user);
-      navigate("/dashboard");
+      navigate('/dashboard');
     } else {
-      alert("incorrect username or password");
+      alert('incorrect username or password');
     }
   };
 
-  const CLIENT_ID = "a62670300c9169ebd3b3";
+  const CLIENT_ID = 'a62670300c9169ebd3b3';
   const githubLogin = () => {
     window.location.assign(
-      "https://www.github.com/login/oauth/authorize?client_id=" + CLIENT_ID
+      'https://www.github.com/login/oauth/authorize?client_id=' + CLIENT_ID
     );
     // add a post request to create a cookie???
   };
@@ -57,26 +57,26 @@ export default function Login<Props>(/* {setUser} */) {
       <div>
         <form onSubmit={handleSubmit}>
           <p>Login Form</p>
-          <label htmlFor="login-username">username</label>
+          <label htmlFor='login-username'>username</label>
           <input
             ref={username}
-            id="login-username"
+            id='login-username'
             onChange={(e) => (username.current = e.target)}
-            name="username"
-            type="text"
-            placeholder="Username"
+            name='username'
+            type='text'
+            placeholder='Username'
           />
-          <label htmlFor="login-password">password</label>
+          <label htmlFor='login-password'>password</label>
           <input
             ref={password}
-            id="login-password"
+            id='login-password'
             onChange={(e) => (password.current = e.target)}
-            name="password"
-            type="password"
-            placeholder="Password"
+            name='password'
+            type='password'
+            placeholder='Password'
           />
           <br></br>
-          <button type="submit" value="Login">
+          <button type='submit' value='Login'>
             Login
           </button>
           <br></br>

@@ -51,10 +51,9 @@ userController.authUser = async function (req, res, next) {
   return next();
 };
 
-
 // setToken : create JWT for authenticated users
 // use this for authorization
-userController.setToken = function (req, res, next) {
+userController.setUserToken = function (req, res, next) {
   // set JWT only if eitther user has successfully been created (signup) or authenticated (signin)
   const usr: LocalUser = res.locals.user;
   if (usr.auth || usr.created) {
@@ -66,9 +65,9 @@ userController.setToken = function (req, res, next) {
       }
     );
     // store token in cookie
-    res.cookie("userToken", res.locals.jwt, {
+    res.cookie('userToken', res.locals.jwt, {
       maxAge: 3600000, // one hour
-      secure: process.env.NODE_ENV !== "development",
+      secure: process.env.NODE_ENV !== 'development',
       httpOnly: true,
     });
   }
@@ -79,7 +78,7 @@ userController.setToken = function (req, res, next) {
 userController.verifyToken = (req, res, next) => {
   // if there's no token, the user isn't logged in yet or the cookie has been deleted
   if (!req.cookies.token) {
-    res.locals.user = { auth: false, message: "missing token" };
+    res.locals.user = { auth: false, message: 'missing token' };
     return next();
   }
 
@@ -93,21 +92,41 @@ userController.verifyToken = (req, res, next) => {
     if (decodedToken.username) {
       res.locals.user = { username: decodedToken.username, auth: true };
     } else {
-      res.locals.user = { auth: false, message: "TokenInvalid" };
+      res.locals.user = { auth: false, message: 'TokenInvalid' };
     }
   } catch (err) {
-    if (err.name === "TokenExpiredError") {
-      res.locals.user = { auth: false, message: "TokenExpired" };
+    if (err.name === 'TokenExpiredError') {
+      res.locals.user = { auth: false, message: 'TokenExpired' };
     } else {
       return next({
-        message: { err: "An error occured " },
-        log: "Error occurred in verifying JWT in verifyToken middleware",
+        message: { err: 'An error occured ' },
+        log: 'Error occurred in verifying JWT in verifyToken middleware',
         error: err,
       });
     }
   } finally {
     return next();
   }
+};
+
+userController.setOauthToken = function (req, res, next) {
+  console.log('entering setOauthToken middleware');
+  res.locals.jwt = jwt.sign(
+    { gitUser: res.locals.token },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: 3600, // set expiry to 1 hour
+    }
+  );
+  // store token in cookie
+  console.log('right before cookie');
+  res.cookie('oauthToken', res.locals.jwt, {
+    maxAge: 3600000, // one hour
+    secure: process.env.NODE_ENV !== 'development',
+    httpOnly: true,
+  });
+  console.log('after cookie: ', res.locals.jwt);
+  return next();
 };
 
 // The deleteUser middleware here is mainly used for testing.
