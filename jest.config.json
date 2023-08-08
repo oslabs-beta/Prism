@@ -1,4 +1,5 @@
 {
-    "testEnvironment": "jsdom"
-
- }
+  "testEnvironment": "jsdom",
+  "collectCoverage": true,
+  "collectCoverageFrom": ["**/**/*.{ts,tsx}"]
+}

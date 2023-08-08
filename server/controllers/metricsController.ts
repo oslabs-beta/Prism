@@ -17,14 +17,9 @@ const readAPIKey = (): apiKeyObject => {
       .readFileSync(path.resolve(__dirname, '../../grafana/api_token.json'))
       .toString()
   );
-
-  // ‼️ NOTE: authorization header must be 'Bearer ' + apiKey ‼️
 };
 
 const metricsController: Controller = {
-  //testButton method
-
-  // methodName: (req, res, next) => {},
   // read api key so we can send requests
   // save in res.locals for now
   // createDashboard
@@ -56,11 +51,9 @@ const metricsController: Controller = {
     };
     // res.locals.dashboard = dashboardJSON;
 
-    //🎯 TODO:  make request to create dashboard in grafana
     // post fetch request with authorization header
     const dashboardProvision: string = JSON.stringify(dashboardObject);
-    //console.log(dashboardProvision);
-    //console.log('type: ', typeof dashboardProvision);
+
     fetch('http://localhost:3000/api/dashboards/db', {
       method: 'POST',
       headers: {
@@ -74,9 +67,7 @@ const metricsController: Controller = {
       .then((data) => {
         if (!data.url) return Promise.reject(new Error(data.message));
         res.locals.dashboardURL = data.url;
-        // sample response url property : /d/a0568fed-94d0-4eba-a617-6507426ad032/production-overview
-        console.log('data: ', data);
-        console.log('data URL: ', res.locals.dashboardURL);
+
         return next();
       })
       .catch((err) =>
@@ -114,21 +105,17 @@ const metricsController: Controller = {
     // this can be source for iframe
 
     const dashboardURL: string = res.locals.dashboardURL;
-    //console.log('dashboard URL in controller: ', res.locals.dashboardURL);
-    // console.log('in DashboardURL', dashboardURL);
-    // url comes in as something like :
-    // we need to turn into:  http://localhost:64090/d-solo/e13e401a-7d5e-456b-a57f-9a745508ceca/production-overview?panelId=2
-    //let dashboardURLTestSrc = dashboardURL.replace('/d/', '/d-solo/');
+
+    // convert total dashboard import to frame-by-frame
     res.locals.iframe = {
       frameURL: `http://localhost:3000${dashboardURL.replace(
         '/d/',
         '/d-solo/'
       )}?panelId=1`,
     };
-    // console.log('iframe', res.locals.iframe);
+
     return next();
   },
-
 };
 
 export default metricsController;

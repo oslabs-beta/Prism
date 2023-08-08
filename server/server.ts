@@ -3,7 +3,7 @@ import { middlewareError } from 'types/types';
 // express server setup
 import express, { NextFunction, Request, Response, json } from 'express';
 import cookieParser from 'cookie-parser';
-
+import cors from 'cors';
 import { resolve } from 'path';
 
 // route imports
@@ -21,6 +21,7 @@ connectDB(); /// uncomment to connect to DB
 
 // parse request body
 app.use(json());
+app.use(cors());
 app.use(cookieParser());
 
 // serve static files (just CSS right now)

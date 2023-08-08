@@ -1,7 +1,7 @@
 // user authentication middleware
 import User, { HydratedDocument, IUser } from '../db/models/userSchema'; // import user model
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import { Controller } from 'types/types';
+import { Controller } from '../../types/types';
 // mvp of this stretch feature: basic user auth, lasts while window is open
 // stretch feature level 1: sets a JWT in cookie to use for auth purposes
 // stretch feature level
@@ -10,9 +10,9 @@ interface jwtPayload extends JwtPayload {
 }
 const userController: Controller = {};
 
+// create a new user in database with signup field
 userController.createUser = async function (req, res, next) {
   // username nand password should come in on response body
-
   const { username, password } = req.body;
   const existingUser: HydratedDocument<IUser> | undefined = await User.findOne({
     username,
@@ -33,6 +33,7 @@ userController.createUser = async function (req, res, next) {
   return next();
 };
 
+// authenticate user by comparing password with database hash
 userController.authUser = async function (req, res, next) {
   // if user is already token authenticated, we can continue
   if (res.locals.user.auth) return next();
@@ -49,10 +50,10 @@ userController.authUser = async function (req, res, next) {
 };
 
 // setToken : create JWT for authenticated users
+// use this for authorization
 userController.setToken = function (req, res, next) {
   // set JWT only if eitther user has successfully been created (signup) or authenticated (signin)
   if (res.locals.user.auth || res.locals.user.created) {
-    console.log('login/signup successful');
     res.locals.jwt = jwt.sign(
       { username: res.locals.user.username },
       process.env.JWT_SECRET,
@@ -69,21 +70,23 @@ userController.setToken = function (req, res, next) {
   }
   return next();
 };
-// verifyToken: verify JWT
+
+// verifyToken: verify  authentication token
 userController.verifyToken = (req, res, next) => {
+  // if there's no token, the user isn't logged in yet or the cookie has been deleted
   if (!req.cookies.token) {
     res.locals.user = { auth: false, message: 'missing token' };
     return next();
   }
 
-  // verify jwt
+  // verify token
+
   try {
     const decodedToken: jwtPayload | string = jwt.verify(
       req.cookies.token,
       process.env.JWT_SECRET
-    ) as jwtPayload; // will return null if decoding fails
+    ) as jwtPayload;
     if (decodedToken.username) {
-      console.log('token authenticated');
       res.locals.user = { username: decodedToken.username, auth: true };
     } else {
       res.locals.user = { auth: false, message: 'TokenInvalid' };
@@ -103,11 +106,13 @@ userController.verifyToken = (req, res, next) => {
   }
 };
 
+// The deleteUser middleware here is mainly used for testing.
 userController.deleteUser = async (req, res, next) => {
-  const { username, password } = req.body;
+  const { username } = req.body;
 
   // deletion authorization is tied to either the password or the jwt to prevent unauthorized users from using this method.
-  const authorized: boolean = res.locals.user.auth;
+  const authorized: boolean =
+    res.locals.user.auth && res.locals.user.username === username;
   if (!authorized) {
     res.locals.user = {
       username: username,
