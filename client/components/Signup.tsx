@@ -12,11 +12,11 @@ export default function Signup<Props>(/*{setUser} */) {
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    const res = await fetch('/signup', {
+    const res = await fetch('/user/signup', {
       method: 'POST',
       body: JSON.stringify({
-        username: username.current.value,
-        password: password.current.value
+        username: username?.current.value,
+        password: password?.current.value
       }),
       headers: {
         'Content-Type' : 'application/json'
@@ -26,11 +26,13 @@ export default function Signup<Props>(/*{setUser} */) {
     //   data.json()
     //   return data
     // })
-    .then((data) => {
-      console.log(data)
+    .then(response=> response.json())
+    .then((user) => {
+      if( user.created)  navigate('/dashboard');
+      else alert('Username is taken!')
     })
   };
-  };
+
 
   useEffect(() => {
     const queryString = window.location.search;

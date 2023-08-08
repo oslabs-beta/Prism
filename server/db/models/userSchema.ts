@@ -16,9 +16,10 @@ const userSchema = new Schema<IUser>({
 userSchema.pre('save', async function (next) {
   // if password has not been modified , we don't need to hash
   // (this is for user object updates)
-  if (!this.isModified(this.password)) return next();
+  console.log('checking if document is modified: ', this.password, this.isModified(this.password))
+  if (!this.isModified(this.password) && !this.isNew) return next();
   const salt: string = await bcrypt.genSalt(10);
-  console.log(salt);
+  console.log("Salt: ",salt);
   const hashedPassword: string = await bcrypt.hash(this.password, salt);
   this.password = hashedPassword;
 });

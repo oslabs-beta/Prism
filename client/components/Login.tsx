@@ -72,24 +72,13 @@ export default function Login<Props>(/* {setUser} */) {
           <br></br>
           <button type='submit' className='bg-[var(--secondary)] px-6'>Login</button>
           <br></br>
-          <button>This will be github lol</button>
+          <button onClick={githubLogin}>Sign in with GitHub here</button>
           <br></br>
           <div className='flex space-x-4'>
             <p className='text-sm text-slate-500 dark:text-[var(--primary-dark)]'>Don't Have an account?</p>
             <Link className='text-sm hover:font-bold' to="/signup">Sign Up</Link>
           </div>
         </form>
-
-        <hr />
-        <br />
-        <hr />
-
-        <div>
-          <div>
-            <button onClick={githubLogin}>Sign in with GitHub here</button>
-          </div>
-          <hr />
-        </div>
       </div>
     </div>
   );
