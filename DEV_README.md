@@ -26,4 +26,25 @@ At a level above a single cluster, we think it would be of user benefit to be ab
 This is perhaps the most ambitious stretch feature in its requirement to extend our application's understanding of the configuration of and access to one cluster  to multiple, but it's also one of the most exciting! 
 
 # File structure
+- [**client**](client)
+    - [**assets**](client/assets)
+    - [**components**](client/components)
+        - [**ClusterView**](client/components/ClusterView)
+            - [**ClusterViewHeader**](client/components/ClusterView/ClusterViewHeader)
+            - [**Dashboard**](client/components/ClusterView/Dashboard)
+            - [**SidePanel**](client/components/ClusterView/SidePanel)
+        - [**LandingPage**](client/components/LandingPage)
+        - [**Main**](client/components/Main)
+            - [**dashboard**](client/components/Main/dashboard)
+            - [**header**](client/components/Main/header)
+- [**coverage**](coverage)
+- [**grafana**](grafana)
+    - [**dashboards**](grafana/dashboards)
+- [**server**](server)
+    - [**controllers**](server/controllers)
+    - [**db**](server/db)
+        - [**models**](server/db/models)
+    - [**routers**](server/routers)
+- [**types**](types)
+
 
