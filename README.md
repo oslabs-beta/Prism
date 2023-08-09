@@ -35,7 +35,7 @@ Prism is a Kubernetes and Docker visualizer that helps users understand the stat
   - [ ] 3000 (used by Grafana)
 ### Steps : 
 - [ ] Fork and clone into the repository
-- [ ] Create a .env file in the root directory with the following:
+- [ ] Create a `.env` file in the root directory with the following:
   - [ ] Your MongoDB URI (MONGO_URI) OR: 
   - [ ] A client ID and secret for Github Oauth: key: `CLIENT_ID`, `CLIENT_SECRET`
 - [ ] Execute the startup shell script (run `./startup.zsh`) - this will: 
