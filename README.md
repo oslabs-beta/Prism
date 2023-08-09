@@ -12,33 +12,18 @@ Prism is a Kubernetes and Docker visualizer that helps users understand the stat
 
 < we should put an image of some kind here >
 
+## Features
 
-## Features: currently live
-
-- connect to K8s API
-  - connect with Prometheus
-  - exact method TBD
-    - import Prometheus info into grafana
-- connect to Grafana API
-  - build a visualizer from a query
-  - import info from Prom TBD
-- customizable dashboards
-    - Dependency: authentication 
-    - Save list of selected metrics to a user-dashboards db
-- cluster relationship visualizer (Rancher)
-    - lines between the clusters? 
-    - once we understand Grafana, we can plan this better
-- Pod view with more detail
-    - Exact data TBD
-- Historical data - more than just live status
-    - dependency: auth & DB
-    - What info can we get? 
-        - how much history should we save? 
-        - do we include logs, or just up time? What specific data
-    - Where to save? 
-        - Local cache? 
-        - Save to DB? 
-    - Refresh rate (API call frequency)
+| Feature                                                                               | Status    |
+|---------------------------------------------------------------------------------------|-----------|
+| Typescript                                                                            | ✅        |
+| Plugin ecosystem for your favorite component framework (React, Vue, Svelte, etc)      | ✅        |
+| Component pages                                                                       | ✅        |
+| Component shortcodes                                                                  | ✅        |
+| SCSS and SASS                                                                         | ⏳        |
+| PostCSS config (ex. Tailwind)                                                         | ⏳        |
+| CSS imports via ESM (including CSS modules)                                           | ⏳        |
+| Shared state between any component shortcode                                          | 🙏🏻        |
 
 ## Geting Started
 ### Requirements
@@ -64,21 +49,6 @@ Prism is a Kubernetes and Docker visualizer that helps users understand the stat
 ## Contribute to the project
 
 - View our Contributor README
-
-## Features: coming soon
-
-
-| Feature                                                                               | Status    |
-|---------------------------------------------------------------------------------------|-----------|
-| Typescript                                                                            | ✅        |
-| Plugin ecosystem for your favorite component framework (React, Vue, Svelte, etc)      | ✅        |
-| Component pages                                                                       | ✅        |
-| Component shortcodes                                                                  | ✅        |
-| SCSS and SASS                                                                         | ⏳        |
-| PostCSS config (ex. Tailwind)                                                         | ⏳        |
-| CSS imports via ESM (including CSS modules)                                           | ⏳        |
-| Shared state between any component shortcode                                          | 🙏🏻        |
-
 
 ## Read More
 
