@@ -9,7 +9,8 @@
 
 :root {
   --primary: #aaeec4;
-  --primary-dark: #aaeec4ad;
+  --primary-600: #aaeec4be;
+  --primary-400: #c5f1d6;
   --secondary: #22252b;
   /* --primary-white: #ffffff; */
   --primary-white: #ffffffec;
@@ -25,7 +26,7 @@
     font-family: 'Nunito', sans-serif;
     font-weight: 600;
     /* font-stretch: semi-condensed; */
-    letter-spacing: -0.06em;
+    letter-spacing: -0.01em;
   }
 
   li {
@@ -62,45 +63,74 @@
   /* border: 2px solid yellow; */
 }
 
-.panel1 {
+/* overview panels */
+.panel1,
+.panel3,
+.panel4,
+.panel27,
+.panel3,
+.panel12 {
   width: 300px;
   height: auto;
-  /* flex: 0 0 calc(33.33% - 10px); */
+
   border-radius: 1rem;
   box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
-  /* width: 700px; */
-  /* border-radius: 50%; */
-}
-.panel3 {
-  width: 300px;
-  height: auto;
-  border-radius: 1rem;
-  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
-  /* flex: 0 0 calc(33.33% - 10px); */
 }
 
-.panel4 {
-  width: 300px;
-  height: auto;
+.panel25,
+.panel28,
+.panel10,
+.panel13,
+.panel26 {
+  width: 560px;
+  height: 250px;
   border-radius: 1rem;
   box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
-  /* flex: 0 0 calc(33.33% - 10px); */
 }
 
+/* Nodes View */
+
+.panel30,
+.panel18,
+.panel17,
+.panel19 {
+  width: 300px;
+  height: auto;
+
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+}
+
+.panel20,
+.panel21,
+.panel22 {
+  width: 560px;
+  height: 250px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+}
+.panel23 {
+  width: 560px;
+  height: 550px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Pods View */
 .panel5 {
   width: 960px;
   height: 300px;
   border-radius: 1rem;
   box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
-  /* width: 700px; */
 }
-.panel6 {
+.panel29 {
   width: 960px;
   height: 300px;
   border-radius: 1rem;
   box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
   /* width: 700px; */
 }
+
 @media screen and (max-width: 1024px) {
   .panelContainer {
     display: flex;
@@ -113,19 +143,27 @@
     padding: 0 3px;
   }
 
-  .panel1 {
-    width: 400px;
-  }
-  .panel3 {
-    width: 400px;
-  }
-  .panel4 {
-    width: 400px;
-  }
-  .panel5 {
-    width: 400px;
-  }
-  .panel6 {
+  .panel1,
+  .panel3,
+  .panel4,
+  .panel27,
+  .panel3,
+  .panel12,
+  .panel25,
+  .panel28,
+  .panel10,
+  .panel13,
+  .panel26,
+  .panel30,
+  .panel18,
+  .panel17,
+  .panel19,
+  .panel20,
+  .panel21,
+  .panel22,
+  .panel23,
+  .panel5,
+  .panel29 {
     width: 400px;
   }
 }

@@ -27,7 +27,7 @@ const Navigation: FC<Navigation> = ({
         <span className='material-symbols-outlined'>overview</span>
         Overview
       </NavLink> */}
-      <button
+      <NavLink
         onClick={() => {
           setViewOverview(true);
           setViewNode(false);
@@ -35,9 +35,10 @@ const Navigation: FC<Navigation> = ({
           setViewClusterMap(false);
         }}
         className='hover:bg-[var(--secondary)] hover:px-2 hover:py-1 my-0 hover:text-[var(--primary)] rounded flex items-center gap-1 dark:hover:text-[var(--secondary)] dark:hover:bg-[var(--primary)]'
+        to={''}
       >
         <span className='material-symbols-outlined'>overview</span>Overview
-      </button>
+      </NavLink>
       {/* END OF ONE NavLink */}
       {/* START OF ONE NavLink */}
       {/* <NavLink
@@ -48,7 +49,7 @@ const Navigation: FC<Navigation> = ({
         Node
       </NavLink> */}
 
-      <button
+      <NavLink
         onClick={() => {
           setViewOverview(false);
           setViewNode(true);
@@ -57,11 +58,12 @@ const Navigation: FC<Navigation> = ({
           console.log('node test');
         }}
         className='hover:bg-[var(--secondary)] hover:px-2 hover:py-1 my-0 hover:text-[var(--primary)] rounded flex items-center gap-1 dark:hover:text-[var(--secondary)] dark:hover:bg-[var(--primary)]'
+        to={''}
       >
         {' '}
         <FaServer size={20} />
-        Node{' '}
-      </button>
+        Nodes{' '}
+      </NavLink>
 
       {/* END OF ONE NavLink */}
       {/* START OF ONE NavLink */}
@@ -74,7 +76,7 @@ const Navigation: FC<Navigation> = ({
         Pods
       </NavLink> */}
 
-      <button
+      <NavLink
         onClick={() => {
           setViewOverview(false);
           setViewNode(false);
@@ -83,10 +85,11 @@ const Navigation: FC<Navigation> = ({
           console.log('pod test');
         }}
         className='hover:bg-[var(--secondary)] hover:px-2 hover:py-1 my-0 hover:text-[var(--primary)] rounded flex items-center gap-1 dark:hover:text-[var(--secondary)] dark:hover:bg-[var(--primary)]'
+        to={''}
       >
         {' '}
         <FaFreebsd size={21} /> Pods{' '}
-      </button>
+      </NavLink>
 
       {/* END OF ONE NavLink */}
       {/* START OF ONE NavLink */}
@@ -98,7 +101,7 @@ const Navigation: FC<Navigation> = ({
         Cluster Map
       </NavLink> */}
 
-      <button
+      <NavLink
         onClick={() => {
           setViewOverview(false);
           setViewNode(false);
@@ -107,10 +110,11 @@ const Navigation: FC<Navigation> = ({
           console.log('Clustermap test');
         }}
         className='hover:bg-[var(--secondary)] hover:px-2 hover:py-1 my-0 hover:text-[var(--primary)] rounded flex items-center gap-1 dark:hover:text-[var(--secondary)] dark:hover:bg-[var(--primary)]'
+        to={''}
       >
         {' '}
         <FaCircleNodes size={22} /> Cluster Map
-      </button>
+      </NavLink>
 
       {/* END OF ONE NavLink */}
     </nav>

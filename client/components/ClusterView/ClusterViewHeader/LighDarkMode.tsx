@@ -7,7 +7,7 @@ interface Props {}
 const LightDarkMode: FC<Props> = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   return (
-    <div className='flex'>
+    <div className='flex '>
       {theme === 'dark' ? (
         // Light mode button
         <div className='flex items-center justify-center gap-3'>

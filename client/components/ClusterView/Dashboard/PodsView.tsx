@@ -1,15 +1,15 @@
 import React, { FC } from 'react';
+import type { ReactNode } from 'react';
 
-interface Props {
-
+interface PodsViewProps {
+  frames: Array<ReactNode | null>;
 }
 
-const PodsView: FC<Props> = () => {
+const PodsView: FC<PodsViewProps> = ({ frames }) => {
   return (
-    <main className='grid items-center'>
-      {' '}
-      <h1>PodsView</h1>
-    </main>
+    <>
+      <div className=' panelContainer '>{frames}</div>
+    </>
   );
 };
 
