@@ -24,11 +24,11 @@ Prism is a Kubernetes and Docker visualizer that helps users understand the stat
 | CSS imports via ESM (including CSS modules)                                           | ⏳        |
 | Shared state between any component shortcode                                          | 🙏🏻        |
 
-## Geting Started
+## Getting Started
 ### Requirements
 
 - [ ] Running cluster in Kubernetes/ Minikube
-- [ ] ports free: 
+- [ ] The following ports must be free: 
   - [ ] 8080  ( where the application will be located)
   - [ ] 3333  (used by the backend of the application)
   - [ ] 3000 (used by Grafana)
