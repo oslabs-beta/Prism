@@ -6,7 +6,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 // const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 module.exports = {
   mode: process.env.NODE_ENV,
-  entry: path.resolve(__dirname, '/client/index.tsx'),
+  entry: path.resolve(__dirname, 'client/index.tsx'),
 
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -64,12 +64,20 @@ module.exports = {
         type: 'asset/resource',
       },
       {
-        test: /\\.(png|jp(e*)g|svg|gif)$/,
-        use: ['file-loader'],
+        test: /\.svg$/,
+        type: 'asset/resource',
+      },
+      // {
+      //   test: /\\.(png|jp(e*)g|svg|gif)$/,
+      //   use: ['file-loader'],
+      // },
+      {
+        test: /\.(png|jpe?g|svg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', '.jsx', '.png'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx', '.png', '.svg'],
   },
 };

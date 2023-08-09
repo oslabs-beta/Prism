@@ -41,8 +41,29 @@ export default function Dashboard() {
   React.useEffect(() => {
     getURL()
       .then((urlString) => {
-        const frameArray: Array<ReactNode | undefined> = [];
-        const panelIdArray = ['1', '3', '4', '5', '6']; // the panels we want to access
+        const frameArray : Array<ReactNode> = [] = [];
+        const panelIdArray = [
+          '1',
+          '3',
+          '12',
+          '4',
+          '27',
+          '25',
+          '28',
+          '10',
+          '13',
+          '26',
+          '30',
+          '18',
+          '17',
+          '19',
+          '22',
+          '20',
+          '21',
+          '23',
+          '5',
+          '29',
+        ]; // the panels we want to access
         // console.log('effect hook running: ', urlString);
         if (urlString) {
           // iterate through panel ids that we want and edit the url for each one , pushing to panels array
@@ -80,9 +101,9 @@ export default function Dashboard() {
         className=' bg-[var(--primary-white)]  text-[var(--secondary)] dark:bg-[var(--secondary)] sm:grid-in-main  dark:text-[var(--primary)]  panelContainerBig  
       '
       >
-        {viewOverview ? <OverView frames={frames} /> : null}
-        {viewNode ? <NodesView /> : null}
-        {viewPods ? <PodsView /> : null}
+        {viewOverview ? <OverView frames={frames.slice(0, 10)} /> : null}
+        {viewNode ? <NodesView frames={frames.slice(10, 18)} /> : null}
+        {viewPods ? <PodsView frames={frames.slice(18, 20)} /> : null}
         {viewClusterMap ? <ClusterMap /> : null}
       </main>
     </div>

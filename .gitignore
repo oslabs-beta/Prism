@@ -2,7 +2,4 @@
 node_modules
 .env
 grafana/api_token.json
-grafana/dashboardURL.json
 build
-grafanaInfo/dashboardURL.json
-electron_config
