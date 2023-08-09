@@ -1,4 +1,4 @@
-<div align='center'> Insert Logo / Background here<img width="autopx" src='./prism_logo_square.png'/>
+<div align='center'> <img width="200px" height="200px" src='./prism_logo_square.png'/>
 
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326ce5?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-0db7ed?style=for-the-badge&logo=docker&logoColor=white)
