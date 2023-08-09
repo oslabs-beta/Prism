@@ -68,7 +68,7 @@ Looking for contributors = 🙏🏻
 
 ## Contribute to the project
 
-- View our Contributor README
+- View our [Contributor README](/DEV_README.md)
 
 ## Read More
 
