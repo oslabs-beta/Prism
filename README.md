@@ -41,45 +41,32 @@ Prism is a Kubernetes and Docker visualizer that helps users understand the stat
     - Refresh rate (API call frequency)
 
 ## Geting Started
+### Requirements
 
-<here we will list the process of getting everything set up >
-- forking the repo
-- making any adjustments for Grafana and Prometheus, etc,
-- detailing exact instructions on how to use it.
-- Include how to sign up
-  
-### Project overview: files summary
+[ ] Running cluster in Kubernetes/ Minikube
+[ ] ports free: 
+- [ ] 8080  ( where the application will be located)
+- [ ] 3333  (used by the backend of the application)
+- [ ] 3000 (used by Grafana)
+### Steps : 
+[ ] Fork and clone into the repository
+[ ] Create a .env file in the root directory with:
+- [ ] your MONGO_URI
+- [ ] CLIENT_ID for github Oauth
+- [ ] CLIENT_SECRET of your choice
+[ ] Execute the startup shell script (run `./startup.zsh`) - this will: 
+- [ ] Install Prometheus and Grafana onto your cluster with our custom `.yaml` file
+- [ ] Start up the web application 
 
-metricsController.js
+[ ] Go to `http://localhost:8080` and view metrics to your heart's desire 🤩
 
-- handles all middleware functions
-
-db.js
-
-- establish database connections
-- will need a model and schema. Can do with a separate file within this one
-
-userRouter.js
-
-- Express Router. Does what it says on the tin
-
-server.js
-
-- Where the HTTP requests are made/start/return to... I think
 
 ## Contribute to the project
 
-- how people can contribute here
-
+- View our Contributor README
 
 ## Features: coming soon
 
-- React app renders to index.html
-- General app actions
-- auth connections
-- connect to a DB
-- Serve static files
-- any button clicks
 
 ## Read More
 
