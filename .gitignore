@@ -1,0 +1,5 @@
+# if you need the .env file see our OSP slack! 
+node_modules
+.env
+grafana/api_token.json
+build

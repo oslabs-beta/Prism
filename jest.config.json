@@ -1,0 +1,6 @@
+{
+  "testEnvironment": "jsdom",
+  "collectCoverage": true,
+  "collectCoverageFrom": ["**/**/*.{ts,tsx}"],
+  "coverageReporters": ["json-summary", "text-summary"]
+}
