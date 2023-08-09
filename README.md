@@ -49,8 +49,8 @@ Our goal for this project was to provide the best possible user experience while
 ### Steps : 
 - [ ] Fork and clone into the repository
 - [ ] Create a `.env` file in the root directory with the following:
-  - [ ] Your MongoDB URI (MONGO_URI) OR: 
-  - [ ] A client ID and secret for Github Oauth: key: `CLIENT_ID`, `CLIENT_SECRET`
+  - [ ] Your MongoDB URI (key `MONGO_URI`) OR: 
+  - [ ] A client ID and secret for Github Oauth: keys `CLIENT_ID`, `CLIENT_SECRET`
 - [ ] Execute the startup shell script (run `./startup.zsh`) - this will:
   - [ ] Install necessary dependencies for the web application  
   - [ ] Install Prometheus 🔥 and Grafana 📊 onto your cluster with our custom configuration
