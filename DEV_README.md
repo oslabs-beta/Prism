@@ -3,10 +3,11 @@ We're so excited that you're thinking about contributing to our application! We 
 
 # Possible Directions for Future Work 
 
-## State management
+## State management and Database Optimization 
+Proper authentication and caching would increase security and enhance the user experience. This will require more comprehensive state management and a close look at what might be best to save in order to persist between reloads. 
 
 ## Customizable dashboards ( positioning, resizing ) 
-It would make for an even better UI if users were able to freely resize and move dashboards in a way that would save in state (possibly persist through the database). 
+It would make for an even better UX if users were able to freely resize and move dashboards in a way that would save in state (possibly persist through the database). 
 
 ## Inter-Cluster Views
 
