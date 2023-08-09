@@ -8,24 +8,25 @@ export default function Login<Props>(/* {setUser} */) {
   const navigate = useNavigate();
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
- 
-
-
 
   const handleSubmit = async (event: SyntheticEvent) => {
-    console.log('sumbit was handled', password.current.value)
     event.preventDefault();
-    console.log(username?.current.value);
-    // const res = await fetch('http://localhost:3333/user/login', {
+    // type assertions for username and password to ensure they've been entered .
+    if (username.current === null || password.current === null) {
+      alert(' You must enter a username and password! ');
+      return;
+    }
+    const name: string = username.current.value;
+    const pwd: string = password.current.value;
     const res = await fetch('/user/login', {
       method: 'POST',
       headers: {
-        'Content-Type' : 'application/json'
+        'Content-Type': 'application/json',
       },
       credentials: 'include',
       body: JSON.stringify({
-        username: username?.current.value,
-        password: password?.current.value,
+        username: name,
+        password: pwd,
       }),
     }).then((response) => response.json());
     console.log(res);
@@ -49,8 +50,11 @@ export default function Login<Props>(/* {setUser} */) {
   return (
     <div className='dark:bg-[var(--secondary)] dark:text-[var(--primary)]'>
       <div className='h-screen flex flex-col items-center justify-center'>
-      <LightDarkMode />   
-        <form className='bg-[var(--primary-grey)] mt-5 px-5 pt-5 dark:bg-[var(--secondary)] pb-10 flex flex-col items-center dark:border-2 dark:border-[var(--primary)] rounded shadow-[5px_5px_6px_0px_rgba(0,0,0,0.3)]' onSubmit={handleSubmit}>
+        <LightDarkMode />
+        <form
+          className='bg-[var(--primary-grey)] mt-5 px-5 pt-5 dark:bg-[var(--secondary)] pb-10 flex flex-col items-center dark:border-2 dark:border-[var(--primary)] rounded shadow-[5px_5px_6px_0px_rgba(0,0,0,0.3)]'
+          onSubmit={handleSubmit}
+        >
           <p className='pb-5'>Login Form</p>
           <input
             ref={username}
@@ -70,13 +74,19 @@ export default function Login<Props>(/* {setUser} */) {
             placeholder='password'
           />
           <br></br>
-          <button type='submit' className='bg-[var(--secondary)] px-6'>Login</button>
+          <button type='submit' className='bg-[var(--secondary)] px-6'>
+            Login
+          </button>
           <br></br>
-          <button onClick={githubLogin}>Sign in with GitHub here</button>
+          <button onClick={githubLogin}>Sign in with GitHub</button>
           <br></br>
           <div className='flex space-x-4'>
-            <p className='text-sm text-slate-500 dark:text-[var(--primary-dark)]'>Don't Have an account?</p>
-            <Link className='text-sm hover:font-bold' to="/signup">Sign Up</Link>
+            <p className='text-sm text-slate-500 dark:text-[var(--primary-dark)]'>
+              Don't Have an account?
+            </p>
+            <Link className='text-sm hover:font-bold' to='/signup'>
+              Sign Up
+            </Link>
           </div>
         </form>
       </div>

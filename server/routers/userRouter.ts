@@ -3,7 +3,7 @@ import userController from '../controllers/userController';
 
 // destructure imports into variables
 const router: Router = Router();
-const { createUser, authUser, setUserToken, deleteUser, verifyToken } =
+const { createUser, authUser, setUserToken, deleteUser, verifyUserToken } =
   userController; // destructure imports
 
 router.post('/signup', createUser, setUserToken, (req, res) => {
@@ -16,7 +16,7 @@ router.post('/login', authUser, setUserToken, (req, res) => {
   res.json(res.locals.user);
 });
 
-router.delete('/', verifyToken, authUser, deleteUser, (req, res) => {
+router.delete('/', verifyUserToken, authUser, deleteUser, (req, res) => {
   res.json(res.locals.user);
 });
 
@@ -24,7 +24,7 @@ router.delete('/', verifyToken, authUser, deleteUser, (req, res) => {
 router.get(
   '/getAccessToken',
   async (req, res, next) => {
-    console.log(req.query.code);
+    // console.log(req.query.code);
 
     const params =
       '?client_id=' +
@@ -55,18 +55,14 @@ router.get(
 
 // getUserData
 router.get('/getUserData', async function (req, res) {
-  req.get('Authorization');
   await fetch('https://api.github.com/user', {
     method: 'GET',
     headers: {
-      Authorization: req.get('Authorization'),
+      Authorization: res.locals.token as string,
     },
   })
+    .then((response) => response.json())
     .then((data) => {
-      return data.json();
-    })
-    .then((data) => {
-      console.log(data);
       res.json(data);
     });
 });

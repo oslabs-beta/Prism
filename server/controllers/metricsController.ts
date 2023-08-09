@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { Controller, middlewareError } from 'types/types';
-import { execFile, spawn } from 'node:child_process';
+import { Controller, middlewareError } from '../../types/types';
 
 interface apiKeyObject {
   id?: number;

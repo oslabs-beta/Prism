@@ -11,28 +11,29 @@ export default function Signup<Props>(/*{setUser} */) {
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
-
+    // type assertions for username and password
+    if (username.current === null || password.current === null) {
+      alert(' You must enter a username and password! ');
+      return;
+    }
+    const name: string = username.current.value;
+    const pwd: string = password.current.value;
     const res = await fetch('/user/signup', {
       method: 'POST',
       body: JSON.stringify({
-        username: username?.current.value,
-        password: password?.current.value
+        username: name,
+        password: password,
       }),
       headers: {
-        'Content-Type' : 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     })
-    // .then((data) => {
-    //   data.json()
-    //   return data
-    // })
-    .then(response=> response.json())
-    .then((user) => {
-      if( user.created)  navigate('/dashboard');
-      else alert('Username is taken!')
-    })
+      .then((response) => response.json())
+      .then((user) => {
+        if (user.created) navigate('/dashboard');
+        else alert('Username is taken!');
+      });
   };
-
 
   useEffect(() => {
     const queryString = window.location.search;
@@ -47,15 +48,17 @@ export default function Signup<Props>(/*{setUser} */) {
     window.location.assign(
       'https://www.github.com/login/oauth/authorize?client_id=' + CLIENT_ID
     );
-    // add a post request to create a cookie???
   };
 
   return (
     <div className='dark:bg-[var(--secondary)] dark:text-[var(--primary)]'>
-      <div className='h-screen flex flex-col items-center justify-center drop-shadow '>  
-      <LightDarkMode />   
-        <form className='bg-[var(--primary-grey)] mt-5 px-5 pt-5 pb-10 flex flex-col items-center rounded dark:bg-[var(--secondary)] dark:border-2 dark:border-[var(--primary)] rounded shadow-[5px_5px_6px_0px_rgba(0,0,0,0.3)]' onSubmit={handleSubmit}>          
-        <p>Signup</p>
+      <div className='h-screen flex flex-col items-center justify-center drop-shadow '>
+        <LightDarkMode />
+        <form
+          className='bg-[var(--primary-grey)] mt-5 px-5 pt-5 pb-10 flex flex-col items-center rounded dark:bg-[var(--secondary)] dark:border-2 dark:border-[var(--primary)] rounded shadow-[5px_5px_6px_0px_rgba(0,0,0,0.3)]'
+          onSubmit={handleSubmit}
+        >
+          <p>Signup</p>
           <br></br>
           <input
             ref={username}
@@ -77,22 +80,17 @@ export default function Signup<Props>(/*{setUser} */) {
           <br></br>
           <button>Sign Up</button>
           <br></br>
-          <button>This will be github lol</button>
+          <button onClick={githubLogin}>Sign up with GitHub</button>
           <br></br>
           <div className='flex space-x-4'>
-            <p className='text-sm text-slate-500 dark:text-[var(--primary-dark)] '>Already have an account?</p>
-            <Link className='text-sm hover:font-bold' to="/login">Login</Link>
-          </div> 
-        </form>
-      </div>
-      <div>
-        <hr />
-        <div>
-          <div>
-            <button onClick={githubLogin}>Sign up with GitHub here</button>
+            <p className='text-sm text-slate-500 dark:text-[var(--primary-dark)] '>
+              Already have an account?
+            </p>
+            <Link className='text-sm hover:font-bold' to='/login'>
+              Login
+            </Link>
           </div>
-          <hr />
-        </div>
+        </form>
       </div>
     </div>
   );

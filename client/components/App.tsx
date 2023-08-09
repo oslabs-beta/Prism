@@ -1,5 +1,5 @@
 import React, { useState, FC, useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './Login';
 import Signup from './Signup';
 import LandingPage from './LandingPage/LandingPage';
@@ -12,7 +12,8 @@ interface Props {}
 const App: FC<Props> = () => {
   const [user, setUser] = useState({});
   const [rerender, setRerender] = useState(false);
-
+  const navigate = useNavigate();
+  // effect hook will get access token if
   useEffect(() => {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -34,6 +35,7 @@ const App: FC<Props> = () => {
               console.log('test from app.tx, then statement');
               localStorage.setItem('accessToken', data.access_token);
               setRerender(!rerender);
+              navigate('/dashboard');
             }
           });
       }
