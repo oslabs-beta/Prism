@@ -81,7 +81,7 @@ server.js
 - Serve static files
 - any button clicks
 
-  | Feature                                                                               | Status    |
+| Feature                                                                               | Status    |
 |---------------------------------------------------------------------------------------|-----------|
 | Typescript                                                                            | ✅        |
 | Plugin ecosystem for your favorite component framework (React, Vue, Svelte, etc)      | ✅        |
