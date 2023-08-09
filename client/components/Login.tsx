@@ -1,32 +1,26 @@
 import React, { SyntheticEvent, useRef, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import LightDarkMode from './ClusterView/ClusterViewHeader/LighDarkMode';
 interface Props {}
 
 export default function Login<Props>(/* {setUser} */) {
   const navigate = useNavigate();
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
+ 
 
-  const Button = () => {
-    return (
-      <div>
-        <button type='button' onClick={() => navigate('/dashboard')}>
-          Close
-        </button>
-      </div>
-    );
-  };
+
 
   const handleSubmit = async (event: SyntheticEvent) => {
+    console.log('sumbit was handled', password.current.value)
     event.preventDefault();
     console.log(username?.current.value);
     // const res = await fetch('http://localhost:3333/user/login', {
     const res = await fetch('/user/login', {
       method: 'POST',
-      // mode: "cors",
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type' : 'application/json'
       },
       credentials: 'include',
       body: JSON.stringify({
@@ -53,46 +47,38 @@ export default function Login<Props>(/* {setUser} */) {
 
   // <NavLink to='/dashboard'></NavLink>
   return (
-    <div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <p>Login Form</p>
-          <label htmlFor='login-username'>username</label>
+    <div className='dark:bg-[var(--secondary)] dark:text-[var(--primary)]'>
+      <div className='h-screen flex flex-col items-center justify-center'>
+      <LightDarkMode />   
+        <form className='bg-[var(--primary-grey)] mt-5 px-5 pt-5 dark:bg-[var(--secondary)] pb-10 flex flex-col items-center dark:border-2 dark:border-[var(--primary)] rounded shadow-[5px_5px_6px_0px_rgba(0,0,0,0.3)]' onSubmit={handleSubmit}>
+          <p className='pb-5'>Login Form</p>
           <input
             ref={username}
             id='login-username'
             onChange={(e) => (username.current = e.target)}
             name='username'
             type='text'
-            placeholder='Username'
+            placeholder='username'
           />
-          <label htmlFor='login-password'>password</label>
+          <br></br>
           <input
             ref={password}
             id='login-password'
             onChange={(e) => (password.current = e.target)}
             name='password'
             type='password'
-            placeholder='Password'
+            placeholder='password'
           />
           <br></br>
-          <button type='submit' value='Login'>
-            Login
-          </button>
+          <button type='submit' className='bg-[var(--secondary)] px-6'>Login</button>
           <br></br>
-          <Button />
-        </form>
-
-        <hr />
-        <br />
-        <hr />
-
-        <div>
-          <div>
-            <button onClick={githubLogin}>Sign in with GitHub here</button>
+          <button onClick={githubLogin}>Sign in with GitHub here</button>
+          <br></br>
+          <div className='flex space-x-4'>
+            <p className='text-sm text-slate-500 dark:text-[var(--primary-dark)]'>Don't Have an account?</p>
+            <Link className='text-sm hover:font-bold' to="/signup">Sign Up</Link>
           </div>
-          <hr />
-        </div>
+        </form>
       </div>
     </div>
   );

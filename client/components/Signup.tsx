@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import LightDarkMode from './ClusterView/ClusterViewHeader/LighDarkMode';
 
 interface Props {}
 
@@ -11,23 +12,27 @@ export default function Signup<Props>(/*{setUser} */) {
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    const res = await fetch('/signup', {
+    const res = await fetch('/user/signup', {
       method: 'POST',
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
       body: JSON.stringify({
         username: username?.current.value,
-        password: password?.current.value,
+        password: password?.current.value
       }),
-    });
-    if (res.ok) {
-      // const user = await res.json();
-      // setUser(user);
-      //   navigate('/');
-    }
+      headers: {
+        'Content-Type' : 'application/json'
+      }
+    })
+    // .then((data) => {
+    //   data.json()
+    //   return data
+    // })
+    .then(response=> response.json())
+    .then((user) => {
+      if( user.created)  navigate('/dashboard');
+      else alert('Username is taken!')
+    })
   };
+
 
   useEffect(() => {
     const queryString = window.location.search;
@@ -46,11 +51,12 @@ export default function Signup<Props>(/*{setUser} */) {
   };
 
   return (
-    <div>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <p>Signup</p>
-          <label htmlFor='signup-username'>username</label>
+    <div className='dark:bg-[var(--secondary)] dark:text-[var(--primary)]'>
+      <div className='h-screen flex flex-col items-center justify-center drop-shadow '>  
+      <LightDarkMode />   
+        <form className='bg-[var(--primary-grey)] mt-5 px-5 pt-5 pb-10 flex flex-col items-center rounded dark:bg-[var(--secondary)] dark:border-2 dark:border-[var(--primary)] rounded shadow-[5px_5px_6px_0px_rgba(0,0,0,0.3)]' onSubmit={handleSubmit}>          
+        <p>Signup</p>
+          <br></br>
           <input
             ref={username}
             id='signup-username'
@@ -59,7 +65,7 @@ export default function Signup<Props>(/*{setUser} */) {
             type='text'
             placeholder='Username'
           />
-          <label htmlFor='signup-password'>password</label>
+          <br></br>
           <input
             ref={password}
             id='signup-password'
@@ -68,10 +74,15 @@ export default function Signup<Props>(/*{setUser} */) {
             type='password'
             placeholder='Password'
           />
+          <br></br>
           <button>Sign Up</button>
-          <button type='button' onClick={() => navigate('/')}>
-            Close
-          </button>
+          <br></br>
+          <button>This will be github lol</button>
+          <br></br>
+          <div className='flex space-x-4'>
+            <p className='text-sm text-slate-500 dark:text-[var(--primary-dark)] '>Already have an account?</p>
+            <Link className='text-sm hover:font-bold' to="/login">Login</Link>
+          </div> 
         </form>
       </div>
       <div>

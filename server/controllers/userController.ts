@@ -14,11 +14,12 @@ const userController: Controller = {};
 userController.createUser = async function (req, res, next) {
   // username nand password should come in on response body
   const { username, password } = req.body;
+  console.log(username, password);
   const existingUser: HydratedDocument<IUser> | undefined = await User.findOne({
     username,
   });
 
-  // console.log('user exists? ', ); // show when user doesn't exist
+  console.log('user exists? ',existingUser ); // show when user doesn't exist
   if (!existingUser) {
     const user: HydratedDocument<IUser> = await User.create({
       username,

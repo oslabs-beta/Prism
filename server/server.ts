@@ -3,7 +3,7 @@ import { middlewareError } from 'types/types';
 // express server setup
 import express, { NextFunction, Request, Response, json } from 'express';
 import cookieParser from 'cookie-parser';
-import cors from 'cors';
+import cors from "cors"
 import { resolve } from 'path';
 
 // route imports
@@ -15,7 +15,7 @@ import connectDB from './db/db';
 
 // const declarations
 const app = express();
-
+app.use(cors())
 const PORT = 3333; // from josh's branch
 connectDB(); /// uncomment to connect to DB
 

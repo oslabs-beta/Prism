@@ -12,6 +12,7 @@
     "outDir": "./dist"
   },
   "include": ["./client/**/*", "./types/**/*", "./server/**/*"]
+  
   // "exclude": [
   //     "./client/assets/**/*",
   // ]
