@@ -63,7 +63,6 @@ const App: FC<Props> = () => {
                 element={<ClusterConnect />}
               ></Route>
             </Route>
-
             <Route path='/clusterview' element={<OverView />}> */}
             {/* <Route index element={<OverView />} /> */}
             {/* <Route exact path='/clusterview/nodes' element={<NodesView />} />
