@@ -65,7 +65,7 @@ Our goal for this project was to provide the best possible user experience while
 
 ## Read More
 
-[Checkout our article on Medium!](https://medium.com) 
+[Check out our article on Medium!](https://medium.com) 
 
 
 ## Authors
