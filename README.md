@@ -40,7 +40,9 @@ Our goal for this project was to provide the best possible user experience while
 | Historcial Data and Trends                                                            | 🙏🏻        |
 
 Done =  ✅ 
+<br>
 In Progress = ⏳
+<br>
 Looking for contributors = 🙏🏻
 
 ## Getting Started
