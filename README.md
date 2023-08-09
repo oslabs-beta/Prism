@@ -39,6 +39,10 @@ Our goal for this project was to provide the best possible user experience while
 | Customizable Dashboards                                                               | 🙏🏻        |
 | Historcial Data and Trends                                                            | 🙏🏻        |
 
+Done =  ✅ 
+In Progress = ⏳
+Looking for contributors = 🙏🏻
+
 ## Getting Started
 ### Requirements
 
