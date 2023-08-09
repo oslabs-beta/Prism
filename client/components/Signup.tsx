@@ -22,7 +22,7 @@ export default function Signup<Props>(/*{setUser} */) {
       method: 'POST',
       body: JSON.stringify({
         username: name,
-        password: password,
+        password: pwd,
       }),
       headers: {
         'Content-Type': 'application/json',
