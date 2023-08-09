@@ -36,9 +36,8 @@ Prism is a Kubernetes and Docker visualizer that helps users understand the stat
 ### Steps : 
 - [ ] Fork and clone into the repository
 - [ ] Create a .env file in the root directory with the following:
-  - [ ] your MONGO_URI
-  - [ ] CLIENT_ID for GitHub Oauth
-  - [ ] CLIENT_SECRET of your choice
+  - [ ] Your MongoDB URI (MONGO_URI) OR: 
+  - [ ] A client ID and secret for Github Oauth: key: `CLIENT_ID`, `CLIENT_SECRET`
 - [ ] Execute the startup shell script (run `./startup.zsh`) - this will: 
   - [ ] Install Prometheus 🔥 and Grafana 📊 onto your cluster with our custom configuration
   - [ ] Start up the web application 
