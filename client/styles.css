@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,600&display=swap');
+
+:root {
+  --primary: #aaeec4;
+  --primary-600: #aaeec4be;
+  --primary-400: #c5f1d6;
+  --secondary: #22252b;
+  /* --primary-white: #ffffff; */
+  --primary-white: #ffffffec;
+  --primary-grey: #e8e8e8;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    /* font-stretch: semi-condensed; */
+    letter-spacing: -0.01em;
+  }
+
+  li {
+    @apply p-4 text-sm;
+  }
+
+  button {
+    @apply flex items-center justify-center px-2 py-1 border bg-[var(--secondary)] text-[var(--primary)] dark:bg-[var(--primary)] dark:text-[var(--secondary)] rounded border-none;
+  }
+
+  h2 {
+    @apply text-xl font-bold;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+}
+
+.panelContainerBig {
+  display: flex;
+  justify-content: center;
+}
+
+.panelContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem 1rem;
+  gap: 2rem;
+  width: min-content;
+  width: 95%;
+  height: fit-content;
+  /* border: 2px solid yellow; */
+}
+
+/* overview panels */
+.panel1,
+.panel3,
+.panel4,
+.panel27,
+.panel3,
+.panel12 {
+  width: 300px;
+  height: auto;
+
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+}
+
+.panel25,
+.panel28,
+.panel10,
+.panel13,
+.panel26 {
+  width: 560px;
+  height: 250px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Nodes View */
+
+.panel30,
+.panel18,
+.panel17,
+.panel19 {
+  width: 300px;
+  height: auto;
+
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+}
+
+.panel20,
+.panel21,
+.panel22 {
+  width: 560px;
+  height: 250px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+}
+.panel23 {
+  width: 560px;
+  height: 550px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Pods View */
+.panel5 {
+  width: 960px;
+  height: 300px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+}
+.panel29 {
+  width: 960px;
+  height: 300px;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+  /* width: 700px; */
+}
+
+@media screen and (max-width: 1024px) {
+  .panelContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 0 calc(100% - 10px);
+    border-radius: 1rem;
+    box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.5);
+    padding: 0 3px;
+  }
+
+  .panel1,
+  .panel3,
+  .panel4,
+  .panel27,
+  .panel3,
+  .panel12,
+  .panel25,
+  .panel28,
+  .panel10,
+  .panel13,
+  .panel26,
+  .panel30,
+  .panel18,
+  .panel17,
+  .panel19,
+  .panel20,
+  .panel21,
+  .panel22,
+  .panel23,
+  .panel5,
+  .panel29 {
+    width: 400px;
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "CommonJS",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    // "noEmit": true,
+    // "allowImportingTsExtensions": true,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "outDir": "./dist"
+  },
+  "include": ["./client/**/*", "./types/**/*", "./server/**/*"]
+  
+  // "exclude": [
+  //     "./client/assets/**/*",
+  // ]
+  // "files": [
+  //     "./client/components/AppIntro.tsx",
+  //     "./client/components/App.tsx",
+  // ]
+}
