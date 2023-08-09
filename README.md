@@ -45,9 +45,9 @@ Prism is a Kubernetes and Docker visualizer that helps users understand the stat
 
 - [ ] Running cluster in Kubernetes/ Minikube
 - [ ] ports free: 
-- [ ] 8080  ( where the application will be located)
-- [ ] 3333  (used by the backend of the application)
-- [ ] 3000 (used by Grafana)
+  - [ ] 8080  ( where the application will be located)
+  - [ ] 3333  (used by the backend of the application)
+  - [ ] 3000 (used by Grafana)
 ### Steps : 
 - [ ] Fork and clone into the repository
 - [ ] Create a .env file in the root directory with the following:
