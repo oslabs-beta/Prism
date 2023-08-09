@@ -54,11 +54,11 @@ Prism is a Kubernetes and Docker visualizer that helps users understand the stat
   - [ ] your MONGO_URI
   - [ ] CLIENT_ID for GitHub Oauth
   - [ ] CLIENT_SECRET of your choice
-[ ] Execute the startup shell script (run `./startup.zsh`) - this will: 
+- [ ] Execute the startup shell script (run `./startup.zsh`) - this will: 
   - [ ] Install Prometheus 🔥 and Grafana 📊 onto your cluster with our custom configuration
   - [ ] Start up the web application 
 
-[ ] Go to `http://localhost:8080` and view metrics to your heart's desire 🤩
+- [ ] Go to `http://localhost:8080` and view metrics to your heart's desire 🤩
 
 
 ## Contribute to the project
