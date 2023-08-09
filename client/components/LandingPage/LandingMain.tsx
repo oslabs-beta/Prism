@@ -125,11 +125,11 @@ export default function LandingMain() {
         className='scroll-mt-24 mt-10  mb-20 bg-[var(--white)] flex flex-col items-center justify-center '
       >
         <h2 className='text-3xl mb-5 '>Get Started</h2>
-        <div className='grid grid-cols-2  border-red-500 gap-10 items-center justify-center'>
-          <div className='flex flex-col border-2 border-green-500'>
+        <div className='grid grid-cols-2  gap-10 items-center justify-center'>
+          <div className='flex flex-col '>
             <h2>Check out our Github page and follow the Read Me file.</h2>
           </div>
-          <div className='flex flex-col border-2 border-yellow-500'>
+          <div className='flex flex-col '>
             <h2>Check out our Medium Article</h2>
           </div>
         </div>

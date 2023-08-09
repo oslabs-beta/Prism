@@ -41,7 +41,7 @@ export default function Dashboard() {
   React.useEffect(() => {
     getURL()
       .then((urlString) => {
-        const frameArray = [];
+        const frameArray : Array<ReactNode> = [] = [];
         const panelIdArray = [
           '1',
           '3',

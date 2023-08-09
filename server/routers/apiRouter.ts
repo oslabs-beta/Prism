@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import metricsController from '../controllers/metricsController';
-const router = Router();
+const router: Router = Router();
 // get api key
 // when authorization is implemented here, we should route certain api calls through verifytoken middleware
 // routes :
@@ -10,12 +10,10 @@ router.post(
   '/',
   metricsController.readDashboardURL,
   (req, res, next) => {
-    console.log('locals check: ', res.locals);
     if (res.locals.dashboardURL) {
       // do nothing
       return next();
     } else {
-      console.log('calling createDashboard');
       return metricsController.createDashboard(req, res, next);
     }
   },

@@ -1,10 +1,14 @@
 // user authentication
-import mongoose from 'mongoose';
+import mongoose, { HydratedDocument } from 'mongoose';
 const { Schema } = mongoose;
 import bcrypt from 'bcrypt';
-
-const userSchema = new Schema({
-  name: String,
+interface IUser {
+  username: string;
+  password: string;
+  matchPassword: (inputPassword: string) => boolean;
+}
+const userSchema = new Schema<IUser>({
+  username: String,
   password: String,
 });
 
@@ -12,17 +16,21 @@ const userSchema = new Schema({
 userSchema.pre('save', async function (next) {
   // if password has not been modified , we don't need to hash
   // (this is for user object updates)
-  if (!this.isModified(this.password)) return next();
+  console.log('checking if document is modified: ', this.password, this.isModified(this.password))
+  if (!this.isModified(this.password) && !this.isNew) return next();
   const salt: string = await bcrypt.genSalt(10);
+  console.log("Salt: ",salt);
   const hashedPassword: string = await bcrypt.hash(this.password, salt);
   this.password = hashedPassword;
 });
 
 // method for comparing passwords stored on user schema
-userSchema.methods.matchPassword = async function (inputPassword) {
+userSchema.methods.matchPassword = async function (inputPassword: string) {
   return await bcrypt.compare(inputPassword, this.password);
 };
 // create model from schema to export
-const userModel = mongoose.model('users', userSchema);
+const userModel = mongoose.model<IUser>('users', userSchema);
 
 export default userModel;
+
+export { HydratedDocument, IUser };

@@ -18,7 +18,7 @@ export default function LandingHeader() {
 
   let [isOpen, setIsOpen] = useState(false);
 
-  const handleNavLinkClick = (sectionId) => {
+  const handleNavLinkClick = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

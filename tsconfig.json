@@ -7,11 +7,12 @@
     "baseUrl": "./",
     // "noEmit": true,
     // "allowImportingTsExtensions": true,
-    // "noImplicitAny": true,
+    "noImplicitAny": true,
     "allowJs": true,
     "outDir": "./dist"
   },
   "include": ["./client/**/*", "./types/**/*", "./server/**/*"]
+  
   // "exclude": [
   //     "./client/assets/**/*",
   // ]
