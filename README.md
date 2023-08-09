@@ -22,7 +22,8 @@
 
 Prism is a Kubernetes and Docker visualizer that helps users understand the status of and relationships between their nodes, pods, services, and containers. It will help developers quickly view their server status and identify problem areas with live metrics and pod health statistics.
 Our goal for this project was to provide the best possible user experience while minimizing the code a user has to write (everything launches with a single command).
-< we should put an image of some kind here >
+
+<img alt="Demo" src="./demo.gif">
 
 ## Features
 
