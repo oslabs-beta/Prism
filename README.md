@@ -6,45 +6,15 @@
 
 
 
-# Prism 
+# Introducing Prism!
 
 Prism is a Kubernetes and Docker visualizer that helps users understand the status of and relationships between their nodes, pods, services, and containers. It will help developers quickly view their server status and identify problem areas with live metrics and pod health statistics.
 
 < we should put an image of some kind here >
 
-# Geting Started
 
-# Installation 
+## Features: currently live
 
-
-
-# Contributions 
-
-# Read More
-- Link to Medium Article
-- 
-# Authors
-
-# Features: currently live
-
-- none yet
-
-# Features: coming soon
-
-- React app renders to index.html
-
-
-
-# backend structure
-
-# required actions
-
-MVP
-General app actions
-- Serve static files
-- any button clicks
-
-K8s and project specific actions
 - connect to K8s API
   - connect with Prometheus
   - exact method TBD
@@ -52,13 +22,6 @@ K8s and project specific actions
 - connect to Grafana API
   - build a visualizer from a query
   - import info from Prom TBD
-
-Stretch!!
-General app actions
-- auth connections
-- connect to a DB
-
-K8s and project specific actions
 - customizable dashboards
     - Dependency: authentication 
     - Save list of selected metrics to a user-dashboards db
@@ -77,7 +40,15 @@ K8s and project specific actions
         - Save to DB? 
     - Refresh rate (API call frequency)
 
-### files and explanations
+## Geting Started
+
+<here we will list the process of getting everything set up >
+- forking the repo
+- making any adjustments for Grafana and Prometheus, etc,
+- detailing exact instructions on how to use it.
+- Include how to sign up
+  
+### Project overview: files summary
 
 metricsController.js
 
@@ -96,9 +67,32 @@ server.js
 
 - Where the HTTP requests are made/start/return to... I think
 
----
+## Contribute to the project
 
-## Test area for git commits
+- how people can contribute here
 
-Hello, my name is Josh
-JAMES was here
+
+## Features: coming soon
+
+- React app renders to index.html
+- General app actions
+- auth connections
+- connect to a DB
+- Serve static files
+- any button clicks
+
+## Read More
+
+[Checkout our article on Medium!](https://medium.com) 
+
+
+## Authors
+
+- list of all people and our links
+- [Bezzy](https://github.com/joshuarhall) 
+- [Dawit](https://github.com/joshuarhall) 
+- [James](https://github.com/joshuarhall) 
+- [Josh Hall](https://github.com/joshuarhall) 
+- [Paul](https://github.com/joshuarhall) 
+
+
