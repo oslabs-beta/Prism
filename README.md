@@ -1,4 +1,4 @@
-<div align='center'> <h1> Welcome to Prism! </h1></div>
+<div align='center'> <h1> Welcome to Prism! </h1> </div>
 <div align='center'> <img width="200px" height="200px" src='./prism_logo_square.png'/>
 
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326ce5?style=for-the-badge&logo=kubernetes&logoColor=white)
