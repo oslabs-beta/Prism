@@ -81,6 +81,18 @@ server.js
 - Serve static files
 - any button clicks
 
+  | Feature                                                                               | Status    |
+|---------------------------------------------------------------------------------------|-----------|
+| Typescript                                                                            | ✅        |
+| Plugin ecosystem for your favorite component framework (React, Vue, Svelte, etc)      | ✅        |
+| Component pages                                                                       | ✅        |
+| Component shortcodes                                                                  | ✅        |
+| SCSS and SASS                                                                         | ⏳        |
+| PostCSS config (ex. Tailwind)                                                         | ⏳        |
+| CSS imports via ESM (including CSS modules)                                           | ⏳        |
+| Shared state between any component shortcode                                          | 🙏🏻        |
+
+
 ## Read More
 
 [Checkout our article on Medium!](https://medium.com) 
