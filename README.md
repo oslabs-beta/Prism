@@ -43,20 +43,20 @@ Prism is a Kubernetes and Docker visualizer that helps users understand the stat
 ## Geting Started
 ### Requirements
 
-[ ] Running cluster in Kubernetes/ Minikube
-[ ] ports free: 
+- [ ] Running cluster in Kubernetes/ Minikube
+- [ ] ports free: 
 - [ ] 8080  ( where the application will be located)
 - [ ] 3333  (used by the backend of the application)
 - [ ] 3000 (used by Grafana)
 ### Steps : 
-[ ] Fork and clone into the repository
-[ ] Create a .env file in the root directory with:
-- [ ] your MONGO_URI
-- [ ] CLIENT_ID for github Oauth
-- [ ] CLIENT_SECRET of your choice
+- [ ] Fork and clone into the repository
+- [ ] Create a .env file in the root directory with the following:
+  - [ ] your MONGO_URI
+  - [ ] CLIENT_ID for GitHub Oauth
+  - [ ] CLIENT_SECRET of your choice
 [ ] Execute the startup shell script (run `./startup.zsh`) - this will: 
-- [ ] Install Prometheus and Grafana onto your cluster with our custom `.yaml` file
-- [ ] Start up the web application 
+  - [ ] Install Prometheus 🔥 and Grafana 📊 onto your cluster with our custom configuration
+  - [ ] Start up the web application 
 
 [ ] Go to `http://localhost:8080` and view metrics to your heart's desire 🤩
 
