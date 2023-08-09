@@ -29,14 +29,15 @@ Our goal for this project was to provide the best possible user experience while
 
 | Feature                                                                               | Status    |
 |---------------------------------------------------------------------------------------|-----------|
-| Typescript                                                                            | ✅        |
-| Plugin ecosystem for your favorite component framework (React, Vue, Svelte, etc)      | ✅        |
-| Component pages                                                                       | ✅        |
-| Component shortcodes                                                                  | ✅        |
-| SCSS and SASS                                                                         | ⏳        |
-| PostCSS config (ex. Tailwind)                                                         | ⏳        |
-| CSS imports via ESM (including CSS modules)                                           | ⏳        |
-| Shared state between any component shortcode                                          | 🙏🏻        |
+| Prometheus and Grafana Intergration                                                   | ✅        |
+| Custom Dashboard                                                                      | ✅        |
+| an Overview, Pods view and Node view of metrics                                       | ✅        |
+| SASS and Tailwind CSS                                                                 | ✅        |
+| Typescript conversion                                                                 | ✅        |
+| Testing (React Testing Library/Jest front-end, Supertest backend)                     | ⏳        |
+| Fully intergrated OAuth/User authentication                                           | ⏳        |
+| Customizable Dashboards                                                               | 🙏🏻        |
+| Historcial Data and Trends                                                            | 🙏🏻        |
 
 ## Getting Started
 ### Requirements
