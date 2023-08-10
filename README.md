@@ -91,7 +91,7 @@ Once you've done the steps above you'll be able to quickly view live metrics and
 
 ## Read More
 
-[Check out our article on Medium!](https://medium.com)
+[Check out our article on Medium!](https://medium.com/@k8s.prism/prism-all-in-one-kubernetes-visualizer-7338b56f8de2)
 
 ## Authors
 
