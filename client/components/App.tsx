@@ -2,7 +2,7 @@ import React, { useState, FC, useEffect } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './Login';
 import Signup from './Signup';
-import LandingPage from './LandingPage/LandingPage';
+// import LandingPage from './LandingPage/LandingPage';
 
 import { ThemeProvider } from './ClusterView/ClusterViewHeader/themeContext';
 import Dashboard from './ClusterView/Dashboard';
@@ -13,6 +13,7 @@ const App: FC<Props> = () => {
   const [user, setUser] = useState({});
   const [rerender, setRerender] = useState(false);
   const navigate = useNavigate();
+
   // effect hook will get access token if
   useEffect(() => {
     const queryString = window.location.search;
@@ -48,8 +49,8 @@ const App: FC<Props> = () => {
       <div>
         <ThemeProvider initialTheme={'dark'}>
           <Routes>
-            <Route path='/' element={<LandingPage />} />
-            <Route path='/login' element={<Login />} />
+            <Route path='/' element={<Login />} />
+            {/* <Route path='/login' element={<Login />} /> */}
             <Route path='/signup' element={<Signup />} />
             <Route path='/dashboard' element={<Dashboard />} />
 

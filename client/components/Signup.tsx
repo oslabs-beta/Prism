@@ -1,13 +1,19 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, SyntheticEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import LightDarkMode from './ClusterView/ClusterViewHeader/LighDarkMode';
-
+import Cookies from 'js-cookie';
 interface Props {}
 
 export default function Signup<Props>(/*{setUser} */) {
   const navigate = useNavigate();
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    if (Cookies.get('oauthToken') || Cookies.get('userToken'))
+      navigate('/dashboard');
+    else console.log(document.cookie);
+  }, []);
 
   const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -44,7 +50,8 @@ export default function Signup<Props>(/*{setUser} */) {
   }, []);
 
   const CLIENT_ID = 'a62670300c9169ebd3b3';
-  const githubLogin = () => {
+  const githubLogin = (event: SyntheticEvent) => {
+    event.preventDefault();
     window.location.assign(
       'https://www.github.com/login/oauth/authorize?client_id=' + CLIENT_ID
     );
@@ -80,13 +87,13 @@ export default function Signup<Props>(/*{setUser} */) {
           <br></br>
           <button>Sign Up</button>
           <br></br>
-          <button onClick={githubLogin}>Sign up with GitHub</button>
+          <button onClick={(e) => githubLogin(e)}>Sign up with GitHub</button>
           <br></br>
           <div className='flex space-x-4'>
             <p className='text-sm text-slate-500 dark:text-[var(--primary-dark)] '>
               Already have an account?
             </p>
-            <Link className='text-sm hover:font-bold' to='/login'>
+            <Link className='text-sm hover:font-bold' to='/'>
               Login
             </Link>
           </div>
