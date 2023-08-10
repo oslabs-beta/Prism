@@ -66,9 +66,9 @@ Looking for contributors = 🙏🏻
 ### Steps :
 
 - [ ] Fork the repository and clone to your local machine
-- [ ] Create a `.env` file in the root directory with the following:
-  - [ ] Your MongoDB URI (key `MONGO_URI`) OR:
-  - [ ] For GitHub OAuth: A client ID and secret key (keys `CLIENT_ID`, `CLIENT_SECRET`)
+- [ ] Set up authentication: Create a `.env` file in the root directory with the following:
+  - [ ] (optional) Private auth database: Your MongoDB URI (key `MONGO_URI`)
+  - [ ] (optional) GitHub OAuth: A client ID and secret key (keys `CLIENT_ID`, `CLIENT_SECRET`)
     - [Read more from GitHub about setting up oAuth in your settings](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)
   - [ ] A secret of your choice for json web tokens (key `JWT_SECRET`)
 - [ ] Execute the startup shell script (run `./startup.zsh`) - this will:
@@ -96,8 +96,8 @@ Once you've done the steps above you'll be able to quickly view live metrics and
 ## Authors
 
 - list of all people and our links
-- [Bezzy](https://github.com/joshuarhall)
-- [Dawit](https://github.com/joshuarhall)
-- [James](https://github.com/joshuarhall)
+- [Beserat Tafesse](https://github.com/BeseratT)
+- [Dawit Merid](https://github.com/dawitmerid)
+- [James Li](https://github.com/Jxmes-Li)
 - [Josh Hall](https://github.com/joshuarhall)
-- [Paul](https://github.com/joshuarhall)
+- [Paul Glenn](https://github.com/paglenn)
