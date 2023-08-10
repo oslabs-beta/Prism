@@ -1,15 +1,6 @@
 
-## Prerequisites - minikube installed 
-##  your deployment and service yaml files written 
-#start minikube 
-minikube start --network=socket_vmnet
-
-# deploy app 
-# kubectl apply -f deployment.yaml 
-# kubectl apply -f service.yaml 
-# kubectl expose service solo-project-deployment --type=NodePort --target-port=8080 --name=solo-project-deployment-np
-
- # minikube service solo-project-deployment-np --url  > proj_url.txt & 
+# Install dependencies 
+npm install  
 
 # install and deploy prometheus 
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
@@ -26,7 +17,7 @@ kubectl expose service grafana  --type=NodePort --target-port=3000 --name=grafan
 sleep 60
 while true; do kubectl port-forward deployment/grafana 3000; done  2>&1 &
 sleep 5  
-# curl -X POST -H "Content-Type: application/json" -d '{"name":"apikeycurl0", "role": "Admin"}' http://admin:$secret@localhost:3000/api/auth/keys > grafana/api_token.json
+
 curl -X POST -H "Content-Type: application/json" -d '{"name":"apikeycurl0", "role": "Admin"}' http://admin:$(kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode)@localhost:3000/api/auth/keys > grafana/api_token.json
-# the terminal will be left open so you can see your url to log into grafana. 
-# Add data source: http://prometheus-server:80  
+
+npm run dev

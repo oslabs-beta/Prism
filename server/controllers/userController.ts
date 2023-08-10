@@ -70,7 +70,6 @@ userController.setUserToken = function (req, res, next) {
     res.cookie('userToken', res.locals.jwt, {
       maxAge: 3600000, // one hour
       secure: process.env.NODE_ENV !== 'development',
-      httpOnly: true,
     });
   }
   return next();
@@ -125,7 +124,6 @@ userController.setOauthToken = function (req, res, next) {
   res.cookie('oauthToken', res.locals.jwt, {
     maxAge: 3600000, // one hour
     secure: process.env.NODE_ENV !== 'development',
-    httpOnly: true,
   });
   console.log('after cookie: ', res.locals.jwt);
   return next();

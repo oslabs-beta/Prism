@@ -1,13 +1,18 @@
 import React, { SyntheticEvent, useRef, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
 import LightDarkMode from './ClusterView/ClusterViewHeader/LighDarkMode';
+import Cookies from 'js-cookie';
 interface Props {}
 
 export default function Login<Props>(/* {setUser} */) {
   const navigate = useNavigate();
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
+  useEffect(() => {
+    if (Cookies.get('oauthToken') || Cookies.get('userToken'))
+      navigate('/dashboard');
+    else console.log(document.cookie);
+  }, []);
 
   const handleSubmit = async (event: SyntheticEvent) => {
     event.preventDefault();
@@ -29,7 +34,6 @@ export default function Login<Props>(/* {setUser} */) {
         password: pwd,
       }),
     }).then((response) => response.json());
-    console.log(res);
     if (res.auth) {
       // const user = await res.json();
       // setUser(user);
@@ -40,7 +44,8 @@ export default function Login<Props>(/* {setUser} */) {
   };
 
   const CLIENT_ID = 'a62670300c9169ebd3b3';
-  const githubLogin = () => {
+  const githubLogin = (e: SyntheticEvent) => {
+    e.preventDefault();
     window.location.assign(
       'https://www.github.com/login/oauth/authorize?client_id=' + CLIENT_ID
     );
@@ -78,7 +83,7 @@ export default function Login<Props>(/* {setUser} */) {
             Login
           </button>
           <br></br>
-          <button onClick={githubLogin}>Sign in with GitHub</button>
+          <button onClick={(e) => githubLogin(e)}>Sign in with GitHub</button>
           <br></br>
           <div className='flex space-x-4'>
             <p className='text-sm text-slate-500 dark:text-[var(--primary-dark)]'>
