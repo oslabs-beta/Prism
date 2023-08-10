@@ -23,7 +23,15 @@
 Prism is a Kubernetes and Docker visualizer that helps users understand the status of and relationships between their nodes, pods, services, and containers. It will help developers quickly view their server status and identify problem areas with live metrics and pod health statistics.
 Our goal for this project was to provide the best possible user experience while minimizing the code a user has to write (everything launches with a single command).
 
-<img alt="Demo" src="./demo.gif">
+## Get insights into your Kubernetes clusters and Docker containers
+
+<img alt="Demo" src="./readme-gifs/demo_views.gif">
+
+## Secure, and built for you!
+
+Login to Prism to see your clusters, nodes, and pods automatically. And with a dark/light mode, you can enjoy it how you want.
+
+<img alt="Demo" src="./readme-gifs/demo_darkmode.gif">
 
 ## Features
 
@@ -57,10 +65,11 @@ Looking for contributors = 🙏🏻
 
 ### Steps :
 
-- [ ] Fork and clone into the repository
+- [ ] Fork the repository and clone to your local machine
 - [ ] Create a `.env` file in the root directory with the following:
   - [ ] Your MongoDB URI (key `MONGO_URI`) OR:
-  - [ ] A client ID and secret for Github Oauth (keys `CLIENT_ID`, `CLIENT_SECRET`)
+  - [ ] For GitHub OAuth: A client ID and secret key (keys `CLIENT_ID`, `CLIENT_SECRET`)
+    - [Read more from GitHub about setting up oAuth in your settings](https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app)
   - [ ] A secret of your choice for json web tokens (key `JWT_SECRET`)
 - [ ] Execute the startup shell script (run `./startup.zsh`) - this will:
 
@@ -69,6 +78,12 @@ Looking for contributors = 🙏🏻
   - [ ] Start up the web application
 
 - [ ] Go to `http://localhost:8080` and view metrics to your heart's desire 🤩
+
+### Enjoy Prism!
+
+Once you've done the steps above you'll be able to quickly view live metrics and pod health statistics with ease.
+
+<img alt="Demo" src="./readme-gifs/demo_login.gif">
 
 ## Contribute to the project
 
