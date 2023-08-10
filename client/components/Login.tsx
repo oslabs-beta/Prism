@@ -1,6 +1,5 @@
 import React, { SyntheticEvent, useRef, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
 import LightDarkMode from './ClusterView/ClusterViewHeader/LighDarkMode';
 import Cookies from 'js-cookie';
 interface Props {}
