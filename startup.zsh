@@ -21,3 +21,6 @@ sleep 5
 curl -X POST -H "Content-Type: application/json" -d '{"name":"apikeycurl0", "role": "Admin"}' http://admin:$(kubectl get secret --namespace default grafana -o jsonpath="{.data.admin-password}" | base64 --decode)@localhost:3000/api/auth/keys > grafana/api_token.json
 
 npm run dev
+
+# KubeReady did all this in a middleware function as part of a startup. 
+# implemented it with the npm module child-processes — https://nodejs.org/api/child_process.html 
