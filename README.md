@@ -45,7 +45,7 @@ Login to Prism to see your clusters, nodes, and pods automatically. And with a d
 | Testing (React Testing Library/Jest front-end, Supertest backend) | ⏳     |
 | Fully intergrated OAuth/User authentication                       | ⏳     |
 | Customizable Dashboards                                           | 🙏🏻     |
-| Historcial Data and Trends                                        | 🙏🏻     |
+| Historical Data and Trends                                        | 🙏🏻     |
 
 Done = ✅
 <br>
