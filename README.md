@@ -38,9 +38,8 @@ Login to Prism to see your clusters, nodes, and pods automatically. And with a d
 | Feature                                                           | Status |
 | ----------------------------------------------------------------- | ------ |
 | Prometheus and Grafana Intergration                               | ✅     |
-| Custom Dashboard                                                  | ✅     |
+| Custom Dashboards                                                 | ✅     |
 | an Overview, Pods view and Node view of metrics                   | ✅     |
-| SASS and Tailwind CSS                                             | ✅     |
 | Typescript conversion                                             | ✅     |
 | Testing (React Testing Library/Jest front-end, Supertest backend) | ⏳     |
 | Fully intergrated OAuth/User authentication                       | ⏳     |
