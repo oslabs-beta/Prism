@@ -1,11 +1,11 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import Login from "../client/components/Login";
+import Login from "../Login";
 import { beforeEach, describe, expect, jest, test } from "@jest/globals";
 // to import Jest and mocking useNavigate
 import "@testing-library/jest-dom";
-import { ThemeProvider } from "../client/components/ClusterView/ClusterViewHeader/themeContext";
+import { ThemeProvider } from "../ClusterView/ClusterViewHeader/themeContext";
 import { Routes, Route, BrowserRouter, HashRouter } from "react-router-dom"; // ne
 const mockUsedNavigate = jest.fn();
 
