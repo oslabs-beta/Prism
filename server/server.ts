@@ -16,7 +16,7 @@ import connectDB from './db/db';
 // const declarations
 const app = express();
 app.use(cors());
-const PORT = 3333; // from josh's branch
+
 connectDB(); /// uncomment to connect to DB
 
 // parse request body
@@ -51,9 +51,6 @@ app.use(
     return res.status(errorObj.status).json(errorObj.message);
   }
 );
-// hi
-app.listen(PORT, () => {
-  console.log(`App listening on PORT ${PORT}`);
-});
+
 
 export default app;
