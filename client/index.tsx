@@ -1,13 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import { HashRouter } from 'react-router-dom';
-import App from './components/App';
-import { createRoot } from 'react-dom/client';
+import { HashRouter } from "react-router-dom";
+import App from "./components/App";
+import { createRoot } from "react-dom/client";
 
-import './styles_output.css';
-import './styles.css';
+import "./styles_output.css";
+import "./styles.css";
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(
@@ -17,12 +17,3 @@ root.render(
     </HashRouter>
   </React.StrictMode>
 );
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <BrowserRouter>
-//       <App />
-//     </BrowserRouter>
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// )
