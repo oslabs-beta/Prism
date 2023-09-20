@@ -2,6 +2,7 @@ import React, { SyntheticEvent, useRef, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LightDarkMode from "./ClusterView/ClusterViewHeader/LighDarkMode";
 import Cookies from "js-cookie";
+import { githubLogin, GitHubSignIn } from "../features/oauth";
 interface Props {}
 
 export default function Login<Props>(/* {setUser} */) {
@@ -41,14 +42,6 @@ export default function Login<Props>(/* {setUser} */) {
     }
   };
 
-  const CLIENT_ID = "a62670300c9169ebd3b3";
-  const githubLogin = (e: SyntheticEvent) => {
-    e.preventDefault();
-    window.location.assign(
-      "https://www.github.com/login/oauth/authorize?client_id=" + CLIENT_ID
-    );
-  };
-
   return (
     <div className="dark:bg-[var(--secondary)] dark:text-[var(--primary)]">
       <div className="h-screen flex flex-col items-center justify-center">
@@ -63,6 +56,7 @@ export default function Login<Props>(/* {setUser} */) {
             id="login-username"
             onChange={(e) => (username.current = e.target)}
             name="username"
+            aria-label="username"
             type="text"
             placeholder="username"
           />
@@ -73,6 +67,7 @@ export default function Login<Props>(/* {setUser} */) {
             onChange={(e) => (password.current = e.target)}
             name="password"
             type="password"
+            aria-label="password"
             placeholder="password"
           />
           <br></br>
@@ -80,7 +75,7 @@ export default function Login<Props>(/* {setUser} */) {
             Login
           </button>
           <br></br>
-          <button onClick={(e) => githubLogin(e)}>Sign in with GitHub</button>
+          <GitHubSignIn type="in" />
           <br></br>
           <div className="flex space-x-4">
             <p className="text-sm text-slate-500 dark:text-[var(--primary-dark)]">

@@ -2,6 +2,7 @@ import React, { useRef, useEffect, SyntheticEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LightDarkMode from "./ClusterView/ClusterViewHeader/LighDarkMode";
 import Cookies from "js-cookie";
+import { githubLogin, GitHubSignIn } from "../features/oauth/index";
 interface Props {}
 
 export default function Signup<Props>(/*{setUser} */) {
@@ -50,13 +51,13 @@ export default function Signup<Props>(/*{setUser} */) {
     const codeParam = urlParams.get("code");
   }, []);
 
-  const CLIENT_ID = "a62670300c9169ebd3b3";
-  const githubLogin = (event: SyntheticEvent) => {
-    event.preventDefault();
-    window.location.assign(
-      "https://www.github.com/login/oauth/authorize?client_id=" + CLIENT_ID
-    );
-  };
+  // const CLIENT_ID = "a62670300c9169ebd3b3";
+  // const githubLogin = (event: SyntheticEvent) => {
+  //   event.preventDefault();
+  //   window.location.assign(
+  //     "https://www.github.com/login/oauth/authorize?client_id=" + CLIENT_ID
+  //   );
+  // };
 
   return (
     <div className="dark:bg-[var(--secondary)] dark:text-[var(--primary)]">
@@ -88,7 +89,7 @@ export default function Signup<Props>(/*{setUser} */) {
           <br></br>
           <button>Sign Up</button>
           <br></br>
-          <button onClick={(e) => githubLogin(e)}>Sign up with GitHub</button>
+          <GitHubSignIn type="up" />
           <br></br>
           <div className="flex space-x-4">
             <p className="text-sm text-slate-500 dark:text-[var(--primary-dark)] ">
