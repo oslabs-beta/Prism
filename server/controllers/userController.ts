@@ -1,7 +1,7 @@
 // user authentication middleware
-import User, { HydratedDocument, IUser } from '../db/models/userSchema'; // import user model
-import jwt, { JwtPayload } from 'jsonwebtoken';
-import { Controller, LocalUser as LocalUser } from '../../types/types';
+import User, { HydratedDocument, IUser } from "../db/models/userSchema"; // import user model
+import jwt, { JwtPayload } from "jsonwebtoken";
+import { Controller, LocalUser as LocalUser } from "../../types/types";
 // mvp of this stretch feature: basic user auth, lasts while window is open
 // stretch feature level 1: sets a JWT in cookie to use for auth purposes
 // stretch feature level
@@ -15,12 +15,12 @@ const userController: Controller = {};
 userController.createUser = async function (req, res, next) {
   // username nand password should come in on response body
   const { username, password } = req.body;
-  console.log(username, password);
+  //console.log(username, password);
   const existingUser: HydratedDocument<IUser> | null = await User.findOne({
     username,
   });
 
-  console.log('user exists? ', existingUser); // show when user doesn't exist
+  //console.log('user exists? ', existingUser); // show when user doesn't exist
   if (!existingUser) {
     const user: HydratedDocument<IUser> = await User.create({
       username,
@@ -61,15 +61,15 @@ userController.setUserToken = function (req, res, next) {
   if (usr.auth || usr.created) {
     res.locals.jwt = jwt.sign(
       { username: usr.username },
-      process.env.JWT_SECRET ?? 'vaticancameos',
+      process.env.JWT_SECRET ?? "vaticancameos",
       {
         expiresIn: 3600, // set expiry to 1 hour
       }
     );
     // store token in cookie
-    res.cookie('userToken', res.locals.jwt, {
+    res.cookie("userToken", res.locals.jwt, {
       maxAge: 3600000, // one hour
-      secure: process.env.NODE_ENV !== 'development',
+      secure: process.env.NODE_ENV !== "development",
     });
   }
   return next();
@@ -79,7 +79,7 @@ userController.setUserToken = function (req, res, next) {
 userController.verifyUserToken = (req, res, next) => {
   // if there's no token, the user isn't logged in yet or the cookie has been deleted
   if (!req.cookies.token) {
-    res.locals.user = { auth: false, message: 'missing token' };
+    res.locals.user = { auth: false, message: "missing token" };
     return next();
   }
 
@@ -88,20 +88,20 @@ userController.verifyUserToken = (req, res, next) => {
   try {
     const decodedToken: jwtPayload | string = jwt.verify(
       req.cookies.token,
-      process.env.JWT_SECRET ?? 'vaticancameos'
+      process.env.JWT_SECRET ?? "vaticancameos"
     ) as jwtPayload;
     if (decodedToken.username) {
       res.locals.user = { username: decodedToken.username, auth: true };
     } else {
-      res.locals.user = { auth: false, message: 'TokenInvalid' };
+      res.locals.user = { auth: false, message: "TokenInvalid" };
     }
   } catch (err) {
-    if (err.name === 'TokenExpiredError') {
-      res.locals.user = { auth: false, message: 'TokenExpired' };
+    if (err.name === "TokenExpiredError") {
+      res.locals.user = { auth: false, message: "TokenExpired" };
     } else {
       return next({
-        message: { err: 'An error occured ' },
-        log: 'Error occurred in verifying JWT in verifyToken middleware',
+        message: { err: "An error occured " },
+        log: "Error occurred in verifying JWT in verifyToken middleware",
         error: err,
       });
     }
@@ -111,21 +111,21 @@ userController.verifyUserToken = (req, res, next) => {
 };
 
 userController.setOauthToken = function (req, res, next) {
-  console.log('entering setOauthToken middleware');
+  //console.log("entering setOauthToken middleware");
   res.locals.jwt = jwt.sign(
     { gitUser: res.locals.token },
-    process.env.JWT_SECRET ?? 'vaticancameos',
+    process.env.JWT_SECRET ?? "vaticancameos",
     {
       expiresIn: 3600, // set expiry to 1 hour
     }
   );
   // store token in cookie
-  console.log('right before cookie');
-  res.cookie('oauthToken', res.locals.jwt, {
+  //console.log('right before cookie');
+  res.cookie("oauthToken", res.locals.jwt, {
     maxAge: 3600000, // one hour
-    secure: process.env.NODE_ENV !== 'development',
+    secure: process.env.NODE_ENV !== "development",
   });
-  console.log('after cookie: ', res.locals.jwt);
+  //console.log('after cookie: ', res.locals.jwt);
   return next();
 };
 
@@ -134,10 +134,10 @@ userController.verifyOauthToken = function (req, res, next) {
   try {
     res.locals.token = (
       jwt.verify(
-        req.cookies['oauthToken'],
-        process.env.JWT_SECRET ?? 'vaticancameos'
+        req.cookies["oauthToken"],
+        process.env.JWT_SECRET ?? "vaticancameos"
       ) as jwtPayload
-    )['token'];
+    )["token"];
   } catch (err) {
     console.log(err);
   }
@@ -154,7 +154,7 @@ userController.deleteUser = async (req, res, next) => {
     res.locals.user = {
       username: username,
       deleted: false,
-      message: 'insufficient permissions',
+      message: "insufficient permissions",
     };
     return next();
   }
