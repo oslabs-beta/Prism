@@ -3,12 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import LightDarkMode from "./ClusterView/ClusterViewHeader/LighDarkMode";
 import Cookies from "js-cookie";
 import { githubLogin, GitHubSignIn } from "../features/oauth";
+import { ShowHideButton } from "client/features/showHidePassword";
 interface Props {}
 
 export default function Login<Props>(/* {setUser} */) {
   const navigate = useNavigate();
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
+  const [setVisible, isVisible] = useState(false);
   useEffect(() => {
     if (Cookies.get("oauthToken") || Cookies.get("userToken"))
       navigate("/dashboard");
@@ -42,6 +44,9 @@ export default function Login<Props>(/* {setUser} */) {
     }
   };
 
+  // password show/hide button
+  // needs click handler to modify state of login
+
   return (
     <div className="dark:bg-[var(--secondary)] dark:text-[var(--primary)]">
       <div className="h-screen flex flex-col items-center justify-center">
@@ -66,7 +71,7 @@ export default function Login<Props>(/* {setUser} */) {
             id="login-password"
             onChange={(e) => (password.current = e.target)}
             name="password"
-            type="password"
+            type={`${isVisible ? "text" : "password"}`}
             aria-label="password"
             placeholder="password"
           />
@@ -90,3 +95,21 @@ export default function Login<Props>(/* {setUser} */) {
     </div>
   );
 }
+
+interface Props {
+  visType?: string;
+  password?: any; // htmlelement | null is returning error
+}
+const PasswordInput = ({ visType, password }: Props) => {
+  return (
+    <input
+      ref={password}
+      id="login-password"
+      onChange={(e) => (password.current = e.target)}
+      name="password"
+      type={visType}
+      aria-label="password"
+      placeholder="password"
+    />
+  );
+};

@@ -6,7 +6,10 @@ interface signProps {
 }
 export const ShowHideButton: FC<signProps> = ({ showPass, clickHandler }) => {
   return (
-    <button onClick={() => clickHandler()}>
+    <button
+      className="rounded bg-transparent border-red-600 border-2"
+      onClick={() => clickHandler()}
+    >
       {showPass ? (
         <FaEyeSlash title="hide password" />
       ) : (
