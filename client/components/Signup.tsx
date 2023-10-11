@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import LightDarkMode from "./ClusterView/ClusterViewHeader/LighDarkMode";
 import Cookies from "js-cookie";
 import { githubLogin, GitHubSignIn } from "../features/oauth/index";
+import { PasswordField } from "../features/showHidePassword";
 interface Props {}
 
 export default function Signup<Props>(/*{setUser} */) {
@@ -51,14 +52,6 @@ export default function Signup<Props>(/*{setUser} */) {
     const codeParam = urlParams.get("code");
   }, []);
 
-  // const CLIENT_ID = "a62670300c9169ebd3b3";
-  // const githubLogin = (event: SyntheticEvent) => {
-  //   event.preventDefault();
-  //   window.location.assign(
-  //     "https://www.github.com/login/oauth/authorize?client_id=" + CLIENT_ID
-  //   );
-  // };
-
   return (
     <div className="dark:bg-[var(--secondary)] dark:text-[var(--primary)]">
       <div className="h-screen flex flex-col items-center justify-center drop-shadow ">
@@ -76,15 +69,14 @@ export default function Signup<Props>(/*{setUser} */) {
             name="username"
             type="text"
             placeholder="Username"
+            className="self-start"
           />
           <br></br>
-          <input
-            ref={password}
+
+          <PasswordField
+            passwordRef={password}
+            description="Password"
             id="signup-password"
-            onChange={(e) => (password.current = e.target)}
-            name="password"
-            type="password"
-            placeholder="Password"
           />
           <br></br>
           <button>Sign Up</button>

@@ -1,6 +1,8 @@
 import { useState } from "react";
-export const usePasswordShown = (initialValue = false) => {
-  const [isPasswordShown, setPasswordShown] = useState(initialValue);
+export const usePasswordShown = (
+  initialValue = false
+): [boolean, () => void] => {
+  const [isPasswordShown, setPasswordShown] = useState<boolean>(initialValue);
   const flipPasswordShown = () => {
     setPasswordShown(!isPasswordShown);
   };

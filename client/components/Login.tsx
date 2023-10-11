@@ -2,15 +2,15 @@ import React, { SyntheticEvent, useRef, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LightDarkMode from "./ClusterView/ClusterViewHeader/LighDarkMode";
 import Cookies from "js-cookie";
-import { githubLogin, GitHubSignIn } from "../features/oauth";
-import { ShowHideButton } from "client/features/showHidePassword";
+import { GitHubSignIn } from "../features/oauth";
+import { PasswordField } from "../features/showHidePassword";
 interface Props {}
 
 export default function Login<Props>(/* {setUser} */) {
   const navigate = useNavigate();
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
-  const [isVisible, setVisible] = useState(false);
+
   useEffect(() => {
     if (Cookies.get("oauthToken") || Cookies.get("userToken"))
       navigate("/dashboard");
@@ -64,9 +64,15 @@ export default function Login<Props>(/* {setUser} */) {
             aria-label="username"
             type="text"
             placeholder="username"
+            className="self-start"
           />
           <br></br>
-          <input
+          <PasswordField
+            passwordRef={password}
+            description="Password"
+            id="login-password"
+          />
+          {/* <input
             ref={password}
             id="login-password"
             onChange={(e) => (password.current = e.target)}
@@ -74,7 +80,7 @@ export default function Login<Props>(/* {setUser} */) {
             type={`${isVisible ? "text" : "password"}`}
             aria-label="password"
             placeholder="password"
-          />
+          /> */}
           <br></br>
           <button type="submit" className="bg-[var(--secondary)] px-6">
             Login
