@@ -9,9 +9,6 @@ import { ThemeProvider } from "../ClusterView/ClusterViewHeader/themeContext";
 import { Routes, Route, BrowserRouter, HashRouter } from "react-router-dom"; // ne
 const mockUsedNavigate = jest.fn();
 
-// jest.mock("react-router-dom", () => ({
-//   useNavigate: () => mockUsedNavigate,
-// }));
 
 Object.defineProperty(window, "matchMedia", {
   writable: true,

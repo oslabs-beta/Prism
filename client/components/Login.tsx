@@ -72,15 +72,7 @@ export default function Login<Props>(/* {setUser} */) {
             description="Password"
             id="login-password"
           />
-          {/* <input
-            ref={password}
-            id="login-password"
-            onChange={(e) => (password.current = e.target)}
-            name="password"
-            type={`${isVisible ? "text" : "password"}`}
-            aria-label="password"
-            placeholder="password"
-          /> */}
+        
           <br></br>
           <button type="submit" className="bg-[var(--secondary)] px-6">
             Login

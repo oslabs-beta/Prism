@@ -17,12 +17,13 @@ export const PasswordField: FC<PasswordProps> = ({
     setInputType(isShown ? "text" : "password");
   }, [isShown]);
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-row py-2">
       <input
         ref={passwordRef}
         id={id}
         onChange={(e) => (passwordRef.current = e.target)}
         name="password"
+        aria-label="password"
         type={inputType}
         placeholder={description}
       />

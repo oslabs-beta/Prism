@@ -7,7 +7,7 @@ interface signProps {
 export const ShowHideButton: FC<signProps> = ({ showPass, clickHandler }) => {
   return (
     <button
-      className="rounded bg-transparent"
+      className="rounded bg-transparent justify-self-end"
       onClick={clickHandler}
       type="button"
     >
