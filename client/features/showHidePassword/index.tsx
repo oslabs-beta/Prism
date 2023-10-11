@@ -1,2 +1,3 @@
 import { ShowHideButton } from "./components/ShowHideButton";
-export { ShowHideButton };
+import { usePasswordShown } from "./hooks/usePasswordShown";
+export { ShowHideButton, usePasswordShown };

@@ -10,7 +10,7 @@ export default function Login<Props>(/* {setUser} */) {
   const navigate = useNavigate();
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
-  const [setVisible, isVisible] = useState(false);
+  const [isVisible, setVisible] = useState(false);
   useEffect(() => {
     if (Cookies.get("oauthToken") || Cookies.get("userToken"))
       navigate("/dashboard");
@@ -96,18 +96,18 @@ export default function Login<Props>(/* {setUser} */) {
   );
 }
 
-interface Props {
-  visType?: string;
+interface PasswordProps extends Props {
+  isShown?: string;
   password?: any; // htmlelement | null is returning error
 }
-const PasswordInput = ({ visType, password }: Props) => {
+const PasswordInput = ({ isShown, password }: PasswordProps) => {
   return (
     <input
       ref={password}
       id="login-password"
       onChange={(e) => (password.current = e.target)}
       name="password"
-      type={visType}
+      type={isShown}
       aria-label="password"
       placeholder="password"
     />
