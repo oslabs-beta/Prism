@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useRef, useEffect, useState } from "react";
+import React, { SyntheticEvent, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LightDarkMode from "./ClusterView/ClusterViewHeader/LighDarkMode";
 import Cookies from "js-cookie";
@@ -72,7 +72,7 @@ export default function Login<Props>(/* {setUser} */) {
             description="Password"
             id="login-password"
           />
-        
+
           <br></br>
           <button type="submit" className="bg-[var(--secondary)] px-6">
             Login

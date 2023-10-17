@@ -2,7 +2,7 @@ import React, { useRef, useEffect, SyntheticEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LightDarkMode from "./ClusterView/ClusterViewHeader/LighDarkMode";
 import Cookies from "js-cookie";
-import { githubLogin, GitHubSignIn } from "../features/oauth/index";
+import { GitHubSignIn } from "../features/oauth/index";
 import { PasswordField } from "../features/showHidePassword";
 interface Props {}
 
@@ -20,7 +20,7 @@ export default function Signup<Props>(/*{setUser} */) {
   }, []);
 
   // submit handler for login button validates input
-  const handleSubmit = async (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
     // type assertions for username and password
     if (username.current === null || password.current === null) {

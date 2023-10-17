@@ -39,6 +39,7 @@
     "react-iframe": "^1.8.5",
     "react-router": "^6.14.0",
     "react-router-dom": "^6.14.2",
+    "redis": "^4.6.10",
     "saslprep": "^1.0.3",
     "style-loader": "^3.3.3",
     "ts-node": "^10.9.1",
