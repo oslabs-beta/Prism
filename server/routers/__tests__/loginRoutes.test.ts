@@ -3,6 +3,7 @@
  */
 import request from "supertest";
 import app from "../../server";
+import { connection } from "mongoose";
 let listener: any;
 beforeAll(() => {
   listener = app.listen(5051, () => {
@@ -11,6 +12,7 @@ beforeAll(() => {
 });
 afterAll((done) => {
   listener.close();
+  connection.close();
   done();
 });
 describe("Signup route tests", () => {
