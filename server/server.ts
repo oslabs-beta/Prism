@@ -29,8 +29,8 @@ app.use(cookieParser());
 app.use('/api', apiRouter);
 app.use('/user', userRouter);
 // just to get something running
-app.get('/', (req, res) => {
-  return res.status(200).sendFile(resolve(__dirname, '../index.html'));
+app.get('/*', (req, res) => {
+  return res.status(200).sendFile(resolve(__dirname, '../build/index.html'));
 });
 
 // catch all route
