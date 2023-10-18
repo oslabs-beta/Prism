@@ -3,12 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import LightDarkMode from "./ClusterView/ClusterViewHeader/LighDarkMode";
 import Cookies from "js-cookie";
 import { githubLogin, GitHubSignIn } from "../features/oauth/index";
+import { PasswordField } from "../features/showHidePassword";
 interface Props {}
 
 export default function Signup<Props>(/*{setUser} */) {
   const navigate = useNavigate();
   const username = useRef<HTMLInputElement | null>(null);
   const password = useRef<HTMLInputElement | null>(null);
+  const password2 = useRef<HTMLInputElement | null>(null);
 
   // on reaching the signup page we check if oauth session is acttive. if so, redirected to main page
   useEffect(() => {
@@ -23,6 +25,9 @@ export default function Signup<Props>(/*{setUser} */) {
     // type assertions for username and password
     if (username.current === null || password.current === null) {
       alert(" You must enter a username and password! ");
+      return;
+    } else if (password.current.value !== password2.current.value) {
+      alert("Passwords must match 🤔");
       return;
     }
     const name: string = username.current.value;
@@ -51,20 +56,12 @@ export default function Signup<Props>(/*{setUser} */) {
     const codeParam = urlParams.get("code");
   }, []);
 
-  // const CLIENT_ID = "a62670300c9169ebd3b3";
-  // const githubLogin = (event: SyntheticEvent) => {
-  //   event.preventDefault();
-  //   window.location.assign(
-  //     "https://www.github.com/login/oauth/authorize?client_id=" + CLIENT_ID
-  //   );
-  // };
-
   return (
     <div className="dark:bg-[var(--secondary)] dark:text-[var(--primary)]">
       <div className="h-screen flex flex-col items-center justify-center drop-shadow ">
         <LightDarkMode />
         <form
-          className="bg-[var(--primary-grey)] mt-5 px-5 pt-5 pb-10 flex flex-col items-center rounded dark:bg-[var(--secondary)] dark:border-2 dark:border-[var(--primary)] rounded shadow-[5px_5px_6px_0px_rgba(0,0,0,0.3)]"
+          className="bg-[var(--primary-grey)] mt-5 px-5 pt-5 pb-10 flex flex-col items-center dark:bg-[var(--secondary)] dark:border-2 dark:border-[var(--primary)] rounded shadow-[5px_5px_6px_0px_rgba(0,0,0,0.3)]"
           onSubmit={handleSubmit}
         >
           <p>Signup</p>
@@ -76,15 +73,20 @@ export default function Signup<Props>(/*{setUser} */) {
             name="username"
             type="text"
             placeholder="Username"
+            className="self-start"
           />
           <br></br>
-          <input
-            ref={password}
+
+          <PasswordField
+            passwordRef={password}
+            description="Password"
             id="signup-password"
-            onChange={(e) => (password.current = e.target)}
-            name="password"
-            type="password"
-            placeholder="Password"
+          />
+
+          <PasswordField
+            passwordRef={password2}
+            description="Re-Enter Password"
+            id="signup-password2"
           />
           <br></br>
           <button>Sign Up</button>

@@ -9,9 +9,6 @@ import { ThemeProvider } from "../ClusterView/ClusterViewHeader/themeContext";
 import { Routes, Route, BrowserRouter, HashRouter } from "react-router-dom"; // ne
 const mockUsedNavigate = jest.fn();
 
-// jest.mock("react-router-dom", () => ({
-//   useNavigate: () => mockUsedNavigate,
-// }));
 
 Object.defineProperty(window, "matchMedia", {
   writable: true,
@@ -40,13 +37,13 @@ beforeEach(() => {
   );
 });
 
-test("If it renders", () => {
-  const ha = screen.getByText(/Login Form/);
+test("login form renders", () => {
+  const form = screen.getByText(/Login Form/);
   // screen.debug();
-  expect(ha).toBeInTheDocument();
+  expect(form).toBeInTheDocument();
 });
 
-test("If username and password input bars render", () => {
+test("username and password input fields render", () => {
   const username = screen.getByRole("textbox", {
     name: "username",
   });

@@ -17,7 +17,7 @@
   "dependencies": {
     "@types/react-icons": "^3.0.0",
     "@types/supertest": "^2.0.12",
-    "axios": "^1.4.0",
+    "axios": "^1.5.0",
     "bcrypt": "^5.1.0",
     "bootstrap": "^5.3.0",
     "concurrently": "^8.2.0",
@@ -35,7 +35,7 @@
     "psql": "^0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.10.1",
+    "react-icons": "^4.11.0",
     "react-iframe": "^1.8.5",
     "react-router": "^6.14.0",
     "react-router-dom": "^6.14.2",
