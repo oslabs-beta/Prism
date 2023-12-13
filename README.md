@@ -94,7 +94,6 @@ Once you've done the steps above you'll be able to quickly view live metrics and
 
 ## Authors
 
-- list of all people and our links
 - [Beserat Tafesse](https://github.com/BeseratT)
 - [Dawit Merid](https://github.com/dawitmerid)
 - [James Li](https://github.com/Jxmes-Li)
