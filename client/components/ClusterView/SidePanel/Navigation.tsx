@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import React, { FC } from 'react';
-import { AiOutlineCluster } from 'react-icons/ai';
 import { FaCircleNodes, FaFreebsd } from 'react-icons/fa6';
 import { FaServer } from 'react-icons/fa';
 

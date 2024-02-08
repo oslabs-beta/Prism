@@ -15,7 +15,6 @@ import connectDB from './db/db';
 
 // const declarations
 const app = express();
-app.use(cors());
 
 connectDB(); /// uncomment to connect to DB
 

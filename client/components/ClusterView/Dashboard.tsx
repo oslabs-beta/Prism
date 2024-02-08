@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Outlet, NavLink } from 'react-router-dom';
 import ClusterViewHeader from './ClusterViewHeader/ClusterViewHeader';
 import SidePanel from './SidePanel/SidePanel';
 import OverView from './Dashboard/Overview';
@@ -7,7 +6,6 @@ import Iframe from 'react-iframe';
 import NodesView from './Dashboard/NodesView';
 import PodsView from './Dashboard/PodsView';
 import ClusterMap from './Dashboard/ClusterMap';
-import { ComponentType } from 'react';
 import type { ReactNode } from 'react';
 
 interface SidePanelProps {
